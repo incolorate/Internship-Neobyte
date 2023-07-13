@@ -1,20 +1,26 @@
 import express from "express";
-import productRouts from "./routes/products.js";
+import productRoutes from "./routes/products.js";
 import mongoose from "mongoose";
 import manageUsers from "./routes/manageUsers.js";
 import session from "express-session";
 import logger from "./middlewares/loggerMid.js";
 import expressWinston from "express-winston";
 import "dotenv/config";
-import { createClient } from 'redis';
-
-
-const client = createClient()
+import { createClient } from "redis";
 
 // Initialize app
 const app = express();
 const PORT = 4000;
-app.listen(PORT);
+
+let client;
+(async () => {
+  client = createClient();
+
+  client.on("error", (error) => console.error(`Error : ${error}`));
+
+  await client.connect();
+  console.log("Redis connected");
+})();
 
 // Middlewares
 app.use(express.json());
@@ -33,14 +39,25 @@ app.use(
 );
 
 // Routes
-app.get("/", (req, res) => {
-  res.send("<h1>Hello Neobyte!</h1>");
+app.get("/", async (req, res) => {
+  try {
+    const cacheResults = await client.get("cached");
+    if (cacheResults) {
+      res.send("Hello mr. redis");
+    } else {
+      res;
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(400).send("Nothing to see here");
+  }
+  res.send("Hello ");
 });
 
 app.get("/error", (req, res) => {
   throw new Error("ErrorError!");
 });
-app.use("/", productRouts);
+app.use("/", productRoutes);
 app.use("/", manageUsers);
 
 // Db stuff
@@ -52,3 +69,7 @@ mongoose
   .catch((error) => {
     console.log("Some error occurred ", error);
   });
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
