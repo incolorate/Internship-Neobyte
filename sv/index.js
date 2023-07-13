@@ -45,13 +45,13 @@ app.get("/", async (req, res) => {
     if (cacheResults) {
       res.send("Hello mr. redis");
     } else {
-      res;
+      await client.set("cached", "some value");
+      res.send("<h1>Hello Neobyte</h1>");
     }
   } catch (error) {
     console.log(error);
     res.status(400).send("Nothing to see here");
   }
-  res.send("Hello ");
 });
 
 app.get("/error", (req, res) => {
