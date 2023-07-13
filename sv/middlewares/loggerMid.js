@@ -16,14 +16,9 @@ const logger = createLogger({
     }),
   ],
   format: format.combine(
-    format.json(),
-    format.prettyPrint(),
-    format.metadata(),
     format.timestamp(),
-    format.printf(({ level, message, timestamp, metadata, req }) => {
-      return `${timestamp} [${level.toUpperCase()}]: ${message} 
-      ${JSON.stringify(metadata)}`;
-    })
+    format.json(),
+    format.prettyPrint()
   ),
 });
 
