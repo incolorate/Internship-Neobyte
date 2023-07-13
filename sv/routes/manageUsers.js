@@ -1,17 +1,17 @@
 import express from "express";
 import bcrypt from "bcrypt";
 import User from "../models/userSchema.js";
+import logger from "../middlewares/loggerMid.js";
 
 const router = express.Router();
 
 // Register new user to db
-router.post("/register", async (req, res) => {
+router.post("/user/register", async (req, res) => {
   const { username, password } = req.body;
   //Check if user exists
   const findDuplicateUser = await User.findOne({
     user: username,
   });
-
   if (findDuplicateUser) return res.status(400).json("Username in use");
   // Validate length
   if (username.toString().length < 4)
@@ -28,13 +28,17 @@ router.post("/register", async (req, res) => {
       });
     });
     res.status(200).json(`${username} successfully created`);
+    logger.info(`${username} successfully created an account`);
   } catch (error) {
     res.json("Some error occurred", error);
+    logger.error(
+      `${error} occurred when ${username} tried to create an account`
+    );
   }
 });
 
 // Login
-router.post("/login", async (req, res) => {
+router.post("/user/login", async (req, res) => {
   const { username, password } = req.body;
   const userInfo = await User.findOne({
     user: username,
@@ -42,9 +46,12 @@ router.post("/login", async (req, res) => {
   //   Password
   bcrypt.compare(password, userInfo.password, function (err, result) {
     if (result) {
-      //  Intreaba maine -> prima oara salbat datele in varabila....
       req.session.user = { username: userInfo.user, role: userInfo.role };
+      logger.info(`${username} successfully logged in`);
       return res.status(200).json(`Welcome ${userInfo.user}`);
+    } else {
+      logger.info(`${username} tried an incorrect password or username`);
+      res.status(404).json(`Password or username incorrect`);
     }
   });
 });
