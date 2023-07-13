@@ -6,21 +6,11 @@ import session from "express-session";
 import logger from "./middlewares/loggerMid.js";
 import expressWinston from "express-winston";
 import "dotenv/config";
-import { createClient } from "redis";
+import client from "./client.js";
 
 // Initialize app
 const app = express();
 const PORT = 4000;
-
-let client;
-(async () => {
-  client = createClient();
-
-  client.on("error", (error) => console.error(`Error : ${error}`));
-
-  await client.connect();
-  console.log("Redis connected");
-})();
 
 // Middlewares
 app.use(express.json());
