@@ -16,6 +16,7 @@ const logger = createLogger({
       level: "silly",
     }),
   ],
+  //   modifica formatul de return
   format: format.combine(
     format.json(),
     format.prettyPrint(),
