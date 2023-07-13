@@ -2,28 +2,6 @@ import express from "express";
 import bcrypt from "bcrypt";
 import User from "../models/userSchema.js";
 
-// Definitie user schema
-// const userSchema = new mongoose.Schema({
-//   user: {
-//     type: String,
-//     unique: true,
-//     required: true,
-//     minlength: 4,
-//   },
-//   password: {
-//     type: String,
-//     minlength: 6,
-//     required: true,
-//   },
-//   role: {
-//     type: String,
-//     default: "Basic",
-//     required: true,
-//   },
-// });
-
-// const User = mongoose.model("User", userSchema);
-
 const router = express.Router();
 
 // Register new user to db
@@ -33,6 +11,7 @@ router.post("/register", async (req, res) => {
   const findDuplicateUser = await User.findOne({
     user: username,
   });
+
   if (findDuplicateUser) return res.status(400).json("Username in use");
   // Validate length
   if (username.toString().length < 4)
@@ -54,9 +33,6 @@ router.post("/register", async (req, res) => {
   }
 });
 
-// Const userData
-export let userData = {};
-
 // Login
 router.post("/login", async (req, res) => {
   const { username, password } = req.body;
@@ -68,7 +44,6 @@ router.post("/login", async (req, res) => {
     if (result) {
       //  Intreaba maine -> prima oara salbat datele in varabila....
       req.session.user = { username: userInfo.user, role: userInfo.role };
-      console.log(req.session.user);
       return res.status(200).json(`Welcome ${userInfo.user}`);
     }
   });

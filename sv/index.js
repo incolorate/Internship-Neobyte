@@ -6,21 +6,24 @@ import session from "express-session";
 import logger from "./middlewares/loggerMid.js";
 import expressWinston from "express-winston";
 import "dotenv/config";
+import { createClient } from 'redis';
 
+
+const client = createClient()
+
+// Initialize app
 const app = express();
-app.use(express.json());
 const PORT = 4000;
 app.listen(PORT);
 
-// Logger
+// Middlewares
+app.use(express.json());
 app.use(
   expressWinston.logger({
     winstonInstance: logger,
     statusLevels: true,
   })
 );
-
-// session
 app.use(
   session({
     secret: process.env.SECRET,
@@ -29,6 +32,7 @@ app.use(
   })
 );
 
+// Routes
 app.get("/", (req, res) => {
   res.send("<h1>Hello Neobyte!</h1>");
 });
@@ -36,10 +40,10 @@ app.get("/", (req, res) => {
 app.get("/error", (req, res) => {
   throw new Error("ErrorError!");
 });
-
 app.use("/", productRouts);
 app.use("/", manageUsers);
 
+// Db stuff
 mongoose
   .connect(process.env.MONGODB)
   .then(() => {

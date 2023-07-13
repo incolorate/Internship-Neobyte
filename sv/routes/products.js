@@ -1,24 +1,6 @@
 import express from "express";
-import mongoose from "mongoose";
 import checkAuth from "../middlewares/checkAuth.js";
 import Product from "../models/productSchema.js";
-
-// const productSchema = mongoose.Schema({
-//   name: {
-//     type: String,
-//     required: true,
-//   },
-//   price: {
-//     type: Number,
-//     required: true,
-//   },
-//   stock: {
-//     type: Number,
-//     required: true,
-//   },
-// });
-
-// const Product = mongoose.model("Product", productSchema);
 
 const router = express.Router();
 
@@ -31,6 +13,7 @@ router.get("/products", async (req, res) => {
   }
 });
 
+// vezi naming conventions
 router.post("/createproduct", checkAuth, async (req, res) => {
   try {
     const product = await Product.create({
