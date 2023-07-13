@@ -31,6 +31,7 @@ router.post("/createproduct", checkAuth, async (req, res) => {
       price: req.body.price,
       stock: req.body.stock,
     });
+    await client.del("products");
     res.status(200).json(product);
   } catch (error) {
     res.status(500).json(error);

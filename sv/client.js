@@ -10,6 +10,4 @@ let client;
   console.log("Redis connected");
 })();
 
-// comit check
-
 export default client;
