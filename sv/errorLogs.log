@@ -1,0 +1,23 @@
+{
+  meta: {
+    req: {
+      url: '/error',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3AnRfpk1sbqbIJBrVo3XJqqaGppEjx89OE.%2B8aUe9sK2zcwg0ncAhdDvRp0MrHzkyNajetXncGhGFQ',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '58'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/error',
+      query: {}
+    },
+    res: { statusCode: 500 },
+    responseTime: 11
+  },
+  level: 'error',
+  message: 'HTTP GET /error'
+}

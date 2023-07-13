@@ -1,0 +1,47 @@
+2023-07-12T16:55:37.150Z warn: undefined
+{
+  meta: {
+    req: {
+      url: '/',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3AUt1jP0zogS5xRVDov2PZHT4-TcCfNJ_X.HvJpAlt7o6NNRpQdHDlzJ4JNzL2%2F8g43vsz%2BTVIYKGw',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '58'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 1
+  },
+  level: 'warn',
+  message: 'HTTP POST /'
+}
+{
+  meta: {
+    req: {
+      url: '/error',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3AnRfpk1sbqbIJBrVo3XJqqaGppEjx89OE.%2B8aUe9sK2zcwg0ncAhdDvRp0MrHzkyNajetXncGhGFQ',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '58'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/error',
+      query: {}
+    },
+    res: { statusCode: 500 },
+    responseTime: 11
+  },
+  level: 'error',
+  message: 'HTTP GET /error'
+}

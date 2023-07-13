@@ -1,0 +1,241 @@
+{
+  meta: {
+    req: {
+      url: '/',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3AnRfpk1sbqbIJBrVo3XJqqaGppEjx89OE.%2B8aUe9sK2zcwg0ncAhdDvRp0MrHzkyNajetXncGhGFQ',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '58'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 3
+  },
+  level: 'info',
+  message: 'HTTP GET /'
+}
+{
+  meta: {
+    req: {
+      url: '/products',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3AnRfpk1sbqbIJBrVo3XJqqaGppEjx89OE.%2B8aUe9sK2zcwg0ncAhdDvRp0MrHzkyNajetXncGhGFQ',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '58'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/products',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 61
+  },
+  level: 'info',
+  message: 'HTTP GET /products'
+}
+{
+  meta: {
+    req: {
+      url: '/',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not.A/Brand";v="8", "Chromium";v="114", "Google Chrome";v="114"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        dnt: '1',
+        'upgrade-insecure-requests': '1',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+        'sec-fetch-site': 'none',
+        'sec-fetch-mode': 'navigate',
+        'sec-fetch-user': '?1',
+        'sec-fetch-dest': 'document',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7',
+        cookie: '__clerk_db_jwt=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXYiOiJkdmJfMlNFWUJBU1REbTJ6WTJSWlMwSzMycGZ2djJMIn0.HfdUEREszdZZmlvpF_av15jBn0aKg9t8FRvKUanzjXHTtWc0KrRRLr4qi06rLOBkVvButMjUBu5QHcZbeK5IsYSPbPw2114Wncyz-U3IMSJRudRcRWxyI4TJ582H9rGqEA3Kk4MSy4yhI6aMj8DaLmuSeGryUdlgVC6TtMybAJwr9JNE6NqMlhVDtei5u1xfiSldttDS8ZLGN2lTrYQxmLaVFFvwP4zJgdRIxVUp_d8UZCYlumqFZuRqtpJlP7wv3Vt4TQh5ttPKB_AjpT2BVEe7jXwWGLxushLL-CbYky1qdbjruEIYWnm-tOcCJKO1vmza35dSHZd5M58mJln2-Q; __client_uat=1688713076; __session=eyJhbGciOiJSUzI1NiIsImtpZCI6Imluc18yUlBkSjFHT1oxcW00Tk80bU1PdFAxdWZCa2wiLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwOi8vbG9jYWxob3N0OjMwMDAiLCJleHAiOjE2ODg3MTMxOTcsImlhdCI6MTY4ODcxMzEzNywiaXNzIjoiaHR0cHM6Ly9nbG9yaW91cy1zdW5maXNoLTYxLmNsZXJrLmFjY291bnRzLmRldiIsIm5iZiI6MTY4ODcxMzEyNywic2lkIjoic2Vzc18yU0VZQzhweU1MQjVtOUw4dlRGRGhFaEZmWWYiLCJzdWIiOiJ1c2VyXzJSUHg1WnNvZ2VERmhKdWJ0bncwUGtLSDZiNiJ9.C1pUPcoS5w9v72Q3zHi-WIvqsTjKliBqqXu1waAkZbzPwSArx8uA28Kuyh0N4aj6C1PrOEu5dxLXMsrDws0PKIfWbPC4GUy4uG-63E-gF0oHqaNEk-ZZiGFv7I--WYbwDj9dHnwXkTU4psoET38TvMe9l4M-rpRU0NuK64jXzxtJOnRHYsXIAKbt56pRkqgQPZ2uOem56zGRa6fTw345jlQuR92jIo7s4EQGGuS3M7eOiNQ0XNXNX7X60MVzoywUXd7HsixXeoqnfjvao65lFktYjuutEXcP-Lh5pBKUiLOL0-jhY-DKt3jyVXSKaDmLE8fNB3YYyYkXh6ShCnJwXw; connect.sid=s%3ALaMc7qHnjLsCEO6xpmNF-SmmlsQmp46W.rOJNqQNuVdjv58okGEGFR3oMCHEoxHWL%2FWEHRHA9nwI',
+        'if-none-match': 'W/"17-hCGevsvGjutGY/fe3WBO+lfEV/o"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 10
+  },
+  level: 'info',
+  message: 'HTTP GET /'
+}
+{
+  meta: {
+    req: {
+      url: '/products',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not.A/Brand";v="8", "Chromium";v="114", "Google Chrome";v="114"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        dnt: '1',
+        'upgrade-insecure-requests': '1',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+        'sec-fetch-site': 'none',
+        'sec-fetch-mode': 'navigate',
+        'sec-fetch-user': '?1',
+        'sec-fetch-dest': 'document',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7',
+        cookie: '__clerk_db_jwt=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXYiOiJkdmJfMlNFWUJBU1REbTJ6WTJSWlMwSzMycGZ2djJMIn0.HfdUEREszdZZmlvpF_av15jBn0aKg9t8FRvKUanzjXHTtWc0KrRRLr4qi06rLOBkVvButMjUBu5QHcZbeK5IsYSPbPw2114Wncyz-U3IMSJRudRcRWxyI4TJ582H9rGqEA3Kk4MSy4yhI6aMj8DaLmuSeGryUdlgVC6TtMybAJwr9JNE6NqMlhVDtei5u1xfiSldttDS8ZLGN2lTrYQxmLaVFFvwP4zJgdRIxVUp_d8UZCYlumqFZuRqtpJlP7wv3Vt4TQh5ttPKB_AjpT2BVEe7jXwWGLxushLL-CbYky1qdbjruEIYWnm-tOcCJKO1vmza35dSHZd5M58mJln2-Q; __client_uat=1688713076; __session=eyJhbGciOiJSUzI1NiIsImtpZCI6Imluc18yUlBkSjFHT1oxcW00Tk80bU1PdFAxdWZCa2wiLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwOi8vbG9jYWxob3N0OjMwMDAiLCJleHAiOjE2ODg3MTMxOTcsImlhdCI6MTY4ODcxMzEzNywiaXNzIjoiaHR0cHM6Ly9nbG9yaW91cy1zdW5maXNoLTYxLmNsZXJrLmFjY291bnRzLmRldiIsIm5iZiI6MTY4ODcxMzEyNywic2lkIjoic2Vzc18yU0VZQzhweU1MQjVtOUw4dlRGRGhFaEZmWWYiLCJzdWIiOiJ1c2VyXzJSUHg1WnNvZ2VERmhKdWJ0bncwUGtLSDZiNiJ9.C1pUPcoS5w9v72Q3zHi-WIvqsTjKliBqqXu1waAkZbzPwSArx8uA28Kuyh0N4aj6C1PrOEu5dxLXMsrDws0PKIfWbPC4GUy4uG-63E-gF0oHqaNEk-ZZiGFv7I--WYbwDj9dHnwXkTU4psoET38TvMe9l4M-rpRU0NuK64jXzxtJOnRHYsXIAKbt56pRkqgQPZ2uOem56zGRa6fTw345jlQuR92jIo7s4EQGGuS3M7eOiNQ0XNXNX7X60MVzoywUXd7HsixXeoqnfjvao65lFktYjuutEXcP-Lh5pBKUiLOL0-jhY-DKt3jyVXSKaDmLE8fNB3YYyYkXh6ShCnJwXw; connect.sid=s%3AUtSIn1c55XNE2Xoa_TWcgPbqmWEsxDkg.ZTtuSCyqX1w3U%2BRPAI248dRWnwZQ%2BHPA0x8gUazBJ9Y'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/products',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 45
+  },
+  level: 'info',
+  message: 'HTTP GET /products'
+}
+{
+  meta: {
+    req: {
+      url: '/products',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'cache-control': 'max-age=0',
+        'sec-ch-ua': '"Not.A/Brand";v="8", "Chromium";v="114", "Google Chrome";v="114"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        dnt: '1',
+        'upgrade-insecure-requests': '1',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+        'sec-fetch-site': 'none',
+        'sec-fetch-mode': 'navigate',
+        'sec-fetch-user': '?1',
+        'sec-fetch-dest': 'document',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7',
+        cookie: '__clerk_db_jwt=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXYiOiJkdmJfMlNFWUJBU1REbTJ6WTJSWlMwSzMycGZ2djJMIn0.HfdUEREszdZZmlvpF_av15jBn0aKg9t8FRvKUanzjXHTtWc0KrRRLr4qi06rLOBkVvButMjUBu5QHcZbeK5IsYSPbPw2114Wncyz-U3IMSJRudRcRWxyI4TJ582H9rGqEA3Kk4MSy4yhI6aMj8DaLmuSeGryUdlgVC6TtMybAJwr9JNE6NqMlhVDtei5u1xfiSldttDS8ZLGN2lTrYQxmLaVFFvwP4zJgdRIxVUp_d8UZCYlumqFZuRqtpJlP7wv3Vt4TQh5ttPKB_AjpT2BVEe7jXwWGLxushLL-CbYky1qdbjruEIYWnm-tOcCJKO1vmza35dSHZd5M58mJln2-Q; __client_uat=1688713076; __session=eyJhbGciOiJSUzI1NiIsImtpZCI6Imluc18yUlBkSjFHT1oxcW00Tk80bU1PdFAxdWZCa2wiLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwOi8vbG9jYWxob3N0OjMwMDAiLCJleHAiOjE2ODg3MTMxOTcsImlhdCI6MTY4ODcxMzEzNywiaXNzIjoiaHR0cHM6Ly9nbG9yaW91cy1zdW5maXNoLTYxLmNsZXJrLmFjY291bnRzLmRldiIsIm5iZiI6MTY4ODcxMzEyNywic2lkIjoic2Vzc18yU0VZQzhweU1MQjVtOUw4dlRGRGhFaEZmWWYiLCJzdWIiOiJ1c2VyXzJSUHg1WnNvZ2VERmhKdWJ0bncwUGtLSDZiNiJ9.C1pUPcoS5w9v72Q3zHi-WIvqsTjKliBqqXu1waAkZbzPwSArx8uA28Kuyh0N4aj6C1PrOEu5dxLXMsrDws0PKIfWbPC4GUy4uG-63E-gF0oHqaNEk-ZZiGFv7I--WYbwDj9dHnwXkTU4psoET38TvMe9l4M-rpRU0NuK64jXzxtJOnRHYsXIAKbt56pRkqgQPZ2uOem56zGRa6fTw345jlQuR92jIo7s4EQGGuS3M7eOiNQ0XNXNX7X60MVzoywUXd7HsixXeoqnfjvao65lFktYjuutEXcP-Lh5pBKUiLOL0-jhY-DKt3jyVXSKaDmLE8fNB3YYyYkXh6ShCnJwXw; connect.sid=s%3AUtSIn1c55XNE2Xoa_TWcgPbqmWEsxDkg.ZTtuSCyqX1w3U%2BRPAI248dRWnwZQ%2BHPA0x8gUazBJ9Y',
+        'if-none-match': 'W/"159-J2XH4zC14uJn4aJxFoD7u4WctoA"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/products',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 45
+  },
+  level: 'info',
+  message: 'HTTP GET /products'
+}
+{
+  meta: {
+    req: {
+      url: '/products',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'cache-control': 'max-age=0',
+        'sec-ch-ua': '"Not.A/Brand";v="8", "Chromium";v="114", "Google Chrome";v="114"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        dnt: '1',
+        'upgrade-insecure-requests': '1',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+        'sec-fetch-site': 'none',
+        'sec-fetch-mode': 'navigate',
+        'sec-fetch-user': '?1',
+        'sec-fetch-dest': 'document',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7',
+        cookie: '__clerk_db_jwt=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXYiOiJkdmJfMlNFWUJBU1REbTJ6WTJSWlMwSzMycGZ2djJMIn0.HfdUEREszdZZmlvpF_av15jBn0aKg9t8FRvKUanzjXHTtWc0KrRRLr4qi06rLOBkVvButMjUBu5QHcZbeK5IsYSPbPw2114Wncyz-U3IMSJRudRcRWxyI4TJ582H9rGqEA3Kk4MSy4yhI6aMj8DaLmuSeGryUdlgVC6TtMybAJwr9JNE6NqMlhVDtei5u1xfiSldttDS8ZLGN2lTrYQxmLaVFFvwP4zJgdRIxVUp_d8UZCYlumqFZuRqtpJlP7wv3Vt4TQh5ttPKB_AjpT2BVEe7jXwWGLxushLL-CbYky1qdbjruEIYWnm-tOcCJKO1vmza35dSHZd5M58mJln2-Q; __client_uat=1688713076; __session=eyJhbGciOiJSUzI1NiIsImtpZCI6Imluc18yUlBkSjFHT1oxcW00Tk80bU1PdFAxdWZCa2wiLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwOi8vbG9jYWxob3N0OjMwMDAiLCJleHAiOjE2ODg3MTMxOTcsImlhdCI6MTY4ODcxMzEzNywiaXNzIjoiaHR0cHM6Ly9nbG9yaW91cy1zdW5maXNoLTYxLmNsZXJrLmFjY291bnRzLmRldiIsIm5iZiI6MTY4ODcxMzEyNywic2lkIjoic2Vzc18yU0VZQzhweU1MQjVtOUw4dlRGRGhFaEZmWWYiLCJzdWIiOiJ1c2VyXzJSUHg1WnNvZ2VERmhKdWJ0bncwUGtLSDZiNiJ9.C1pUPcoS5w9v72Q3zHi-WIvqsTjKliBqqXu1waAkZbzPwSArx8uA28Kuyh0N4aj6C1PrOEu5dxLXMsrDws0PKIfWbPC4GUy4uG-63E-gF0oHqaNEk-ZZiGFv7I--WYbwDj9dHnwXkTU4psoET38TvMe9l4M-rpRU0NuK64jXzxtJOnRHYsXIAKbt56pRkqgQPZ2uOem56zGRa6fTw345jlQuR92jIo7s4EQGGuS3M7eOiNQ0XNXNX7X60MVzoywUXd7HsixXeoqnfjvao65lFktYjuutEXcP-Lh5pBKUiLOL0-jhY-DKt3jyVXSKaDmLE8fNB3YYyYkXh6ShCnJwXw; connect.sid=s%3AQRCT-d9b1X4X9K6v2tn3w5m0EgazWNhu.5QRpR3gE0YgYPa2xRTZwCfWeojJZlOArZv8P60KWuwk',
+        'if-none-match': 'W/"159-J2XH4zC14uJn4aJxFoD7u4WctoA"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/products',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 31
+  },
+  level: 'info',
+  message: 'HTTP GET /products'
+}
+{
+  meta: {
+    req: {
+      url: '/products',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'cache-control': 'max-age=0',
+        'sec-ch-ua': '"Not.A/Brand";v="8", "Chromium";v="114", "Google Chrome";v="114"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        dnt: '1',
+        'upgrade-insecure-requests': '1',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+        'sec-fetch-site': 'none',
+        'sec-fetch-mode': 'navigate',
+        'sec-fetch-user': '?1',
+        'sec-fetch-dest': 'document',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7',
+        cookie: '__clerk_db_jwt=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXYiOiJkdmJfMlNFWUJBU1REbTJ6WTJSWlMwSzMycGZ2djJMIn0.HfdUEREszdZZmlvpF_av15jBn0aKg9t8FRvKUanzjXHTtWc0KrRRLr4qi06rLOBkVvButMjUBu5QHcZbeK5IsYSPbPw2114Wncyz-U3IMSJRudRcRWxyI4TJ582H9rGqEA3Kk4MSy4yhI6aMj8DaLmuSeGryUdlgVC6TtMybAJwr9JNE6NqMlhVDtei5u1xfiSldttDS8ZLGN2lTrYQxmLaVFFvwP4zJgdRIxVUp_d8UZCYlumqFZuRqtpJlP7wv3Vt4TQh5ttPKB_AjpT2BVEe7jXwWGLxushLL-CbYky1qdbjruEIYWnm-tOcCJKO1vmza35dSHZd5M58mJln2-Q; __client_uat=1688713076; __session=eyJhbGciOiJSUzI1NiIsImtpZCI6Imluc18yUlBkSjFHT1oxcW00Tk80bU1PdFAxdWZCa2wiLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwOi8vbG9jYWxob3N0OjMwMDAiLCJleHAiOjE2ODg3MTMxOTcsImlhdCI6MTY4ODcxMzEzNywiaXNzIjoiaHR0cHM6Ly9nbG9yaW91cy1zdW5maXNoLTYxLmNsZXJrLmFjY291bnRzLmRldiIsIm5iZiI6MTY4ODcxMzEyNywic2lkIjoic2Vzc18yU0VZQzhweU1MQjVtOUw4dlRGRGhFaEZmWWYiLCJzdWIiOiJ1c2VyXzJSUHg1WnNvZ2VERmhKdWJ0bncwUGtLSDZiNiJ9.C1pUPcoS5w9v72Q3zHi-WIvqsTjKliBqqXu1waAkZbzPwSArx8uA28Kuyh0N4aj6C1PrOEu5dxLXMsrDws0PKIfWbPC4GUy4uG-63E-gF0oHqaNEk-ZZiGFv7I--WYbwDj9dHnwXkTU4psoET38TvMe9l4M-rpRU0NuK64jXzxtJOnRHYsXIAKbt56pRkqgQPZ2uOem56zGRa6fTw345jlQuR92jIo7s4EQGGuS3M7eOiNQ0XNXNX7X60MVzoywUXd7HsixXeoqnfjvao65lFktYjuutEXcP-Lh5pBKUiLOL0-jhY-DKt3jyVXSKaDmLE8fNB3YYyYkXh6ShCnJwXw; connect.sid=s%3AQRCT-d9b1X4X9K6v2tn3w5m0EgazWNhu.5QRpR3gE0YgYPa2xRTZwCfWeojJZlOArZv8P60KWuwk',
+        'if-none-match': 'W/"159-J2XH4zC14uJn4aJxFoD7u4WctoA"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/products',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 30
+  },
+  level: 'info',
+  message: 'HTTP GET /products'
+}
+{
+  meta: {
+    req: {
+      url: '/error',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3AnRfpk1sbqbIJBrVo3XJqqaGppEjx89OE.%2B8aUe9sK2zcwg0ncAhdDvRp0MrHzkyNajetXncGhGFQ',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '58'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/error',
+      query: {}
+    },
+    res: { statusCode: 500 },
+    responseTime: 11
+  },
+  level: 'error',
+  message: 'HTTP GET /error'
+}
