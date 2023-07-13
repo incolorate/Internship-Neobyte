@@ -39,7 +39,6 @@ app.get("/", async (req, res) => {
       res.send("<h1>Hello Neobyte</h1>");
     }
   } catch (error) {
-    console.log(error);
     res.status(400).send("Nothing to see here");
   }
 });

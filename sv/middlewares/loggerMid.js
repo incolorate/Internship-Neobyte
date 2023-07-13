@@ -15,12 +15,15 @@ const logger = createLogger({
       level: "silly",
     }),
   ],
-  //   modifica formatul de return
   format: format.combine(
     format.json(),
     format.prettyPrint(),
     format.metadata(),
-    format.timestamp()
+    format.timestamp(),
+    format.printf(({ level, message, timestamp, metadata, req }) => {
+      return `${timestamp} [${level.toUpperCase()}]: ${message} 
+      ${JSON.stringify(metadata)}`;
+    })
   ),
 });
 
