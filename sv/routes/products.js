@@ -8,17 +8,21 @@ const router = express.Router();
 
 router.get("/products", async (req, res) => {
   const cachedProducts = await client.get("products");
-
   if (cachedProducts) {
     res.status(200).json(JSON.parse(cachedProducts));
-    console.log("Products loaded from cache");
-    logger.info("Data fetching done from cache");
+    // Nu ma lasa sa folosesc json() in string template. de aia am folosti stringify!
+    req.session.user
+      ? logger.info(`Data fetching done from cache.
+    Username: ${JSON.stringify(req.session.user)}`)
+      : logger.info(`Data fetching done from cache`);
   } else {
     try {
       const allProducts = await Product.find();
-      console.log("Loading products into cache... ");
       client.set("products", JSON.stringify(allProducts));
-      logger.info("Data fetching done from DB, products set in cache");
+      req.session.user
+        ? logger.info(`Data fetching done from DB,
+    Username: ${JSON.stringify(req.session.user)}`)
+        : logger.info("Data fetching done from DB, products set in cache");
       res.status(200).json(allProducts);
     } catch (error) {
       logger.info("An error occurred while fetching product data");
@@ -27,8 +31,7 @@ router.get("/products", async (req, res) => {
   }
 });
 
-// vezi naming conventions
-router.post("/createproduct", checkAuth, async (req, res) => {
+router.post("/products/createproduct", checkAuth, async (req, res) => {
   try {
     const product = await Product.create({
       name: req.body.name,
@@ -37,6 +40,10 @@ router.post("/createproduct", checkAuth, async (req, res) => {
     });
     await client.del("products");
     res.status(200).json(product);
+    logger.info(`${JSON.stringify(req.session.user)} created a product:
+    ${req.body.name},
+    ${req.body.price},
+    ${req.body.stock}`);
   } catch (error) {
     res.status(500).json(error);
   }
