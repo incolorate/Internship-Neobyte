@@ -30,26 +30,15 @@ app.use(
 
 // Routes
 app.get("/", async (req, res) => {
-  try {
-    const cacheResults = await client.get("cached");
-    if (cacheResults) {
-      res.send("Hello mr. redis");
-    } else {
-      await client.set("cached", "some value");
-      res.send("<h1>Hello Neobyte</h1>");
-    }
-  } catch (error) {
-    res.status(400).send("Nothing to see here");
-  }
+  return res.send(`<h1>Hello Neobyte</h1>`);
 });
-
 app.get("/error", (req, res) => {
   throw new Error("ErrorError!");
 });
 app.use("/", productRoutes);
 app.use("/", manageUsers);
 
-// Db stuff
+// Connect to db
 mongoose
   .connect(process.env.MONGODB)
   .then(() => {
