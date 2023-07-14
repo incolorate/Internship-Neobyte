@@ -1,6 +1,7 @@
 import { createClient } from "redis";
 
 let client;
+// Await client connection
 (async () => {
   client = createClient();
 
