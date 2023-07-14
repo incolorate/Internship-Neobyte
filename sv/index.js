@@ -2,6 +2,7 @@ import express from "express";
 import productRoutes from "./routes/products.js";
 import mongoose from "mongoose";
 import manageUsers from "./routes/manageUsers.js";
+import manageCsv from "./routes/manageCsv.js";
 import session from "express-session";
 import logger from "./middlewares/loggerMid.js";
 import expressWinston from "express-winston";
@@ -37,6 +38,7 @@ app.get("/error", (req, res) => {
 });
 app.use("/", productRoutes);
 app.use("/", manageUsers);
+app.use("/", manageCsv);
 
 // Connect to db
 mongoose
