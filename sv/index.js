@@ -2,12 +2,10 @@ import express from "express";
 import productRoutes from "./routes/products.js";
 import mongoose from "mongoose";
 import manageUsers from "./routes/manageUsers.js";
-import manageCsv from "./routes/manageCsv.js";
 import session from "express-session";
 import logger from "./middlewares/loggerMid.js";
 import expressWinston from "express-winston";
 import "dotenv/config";
-import client from "./client.js";
 
 // Initialize app
 const app = express();
@@ -38,7 +36,6 @@ app.get("/error", (req, res) => {
 });
 app.use("/", productRoutes);
 app.use("/", manageUsers);
-app.use("/", manageCsv);
 
 // Connect to db
 mongoose
