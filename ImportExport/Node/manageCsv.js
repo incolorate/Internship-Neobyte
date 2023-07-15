@@ -1,7 +1,7 @@
 import express from "express";
 import fs from "fs-extra";
 import { parse } from "csv-parse";
-import Data from "../models/importSchema.js";
+import Data from "./importSchema.js";
 
 const router = express.Router();
 
