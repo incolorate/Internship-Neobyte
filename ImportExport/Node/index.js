@@ -1,13 +1,19 @@
 import express from "express";
+import mongoose from "mongoose";
+import "dotenv/config";
 import fs from "fs-extra";
-import { parse } from "csv-parse";
 import Data from "./importSchema.js";
+import { stringify } from "csv-stringify/sync";
 
-const router = express.Router();
+const app = express();
+const PORT = 5000;
 
-router.post("/importtodb", async (req, res) => {
+// Middlewares
+app.use(express.json());
+
+// Routes
+app.post("/import", async (req, res) => {
   const dataToPush = [];
-
   fs.createReadStream("./file.csv")
     .pipe(
       parse({
@@ -49,4 +55,37 @@ router.post("/importtodb", async (req, res) => {
       reject(error);
     });
 });
-export default router;
+
+app.post("/export", async (req, res) => {
+  const data = await Data.find();
+  if (!data) {
+    return res.json("There was an error when fetching the data");
+  }
+
+  const writableStream = fs.createWriteStream("new.csv");
+  const headers = [
+    "customerId",
+    "firstName",
+    "lastName",
+    "company",
+    "city",
+    "country",
+    "phone",
+  ];
+
+  // Write the headers to the file
+});
+
+// Connect to db
+mongoose
+  .connect(process.env.MONGODB)
+  .then(() => {
+    console.log("Connected to mongodb");
+  })
+  .catch((error) => {
+    console.log("Some error occurred ", error);
+  });
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
