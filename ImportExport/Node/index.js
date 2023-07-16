@@ -73,7 +73,13 @@ app.post("/export", async (req, res) => {
     "phone",
   ];
 
+  writableStream.write(headers.join(",") + "\n");
   // Write the headers to the file
+  data.forEach((row) => {
+    const rowData = headers.map((header) => row[header]);
+    writableStream.write(rowData.join(",") + "\n");
+  });
+  return res.json("successfully exported the data");
 });
 
 // Connect to db
