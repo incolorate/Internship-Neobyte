@@ -2,17 +2,26 @@ import Layout from "~/components/Layout";
 
 import { useState } from "react";
 import { api } from "~/utils/api";
+import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
 
 export default function Users() {
   const [search, setSearch] = useState("");
   const [filterBy, setFilterBy] = useState("First_Name");
+  const [perPage, setPerPage] = useState(15);
+
+  const handleAddData = () => {
+    setPerPage((prev) => prev + 15);
+  };
+
+  const handleRemoveData = () => {
+    setPerPage((prev): number => (prev > 29 ? prev - 15 : prev));
+  };
 
   const allData = api.example.getAll.useQuery();
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
-
   const handleSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFilterBy(e.target.value);
   };
@@ -34,22 +43,22 @@ export default function Users() {
     <Layout>
       <main className=" min-h-screen text-black">
         <div className="flex w-full gap-6 p-4">
-          <label>
-            Search
+          <label className="flex flex-col">
+            Search:
             <input
               type="text"
-              className="w-44 text-black"
+              className="w-44 rounded-xl bg-slate-300 p-1 text-black"
               value={search}
               onChange={handleSearch}
             />
           </label>
 
-          <label>
+          <label className="flex flex-col">
             Search by:
             <select
               name="cars"
               id="cars"
-              className="text-black"
+              className="rounded-xl bg-slate-300 p-1 text-black"
               onChange={handleSelect}
             >
               <option value="First_Name">First name</option>
@@ -87,9 +96,17 @@ export default function Users() {
                   </tr>
                 );
               })
-              .slice(1, 15)}
+              .slice(1, perPage)}
           </tbody>
         </table>
+        <div className="mt-4 flex justify-center gap-2">
+          <div onClick={handleAddData}>
+            <FaArrowDown />
+          </div>
+          <div onClick={handleRemoveData}>
+            <FaArrowUp />
+          </div>
+        </div>
       </main>
     </Layout>
   );
