@@ -1,8 +1,12 @@
 import Layout from "~/components/Layout";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { api } from "~/utils/api";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
+import {
+  AiOutlineSortAscending,
+  AiOutlineSortDescending,
+} from "react-icons/ai";
 
 type Customer = {
   id: string;
@@ -19,6 +23,8 @@ export default function Users() {
   const [filterBy, setFilterBy] = useState("First_Name");
   // Items / page increase by 15
   const [perPage, setPerPage] = useState(15);
+  // Set ascending or descending
+  const [sort, setSort] = useState("");
 
   // Form control
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -54,6 +60,22 @@ export default function Users() {
       object[filterBy].toLowerCase().includes(search.toLowerCase())
     ) as Customer[]) ?? [];
 
+  // Filter data asc/desc
+  const handleSort = () => {
+    sort === "asc" ? setSort("desc") : setSort("asc");
+    allData.data.sort((a, b) => {
+      const fieldA = a["First_Name"].toLowerCase();
+      const fieldB = b["First_Name"].toLowerCase();
+      if (fieldA < fieldB) {
+        return sort === "asc" ? -1 : 1;
+      }
+      if (fieldA > fieldB) {
+        return sort === "asc" ? 1 : -1;
+      }
+      return 0;
+    });
+  };
+
   return (
     <Layout>
       <main className=" min-h-screen text-black">
@@ -71,25 +93,32 @@ export default function Users() {
           <label className="flex flex-col">
             Search by:
             <select
-              name="cars"
-              id="cars"
               className="rounded-xl bg-slate-300 p-1 text-black"
               onChange={handleSelect}
+              value={filterBy}
             >
               <option value="First_Name">First name</option>
               <option value="Last_Name">Last Name</option>
               <option value="Company">Company</option>
               <option value="City">City</option>
               <option value="Country">Country</option>
-              <option value="Customer_Id">Customer ID</option>
               <option value="Phone_1">Phone</option>
             </select>
           </label>
         </div>
-        <table className="w-full">
+        <table className="w-full table-fixed">
           <thead className="bg-zinc-300 p-2 text-left">
             <tr>
-              <th>First Name</th>
+              <th className="flex items-center">
+                <p>First Name</p>
+                <div onClick={handleSort}>
+                  {sort === "asc" ? (
+                    <AiOutlineSortAscending className="text-2xl" />
+                  ) : (
+                    <AiOutlineSortDescending className="text-2xl" />
+                  )}
+                </div>
+              </th>
               <th>Last Name</th>
               <th>Company</th>
               <th>City</th>
