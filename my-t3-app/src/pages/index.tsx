@@ -1,10 +1,19 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useState } from "react";
 import { api } from "~/utils/api";
 
 export default function Home() {
+  const [search, setSearch] = useState();
+
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
   const allData = api.example.getAll.useQuery();
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+    console.log(search);
+  };
+
   if (!allData.isFetched) {
     return <h1>Loading...</h1>;
   }
@@ -17,7 +26,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-        <input type="text" className="w-44"></input>
+        <input
+          type="text"
+          className="w-44 text-black"
+          value={search}
+          onChange={handleSearch}
+        ></input>
 
         <table>
           <tr>
