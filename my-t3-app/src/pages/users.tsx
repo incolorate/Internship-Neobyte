@@ -4,21 +4,23 @@ import { useState } from "react";
 import { api } from "~/utils/api";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
 
+type Customer = {
+  id: string;
+  First_Name: string;
+  Last_Name: string;
+  Company: string;
+  Country: string;
+  Phone_1: string;
+};
+
 export default function Users() {
+  // Form control state`
   const [search, setSearch] = useState("");
   const [filterBy, setFilterBy] = useState("First_Name");
+  // Items / page increase by 15
   const [perPage, setPerPage] = useState(15);
 
-  const handleAddData = () => {
-    setPerPage((prev) => prev + 15);
-  };
-
-  const handleRemoveData = () => {
-    setPerPage((prev): number => (prev > 29 ? prev - 15 : prev));
-  };
-
-  const allData = api.example.getAll.useQuery();
-
+  // Form control
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
@@ -26,6 +28,18 @@ export default function Users() {
     setFilterBy(e.target.value);
   };
 
+  // Click down / up arrow`
+  const handleAddData = () => {
+    setPerPage((prev) => prev + 15);
+  };
+  const handleRemoveData = () => {
+    setPerPage((prev): number => (prev > 29 ? prev - 15 : prev));
+  };
+
+  // Fetch Data
+  const allData = api.example.getAll.useQuery();
+
+  // Check if data is fetched
   if (!allData.isFetched) {
     return (
       <Layout>
@@ -33,11 +47,12 @@ export default function Users() {
       </Layout>
     );
   }
-  const filteredData: Customer[] = allData
-    ? (allData.data?.filter((object: Customer) =>
-        object[filterBy].toLowerCase().includes(search.toLowerCase())
-      ) as Customer[]) ?? []
-    : "hello";
+
+  // Filter data by search
+  const filteredData: Customer[] =
+    (allData.data?.filter((object: Customer) =>
+      object[filterBy].toLowerCase().includes(search.toLowerCase())
+    ) as Customer[]) ?? [];
 
   return (
     <Layout>
