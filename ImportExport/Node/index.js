@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import "dotenv/config";
 import fs from "fs-extra";
 import Data from "./importSchema.js";
-import { stringify } from "csv-stringify/sync";
+import { parse } from "csv-parse/.";
 
 const app = express();
 const PORT = 5000;

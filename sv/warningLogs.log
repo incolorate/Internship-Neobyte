@@ -270,3 +270,51 @@
   level: 'warn',
   message: 'HTTP GET /favicon.ico'
 }
+{
+  meta: {
+    req: {
+      url: '/',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3Atj1QSxrDxPd3Emz_o0HPq66-A1dyrKIz.HWZOLiBl3bHbTCcYcfVkt9LLvSuVX9h94kjejRxKR8g',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '0'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 11
+  },
+  level: 'warn',
+  message: 'HTTP POST /',
+  timestamp: '2023-07-15T15:18:04.259Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/register',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3ABfKRZ0rXxuE_3WPhx2_4JTwZy2jLWeoR.aZNcS0J%2FBzm%2FqOBUR%2FAKRA0seCMJcp%2F%2Fb%2BsKf4f3CqA',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '58'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/register',
+      query: {}
+    },
+    res: { statusCode: 400 },
+    responseTime: 46
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/register',
+  timestamp: '2023-07-15T15:35:15.835Z'
+}

@@ -1020,3 +1020,551 @@
   level: 'info',
   message: 'HTTP GET /'
 }
+{
+  meta: {
+    req: {
+      url: '/',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3Atj1QSxrDxPd3Emz_o0HPq66-A1dyrKIz.HWZOLiBl3bHbTCcYcfVkt9LLvSuVX9h94kjejRxKR8g',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '0'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 11
+  },
+  level: 'warn',
+  message: 'HTTP POST /',
+  timestamp: '2023-07-15T15:18:04.259Z'
+}
+{
+  meta: {
+    req: {
+      url: '/',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3AjsMKWyw8HN_EZhJ1KZD5ogh0jiTLvWAl.3qwnBgSD6EOIXjy14yfWelzM8ha0NVem%2Ft7OG%2FRXpNE',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '0'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 4
+  },
+  level: 'info',
+  message: 'HTTP GET /',
+  timestamp: '2023-07-15T15:18:10.080Z'
+}
+{
+  meta: {
+    req: {
+      url: '/',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3AjsMKWyw8HN_EZhJ1KZD5ogh0jiTLvWAl.3qwnBgSD6EOIXjy14yfWelzM8ha0NVem%2Ft7OG%2FRXpNE',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '0'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 2
+  },
+  level: 'info',
+  message: 'HTTP GET /',
+  timestamp: '2023-07-15T15:18:12.787Z'
+}
+{
+  meta: {
+    req: {
+      url: '/products',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3AjsMKWyw8HN_EZhJ1KZD5ogh0jiTLvWAl.3qwnBgSD6EOIXjy14yfWelzM8ha0NVem%2Ft7OG%2FRXpNE',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '0'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/products',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 8
+  },
+  level: 'info',
+  message: 'HTTP GET /products',
+  timestamp: '2023-07-15T15:18:26.303Z'
+}
+{
+  meta: {
+    req: {
+      url: '/products',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3AjsMKWyw8HN_EZhJ1KZD5ogh0jiTLvWAl.3qwnBgSD6EOIXjy14yfWelzM8ha0NVem%2Ft7OG%2FRXpNE',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '0'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/products',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 2
+  },
+  level: 'info',
+  message: 'HTTP GET /products',
+  timestamp: '2023-07-15T15:18:28.143Z'
+}
+{
+  meta: {
+    req: {
+      url: '/products',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3AjsMKWyw8HN_EZhJ1KZD5ogh0jiTLvWAl.3qwnBgSD6EOIXjy14yfWelzM8ha0NVem%2Ft7OG%2FRXpNE',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '0'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/products',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 3
+  },
+  level: 'info',
+  message: 'HTTP GET /products',
+  timestamp: '2023-07-15T15:18:35.039Z'
+}
+{
+  message: 'incolorate12 successfully created an account',
+  level: 'info',
+  timestamp: '2023-07-15T15:25:16.565Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/register',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3AjsMKWyw8HN_EZhJ1KZD5ogh0jiTLvWAl.3qwnBgSD6EOIXjy14yfWelzM8ha0NVem%2Ft7OG%2FRXpNE',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '58'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/register',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 68
+  },
+  level: 'info',
+  message: 'HTTP POST /user/register',
+  timestamp: '2023-07-15T15:25:16.586Z'
+}
+{
+  message: 'incolorate successfully logged in',
+  level: 'info',
+  timestamp: '2023-07-15T15:26:17.529Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3ATL5jKHuRlN0UY3618zwoSAJnmRk6stsG.adhYZI88GMbDUA1XLuTTfu7a5%2B3MKaxIAj7Ptuxy7xM',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '54'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 51
+  },
+  level: 'info',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-15T15:26:17.532Z'
+}
+{
+  message: '{"username":"incolorate","role":"Admin"} created a product:\n' +
+    '    Mouse,\n' +
+    '    30,\n' +
+    '    5',
+  level: 'info',
+  timestamp: '2023-07-15T15:28:08.379Z'
+}
+{
+  meta: {
+    req: {
+      url: '/products/create',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3ATL5jKHuRlN0UY3618zwoSAJnmRk6stsG.adhYZI88GMbDUA1XLuTTfu7a5%2B3MKaxIAj7Ptuxy7xM',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '54'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/products/create',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 69
+  },
+  level: 'info',
+  message: 'HTTP POST /products/create',
+  timestamp: '2023-07-15T15:28:08.382Z'
+}
+{
+  message: 'Data fetching done from DB, products set in cache',
+  level: 'info',
+  timestamp: '2023-07-15T15:35:04.662Z'
+}
+{
+  meta: {
+    req: {
+      url: '/products',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3ATL5jKHuRlN0UY3618zwoSAJnmRk6stsG.adhYZI88GMbDUA1XLuTTfu7a5%2B3MKaxIAj7Ptuxy7xM',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '0'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/products',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 104
+  },
+  level: 'info',
+  message: 'HTTP GET /products',
+  timestamp: '2023-07-15T15:35:04.689Z'
+}
+{
+  meta: {
+    req: {
+      url: '/products',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3ABfKRZ0rXxuE_3WPhx2_4JTwZy2jLWeoR.aZNcS0J%2FBzm%2FqOBUR%2FAKRA0seCMJcp%2F%2Fb%2BsKf4f3CqA',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '0'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/products',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 3
+  },
+  level: 'info',
+  message: 'HTTP GET /products',
+  timestamp: '2023-07-15T15:35:11.892Z'
+}
+{
+  meta: {
+    req: {
+      url: '/products',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3ABfKRZ0rXxuE_3WPhx2_4JTwZy2jLWeoR.aZNcS0J%2FBzm%2FqOBUR%2FAKRA0seCMJcp%2F%2Fb%2BsKf4f3CqA',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '0'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/products',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 3
+  },
+  level: 'info',
+  message: 'HTTP GET /products',
+  timestamp: '2023-07-15T15:35:12.937Z'
+}
+{
+  meta: {
+    req: {
+      url: '/products',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3ABfKRZ0rXxuE_3WPhx2_4JTwZy2jLWeoR.aZNcS0J%2FBzm%2FqOBUR%2FAKRA0seCMJcp%2F%2Fb%2BsKf4f3CqA',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '0'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/products',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 2
+  },
+  level: 'info',
+  message: 'HTTP GET /products',
+  timestamp: '2023-07-15T15:35:13.738Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/register',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3ABfKRZ0rXxuE_3WPhx2_4JTwZy2jLWeoR.aZNcS0J%2FBzm%2FqOBUR%2FAKRA0seCMJcp%2F%2Fb%2BsKf4f3CqA',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '58'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/register',
+      query: {}
+    },
+    res: { statusCode: 400 },
+    responseTime: 46
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/register',
+  timestamp: '2023-07-15T15:35:15.835Z'
+}
+{
+  message: 'incolorate successfully logged in',
+  level: 'info',
+  timestamp: '2023-07-15T15:35:18.751Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3ABfKRZ0rXxuE_3WPhx2_4JTwZy2jLWeoR.aZNcS0J%2FBzm%2FqOBUR%2FAKRA0seCMJcp%2F%2Fb%2BsKf4f3CqA',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '54'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 44
+  },
+  level: 'info',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-15T15:35:18.752Z'
+}
+{
+  message: '{"username":"incolorate","role":"Admin"} created a product:\n' +
+    '    Mouse,\n' +
+    '    30,\n' +
+    '    5',
+  level: 'info',
+  timestamp: '2023-07-15T15:35:21.238Z'
+}
+{
+  meta: {
+    req: {
+      url: '/products/create',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3ABfKRZ0rXxuE_3WPhx2_4JTwZy2jLWeoR.aZNcS0J%2FBzm%2FqOBUR%2FAKRA0seCMJcp%2F%2Fb%2BsKf4f3CqA',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '54'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/products/create',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 63
+  },
+  level: 'info',
+  message: 'HTTP POST /products/create',
+  timestamp: '2023-07-15T15:35:21.241Z'
+}
+{
+  message: '{"username":"incolorate","role":"Admin"} created a product:\n' +
+    '    Mouse,\n' +
+    '    30,\n' +
+    '    5',
+  level: 'info',
+  timestamp: '2023-07-15T15:35:23.639Z'
+}
+{
+  meta: {
+    req: {
+      url: '/products/create',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3ABfKRZ0rXxuE_3WPhx2_4JTwZy2jLWeoR.aZNcS0J%2FBzm%2FqOBUR%2FAKRA0seCMJcp%2F%2Fb%2BsKf4f3CqA',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '54'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/products/create',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 52
+  },
+  level: 'info',
+  message: 'HTTP POST /products/create',
+  timestamp: '2023-07-15T15:35:23.642Z'
+}
+{
+  message: '{"username":"incolorate","role":"Admin"} created a product:\n' +
+    '    Mouse,\n' +
+    '    30,\n' +
+    '    5',
+  level: 'info',
+  timestamp: '2023-07-15T15:35:24.818Z'
+}
+{
+  meta: {
+    req: {
+      url: '/products/create',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3ABfKRZ0rXxuE_3WPhx2_4JTwZy2jLWeoR.aZNcS0J%2FBzm%2FqOBUR%2FAKRA0seCMJcp%2F%2Fb%2BsKf4f3CqA',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '54'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/products/create',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 90
+  },
+  level: 'info',
+  message: 'HTTP POST /products/create',
+  timestamp: '2023-07-15T15:35:24.820Z'
+}
+{
+  message: '{"username":"incolorate","role":"Admin"} created a product:\n' +
+    '    Mouse,\n' +
+    '    30,\n' +
+    '    5',
+  level: 'info',
+  timestamp: '2023-07-15T15:35:25.851Z'
+}
+{
+  meta: {
+    req: {
+      url: '/products/create',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3ABfKRZ0rXxuE_3WPhx2_4JTwZy2jLWeoR.aZNcS0J%2FBzm%2FqOBUR%2FAKRA0seCMJcp%2F%2Fb%2BsKf4f3CqA',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '54'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/products/create',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 46
+  },
+  level: 'info',
+  message: 'HTTP POST /products/create',
+  timestamp: '2023-07-15T15:35:25.853Z'
+}
+{
+  message: '{"username":"incolorate","role":"Admin"} created a product:\n' +
+    '    Mouse,\n' +
+    '    30,\n' +
+    '    5',
+  level: 'info',
+  timestamp: '2023-07-15T15:35:27.024Z'
+}
+{
+  meta: {
+    req: {
+      url: '/products/create',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3ABfKRZ0rXxuE_3WPhx2_4JTwZy2jLWeoR.aZNcS0J%2FBzm%2FqOBUR%2FAKRA0seCMJcp%2F%2Fb%2BsKf4f3CqA',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '54'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/products/create',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 46
+  },
+  level: 'info',
+  message: 'HTTP POST /products/create',
+  timestamp: '2023-07-15T15:35:27.026Z'
+}
