@@ -22,7 +22,7 @@ export default function Nav() {
         <RxDashboard className="text-3xl" />
         <h1 className="text-center text-3xl text-white">Admin Dashboard</h1>
       </div>
-      <nav className="flex flex-col gap-6 p-2  text-white ">
+      <nav className="flex w-72 flex-col gap-6  p-2 text-white">
         <Link href="/" className={pathname === "/" ? active : inactive}>
           <RxHome className="text-center text-2xl" />
           <p className="text-center text-2xl">Home</p>
