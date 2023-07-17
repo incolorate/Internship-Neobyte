@@ -1,15 +1,22 @@
 import Head from "next/head";
-import Link from "next/link";
 import { useState } from "react";
 import { api } from "~/utils/api";
 
-export default function Home() {
-  const [search, setSearch] = useState();
+type Customer = {
+  id: string;
+  First_Name: string;
+  Last_Name: string;
+  Company: string;
+  Country: string;
+  Phone_1: string;
+};
 
-  const hello = api.example.hello.useQuery({ text: "from tRPC" });
+export default function Home() {
+  const [search, setSearch] = useState("");
+
   const allData = api.example.getAll.useQuery();
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
     console.log(search);
   };
@@ -18,6 +25,10 @@ export default function Home() {
     return <h1>Loading...</h1>;
   }
 
+  const filteredData: Customer[] =
+    (allData.data?.filter((object: Customer) =>
+      object.First_Name.toLowerCase().includes(search.toLowerCase())
+    ) as Customer[]) ?? [];
   return (
     <>
       <Head>
@@ -32,26 +43,29 @@ export default function Home() {
           value={search}
           onChange={handleSearch}
         ></input>
-
         <table>
-          <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Company</th>
-            <th>Country</th>
-            <th>Phone</th>
-          </tr>
-          {allData.data?.map((object) => {
-            return (
-              <tr key={object.id}>
-                <td>{object.First_Name}</td>
-                <td>{object.Last_Name}</td>
-                <td>{object.Company}</td>
-                <td>{object.Country}</td>
-                <td>{object.Phone_1}</td>
-              </tr>
-            );
-          })}
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Company</th>
+              <th>Country</th>
+              <th>Phone</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredData.map((object: Customer) => {
+              return (
+                <tr key={object.id}>
+                  <td>{object.First_Name}</td>
+                  <td>{object.Last_Name}</td>
+                  <td>{object.Company}</td>
+                  <td>{object.Country}</td>
+                  <td>{object.Phone_1}</td>
+                </tr>
+              );
+            })}
+          </tbody>
         </table>
       </main>
     </>
