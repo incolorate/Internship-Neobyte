@@ -1,6 +1,6 @@
 import Layout from "~/components/Layout";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { api } from "~/utils/api";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
 import {
@@ -22,7 +22,7 @@ export default function Users() {
   const [search, setSearch] = useState("");
   const [filterBy, setFilterBy] = useState("First_Name");
   // Items / page increase by 15
-  const [perPage, setPerPage] = useState(15);
+  const [perPage, setPerPage] = useState(14);
   // Set ascending or descending
   const [sort, setSort] = useState("");
 
@@ -30,6 +30,7 @@ export default function Users() {
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
+
   const handleSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFilterBy(e.target.value);
   };
@@ -54,16 +55,15 @@ export default function Users() {
     );
   }
 
-  // Filter data by search
-  const filteredData: Customer[] =
-    (allData.data?.filter((object: Customer) =>
-      object[filterBy].toLowerCase().includes(search.toLowerCase())
-    ) as Customer[]) ?? [];
+  // Filter data by filterBy state/ search state
+  const filteredData: Customer[] = allData.data?.filter((object: Customer) =>
+    object[filterBy].toLowerCase().includes(search.toLowerCase())
+  ) as Customer[];
 
   // Filter data asc/desc
   const handleSort = () => {
     sort === "asc" ? setSort("desc") : setSort("asc");
-    allData.data.sort((a, b) => {
+    allData?.data?.sort((a, b) => {
       const fieldA = a["First_Name"].toLowerCase();
       const fieldB = b["First_Name"].toLowerCase();
       if (fieldA < fieldB) {
@@ -140,7 +140,7 @@ export default function Users() {
                   </tr>
                 );
               })
-              .slice(1, perPage)}
+              .slice(0, perPage)}
           </tbody>
         </table>
         <div className="mt-4 flex justify-center gap-2">
