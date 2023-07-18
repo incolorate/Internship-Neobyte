@@ -5,6 +5,7 @@ import { api } from "~/utils/api";
 type User = {
   username: string;
   password: string;
+  email: string;
 };
 
 export default function Login() {
@@ -17,6 +18,7 @@ export default function Login() {
     createUser.mutate({
       username: user?.username,
       password: user?.password,
+      email: user?.email,
     });
   };
 
@@ -39,6 +41,10 @@ export default function Login() {
           <label>
             Password
             <input type="text" name="password" onChange={handleChange} />
+          </label>
+          <label>
+            Email
+            <input type="text" name="email" onChange={handleChange} />
           </label>
           <button onClick={handleSubmit}>Login</button>
         </form>
