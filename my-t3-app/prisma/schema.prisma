@@ -18,3 +18,11 @@ model Import {
   Last_Name   String @map("Last Name")
   Phone_1     String @map("Phone 1")
 }
+
+
+model User {
+  id  String @id @default(auto()) @map("_id") @db.ObjectId
+  user String @unique
+  password String
+  email String @unique
+}

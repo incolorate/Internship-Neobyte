@@ -30,5 +30,15 @@ export const exampleRouter = createTRPCRouter({
     await client.expire("users", 100);
     return JSON.parse(cache) as Customer[];
   }),
+  register: publicProcedure
+    .input(z.object({ username: z.string(), password: z.string() }))
+    .mutation(({ ctx, input }) => {
+      const newUser = ctx.prisma.user.create({
+        data: {
+          user: input.username,
+          password: input.password,
+        },
+      });
+      return newUser;
+    }),
 });
-``;
