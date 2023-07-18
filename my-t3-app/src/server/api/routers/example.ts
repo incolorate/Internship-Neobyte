@@ -3,6 +3,8 @@ import { z } from "zod";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 import { Redis } from "ioredis";
 import { env } from "~/env.mjs";
+import bcrypt from "bcrypt";
+import { Hash } from "crypto";
 
 type Customer = {
   id: string;
@@ -31,12 +33,22 @@ export const exampleRouter = createTRPCRouter({
     return JSON.parse(cache) as Customer[];
   }),
   register: publicProcedure
-    .input(z.object({ username: z.string(), password: z.string() }))
-    .mutation(({ ctx, input }) => {
+    .input(
+      z.object({
+        username: z.string(),
+        password: z.string(),
+        email: z.string(),
+      })
+    )
+    .mutation(async ({ ctx, input }) => {
+      const saltRounds = 10;
+      const hash = bcrypt.hashSync(input.password, saltRounds);
+      console.log(hash);
       const newUser = ctx.prisma.user.create({
         data: {
           user: input.username,
-          password: input.password,
+          password: hash,
+          email: input.email,
         },
       });
       return newUser;
