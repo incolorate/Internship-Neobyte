@@ -1,4 +1,4 @@
-import { boolean, z } from "zod";
+import { z } from "zod";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 import { Redis } from "ioredis";
 import { env } from "~/env.mjs";
@@ -6,6 +6,7 @@ import bcrypt from "bcrypt";
 import nodemailer from "nodemailer";
 import codeGenerator from "../../helpers/validationCodeGenerator.ts";
 import { TRPCError } from "@trpc/server";
+import emailTemplate from "~/server/helpers/emailTemplate.ts";
 
 type Customer = {
   id: string;
@@ -18,6 +19,17 @@ type Customer = {
   Phone_1: string;
 };
 
+// Connect to email service
+const transport = nodemailer.createTransport({
+  host: "sandbox.smtp.mailtrap.io",
+  port: 2525,
+  auth: {
+    user: "b4327d3329c77c",
+    pass: "29daa3180ba1f2",
+  },
+});
+
+// Connect to redis server
 const client = new Redis(env.REDIS_URL);
 
 export const exampleRouter = createTRPCRouter({
@@ -81,44 +93,33 @@ export const exampleRouter = createTRPCRouter({
           message: "Email not found in db",
         });
       }
-      // If password match-> validation code
+      // Code generator generates a unique 6 digit code
+      const validationCode: string = codeGenerator();
       if (checkMatch) {
         await ctx.prisma.user.update({
           where: {
             email: input.email,
           },
           data: {
-            validationCode: codeGenerator(),
+            validationCode: validationCode,
           },
         });
       }
 
-      var transport = nodemailer.createTransport({
-        host: "sandbox.smtp.mailtrap.io",
-        port: 2525,
-        auth: {
-          user: "b4327d3329c77c",
-          pass: "29daa3180ba1f2",
-        },
-      });
-      var mailOptions = {
-        from: "blah@example.com",
-        to: "blabla@example.com",
-        subject: "Test Email",
-        text: `Your activation code ${arr.join("")}`,
-        html: `<p>Your activation code ${arr.join("")}</p>`,
-      };
-
-      transport.sendMail(mailOptions, function (error, info) {
-        if (error) {
-          console.log("Error occurred:", error.message);
-        } else {
-          console.log("Email sent successfully!");
-          console.log("Message ID:", info.messageId);
+      // handle email send
+      transport?.sendMail(
+        emailTemplate(validationCode),
+        function (error, info) {
+          if (error) {
+            console.log("Error occurred:", error.message);
+          } else {
+            console.log("Email sent successfully!");
+            console.log("Message ID:", info.messageId);
+          }
         }
-      });
+      );
 
-      return arr.join("");
+      return validationCode;
     }),
 
   // handleTwoFactoA: publicProcedure

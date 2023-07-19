@@ -6,6 +6,7 @@ import Link from "next/dist/client/link";
 import { api } from "~/utils/api";
 import LoginComponent from "~/components/LoginComponent";
 import LoginValidation from "~/components/LoginValidation";
+import { error } from "console";
 
 type User = {
   email: string;
@@ -34,6 +35,7 @@ export default function SignInForm() {
     setUserValidationCode(e.target.value);
   };
 
+  // Validation logic
   const handleValidationSubmit = async (e) => {
     e.preventDefault();
     if (validationCode !== userValidationCode) {
@@ -62,6 +64,7 @@ export default function SignInForm() {
     }
   };
 
+  // Login validation
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -72,7 +75,6 @@ export default function SignInForm() {
     } catch (error) {
       console.log(error);
     }
-
     setPendingVerification(true);
   };
 
