@@ -1,29 +1,12 @@
-import Router from "next/router";
 import Nav from "./Nav";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/router";
-
+import { RedirectToSignIn } from "@clerk/nextjs";
 type Props = {
   children: React.ReactNode;
 };
 
 export default function Layout({ children }: Props) {
-  const router = useRouter();
-
-  const { isLoaded, isSignedIn, user } = useUser();
-
-  if (!isLoaded) {
-    return (
-      <Layout>
-        <h1 className="text-black">Loading...</h1>
-      </Layout>
-    );
-  }
-
-  if (!isSignedIn) {
-    return router.push("/login");
-  }
-
   return (
     <div className="flex min-h-screen">
       <Nav />
