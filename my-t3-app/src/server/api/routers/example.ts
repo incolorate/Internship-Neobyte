@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { string, z } from "zod";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 import { Redis } from "ioredis";
 import { env } from "~/env.mjs";
@@ -54,8 +54,9 @@ export const exampleRouter = createTRPCRouter({
       })
     )
     .mutation(async ({ ctx, input }) => {
+      // Hash password
       const saltRounds = 10;
-      const hash = bcrypt.hashSync(input.password, saltRounds);
+      const hash: string = bcrypt.hashSync(input.password, saltRounds);
       const newUser = ctx.prisma.user.create({
         data: {
           password: hash,
@@ -106,7 +107,7 @@ export const exampleRouter = createTRPCRouter({
         });
       }
 
-      // handle email send
+      // Send email, if email fails to send, log error
       transport?.sendMail(
         emailTemplate(validationCode),
         function (error, info) {
@@ -121,83 +122,4 @@ export const exampleRouter = createTRPCRouter({
 
       return validationCode;
     }),
-
-  // handleTwoFactoA: publicProcedure
-  //   .input(
-  //     z.object({
-  //       email: z.string(),
-  //       session: z.string(),
-  //     })
-  //   )
-  //   .mutation(async ({ ctx, input }) => {
-
-  //     const user = await ctx.prisma.user.findUnique({
-  //       where: { email: input.email },
-  //     });
-  //     const arr = [];
-  //     if (!user) {
-  //       await ctx.prisma.user.create({
-  //         data: {
-  //           email: input.email,
-  //           session: input.session,
-  //         },
-  //       });
-  //     }
-  //     // Geenrate validation
-  //     while (arr.length < 6) {
-  //       const number = Math.floor(Math.random() * 10);
-  //       if (arr[arr.length - 1] + 1 !== number && arr[arr.length] !== number) {
-  //         arr.push(number);
-  //       }
-  //     // asign validation code to account
-  //     await ctx.prisma.user.update({
-  //         where: {
-  //           email: input.email,
-  //         },
-  //         data: {
-  //           validationCode: arr.join(""),
-  //         },
-  //       });
-  //       // Send validation to email
-  //       var mailOptions = {
-  //         from: "blah@example.com",
-  //         to: "blabla@example.com",
-  //         subject: "Test Email",
-  //         text: `Your activation code ${arr.join("")}`,
-  //         html: `<p>Your activation code ${arr.join("")}</p>`,
-  //       };
-
-  //     }
-
-  //     // Send the email
-
-  //     await ctx.prisma.user.update({
-  //       where: {
-  //         email: input.email,
-  //       },
-  //       data: {
-  //         validationCode: arr.join(""),
-  //         session: input.session,
-  //       },
-  //     });
-
-  //     transport.sendMail(mailOptions, function (error, info) {
-  //       if (error) {
-  //         console.log("Error occurred:", error.message);
-  //       } else {
-  //         console.log("Email sent successfully!");
-  //         console.log("Message ID:", info.messageId);
-  //       }
-  //   }),
-  // handleValidation: publicProcedure
-  //   .input(z.object({ validation: z.string() }))
-  //   .query(async ({ ctx, input }) => {
-  //     const user = await ctx.prisma.user.findUnique({
-  //       where: { validationCode: input.validation },
-  //     });
-  //     if (!user) {
-  //       return false;
-  //     }
-  //     return user.session;
-  //   }),
 });
