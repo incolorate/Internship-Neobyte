@@ -50,15 +50,15 @@ export default function SignUp() {
       }
       if (completeSignUp.status === "complete") {
         await setActive({ session: completeSignUp.createdSessionId });
+        register.mutate({
+          email: userForm?.email,
+          password: userForm?.password,
+        });
         router.push("/");
       }
     } catch (err: any) {
       console.error(JSON.stringify(err, null, 2));
     }
-    register.mutate({
-      email: userForm?.email,
-      password: userForm?.password,
-    });
   };
 
   return (
