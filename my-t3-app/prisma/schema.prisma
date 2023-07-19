@@ -24,5 +24,4 @@ model User {
   email         String?   @unique
   validationCode String? 
   password  String
-  session String
 }
