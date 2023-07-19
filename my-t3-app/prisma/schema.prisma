@@ -21,7 +21,8 @@ model Import {
 // fix this
 model User {
   id            String    @id @default(auto()) @map("_id") @db.ObjectId
-  user          String?
   email         String?   @unique
-  password      String?
+  validationCode String? 
+  password  String
+  session String
 }

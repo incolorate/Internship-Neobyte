@@ -3,83 +3,92 @@ import { useSignIn } from "@clerk/nextjs";
 import { useRouter } from "next/router";
 import { useUser } from "@clerk/nextjs";
 import { SignOutButton } from "@clerk/nextjs";
+import { api } from "~/utils/api";
 
 export default function SignInForm() {
-  const { isLoaded, signIn, setActive } = useSignIn();
-  const [emailAddress, setEmailAddress] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
+  const { isLoaded, signIn, setActive } = useSignIn();
 
-  // start the sign In process.
-  const generateCode = () => {
-    let arr = [];
-    for (let i = arr.length; i < 6; i++) {
-      const number = Math.floor(Math.random() * 10);
-      if (arr[i - 1] + 1 !== number && arr[i - 1] !== number) {
-        arr.push(number);
-      }
-    }
-    return arr.join("");
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!isLoaded) {
-      return;
-    }
-
-    try {
-      const result = await signIn.create({
-        identifier: emailAddress,
-        password,
-      });
-      generateCode();
-      if (result.status === "complete") {
-        console.log(result);
-        await setActive({ session: result.createdSessionId });
-        router.push("/");
-      } else {
-        /*Investigate why the login hasn't completed */
-        console.log(result);
-      }
-    } catch (err: any) {
-      console.error("error", err.errors[0].longMessage);
-    }
-  };
-
+  const generateCode = api.example.handleTwoFactoA.useMutation();
+  if (!isLoaded) {
+    return null;
+  }
   const user = useUser();
-  console.log(user);
+
   return (
-    <div>
+    <>
       {!user.isSignedIn && (
-        <form>
-          <div>
-            <label htmlFor="email">Email</label>
-            <input
-              onChange={(e) => setEmailAddress(e.target.value)}
-              id="email"
-              name="email"
-              type="email"
+        <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+          <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+            <img
+              className="mx-auto h-10 w-auto"
+              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+              alt="Your Company"
             />
+            <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+              Sign in to your account
+            </h2>
           </div>
-          <div>
-            <label htmlFor="password">Password</label>
-            <input
-              onChange={(e) => setPassword(e.target.value)}
-              id="password"
-              name="password"
-              type="password"
-            />
+
+          <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+            <form className="space-y-6" onSubmit={submit}>
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium leading-6 text-gray-900"
+                >
+                  Email address
+                </label>
+                <div className="mt-2">
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    autoComplete="email"
+                    required
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                  <button></button>
+                </div>
+              </div>
+
+              <div>
+                <div className="flex items-center justify-between">
+                  <label
+                    htmlFor="password"
+                    className="block text-sm font-medium leading-6 text-gray-900"
+                  >
+                    Password
+                  </label>
+                </div>
+                <div className="mt-2">
+                  <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    autoComplete="current-password"
+                    required
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <button
+                  type="submit"
+                  className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >
+                  Sign in
+                </button>
+              </div>
+            </form>
           </div>
-          <button onClick={handleSubmit}>Sign In</button>
-        </form>
-      )}
-      {user.isSignedIn && (
-        <div>
-          you are signed in
-          <SignOutButton />
         </div>
       )}
-    </div>
+    </>
   );
 }

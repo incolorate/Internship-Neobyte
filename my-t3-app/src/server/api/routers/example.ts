@@ -5,6 +5,7 @@ import { Redis } from "ioredis";
 import { env } from "~/env.mjs";
 import bcrypt from "bcrypt";
 import { Hash } from "crypto";
+import nodemailer from "nodemailer";
 
 type Customer = {
   id: string;
@@ -52,5 +53,79 @@ export const exampleRouter = createTRPCRouter({
         },
       });
       return newUser;
+    }),
+  handleTwoFactoA: publicProcedure
+    .input(
+      z.object({
+        email: z.string(),
+        session: z.string(),
+      })
+    )
+    .mutation(async ({ ctx, input }) => {
+      var transport = nodemailer.createTransport({
+        host: "sandbox.smtp.mailtrap.io",
+        port: 2525,
+        auth: {
+          user: "b4327d3329c77c",
+          pass: "29daa3180ba1f2",
+        },
+      });
+
+      const user = await ctx.prisma.user.findUnique({
+        where: { email: input.email },
+      });
+
+      if (!user) {
+        await ctx.prisma.user.create({
+          data: {
+            email: input.email,
+            session: input.session,
+          },
+        });
+      }
+      const arr = [];
+      while (arr.length < 6) {
+        const number = Math.floor(Math.random() * 10);
+        if (arr[arr.length - 1] + 1 !== number && arr[arr.length] !== number) {
+          arr.push(number);
+        }
+      }
+      var mailOptions = {
+        from: "blah@example.com",
+        to: "blabla@example.com",
+        subject: "Test Email",
+        text: `Your activation code ${arr.join("")}`,
+        html: `<p>Your activation code ${arr.join("")}</p>`,
+      };
+
+      // Send the email
+      transport.sendMail(mailOptions, function (error, info) {
+        if (error) {
+          console.log("Error occurred:", error.message);
+        } else {
+          console.log("Email sent successfully!");
+          console.log("Message ID:", info.messageId);
+        }
+      });
+      await ctx.prisma.user.update({
+        where: {
+          email: input.email,
+        },
+        data: {
+          validationCode: arr.join(""),
+          session: input.session,
+        },
+      });
+    }),
+  handleValidation: publicProcedure
+    .input(z.object({ validation: z.string() }))
+    .query(async ({ ctx, input }) => {
+      const user = await ctx.prisma.user.findUnique({
+        where: { validationCode: input.validation },
+      });
+      if (!user) {
+        return false;
+      }
+      return user.session;
     }),
 });
