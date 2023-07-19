@@ -5,6 +5,7 @@ import { useUser } from "@clerk/nextjs";
 import Link from "next/dist/client/link";
 import { api } from "~/utils/api";
 import LoginComponent from "~/components/LoginComponent";
+import LoginValidation from "~/components/LoginValidation";
 
 type User = {
   email: string;
@@ -16,11 +17,49 @@ export default function SignInForm() {
   const [pendingVerification, setPendingVerification] =
     useState<boolean>(false);
   const [validationCode, setValidationCode] = useState<string>("");
+  const [userValidationCode, setUserValidationCode] = useState<string>("");
+  const [invalidCode, setInvalidCode] = useState<boolean>(false);
+
+  const { isLoaded, signIn, setActive } = useSignIn();
+
+  const router = useRouter();
 
   const login = api.example.handleLogin.useMutation();
 
   const handleFormChange = (e) => {
     setUserForm({ ...userFrom, [e.target.name]: e.target.value });
+  };
+
+  const handleUserValidationCode = (e) => {
+    setUserValidationCode(e.target.value);
+  };
+
+  const handleValidationSubmit = async (e) => {
+    e.preventDefault();
+    if (validationCode !== userValidationCode) {
+      setInvalidCode(true);
+    } else {
+      if (!isLoaded) {
+        return;
+      }
+      try {
+        const result = await signIn.create({
+          identifier: userFrom.email,
+          password: userFrom.password,
+        });
+        if (result.status === "complete") {
+          console.log(result);
+          await setActive({ session: result.createdSessionId });
+          setInvalidCode(false);
+          router.push("/");
+        } else {
+          /*Investigate why the login hasn't completed */
+          console.log(result);
+        }
+      } catch (err: any) {
+        console.error("error", err.errors[0].longMessage);
+      }
+    }
   };
 
   const handleFormSubmit = async (e) => {
@@ -59,6 +98,13 @@ export default function SignInForm() {
           <LoginComponent
             handleFormChange={handleFormChange}
             handleFormSubmit={handleFormSubmit}
+          />
+        )}
+        {pendingVerification && (
+          <LoginValidation
+            handleUserValidationCode={handleUserValidationCode}
+            handleValidationSubmit={handleValidationSubmit}
+            invalidCode={invalidCode}
           />
         )}
       </div>
