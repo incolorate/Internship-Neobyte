@@ -41,9 +41,9 @@ export const exampleRouter = createTRPCRouter({
       })
     )
     .mutation(async ({ ctx, input }) => {
+      // Check if username is in use
       const saltRounds = 10;
       const hash = bcrypt.hashSync(input.password, saltRounds);
-      console.log(hash);
       const newUser = ctx.prisma.user.create({
         data: {
           user: input.username,

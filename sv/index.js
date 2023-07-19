@@ -6,6 +6,7 @@ import session from "express-session";
 import logger from "./middlewares/loggerMid.js";
 import expressWinston from "express-winston";
 import "dotenv/config";
+import cors from "cors";
 
 // Initialize app
 const app = express();
@@ -19,6 +20,7 @@ app.use(
     statusLevels: true,
   })
 );
+app.use(cors());
 app.use(
   session({
     secret: process.env.SECRET,

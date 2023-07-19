@@ -10,7 +10,9 @@
     "start": "next start"
   },
   "dependencies": {
-    "@prisma/client": "^4.14.0",
+    "@clerk/nextjs": "^4.22.0",
+    "@next-auth/prisma-adapter": "^0.4.4-canary.81",
+    "@prisma/client": "^4.16.2",
     "@t3-oss/env-nextjs": "^0.3.1",
     "@tanstack/react-query": "^4.29.7",
     "@trpc/client": "^10.26.0",
@@ -20,6 +22,7 @@
     "bcrypt": "^5.1.0",
     "ioredis": "^5.3.2",
     "next": "^13.4.2",
+    "next-auth": "^4.22.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.10.1",

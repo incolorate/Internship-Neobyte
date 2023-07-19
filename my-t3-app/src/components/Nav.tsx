@@ -35,11 +35,11 @@ export default function Nav() {
           <p className="text-center text-2xl">Users</p>
         </Link>
         <Link
-          href="/login"
+          href="/register"
           className={`${pathname.includes("login") ? active : inactive}`}
         >
           <RxDesktop className="text-center text-2xl" />
-          <p className="text-center text-2xl">Login</p>
+          <p className="text-center text-2xl">Register</p>
         </Link>
       </nav>
     </div>
