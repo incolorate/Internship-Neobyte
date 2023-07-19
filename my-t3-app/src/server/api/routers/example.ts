@@ -1,11 +1,11 @@
-import { Prisma } from "@prisma/client";
-import { z } from "zod";
+import { boolean, z } from "zod";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 import { Redis } from "ioredis";
 import { env } from "~/env.mjs";
 import bcrypt from "bcrypt";
-import { Hash } from "crypto";
 import nodemailer from "nodemailer";
+import codeGenerator from "../../helpers/validationCodeGenerator.ts";
+import { TRPCError } from "@trpc/server";
 
 type Customer = {
   id: string;
@@ -33,6 +33,7 @@ export const exampleRouter = createTRPCRouter({
     await client.expire("users", 100);
     return JSON.parse(cache) as Customer[];
   }),
+
   register: publicProcedure
     .input(
       z.object({
@@ -41,7 +42,6 @@ export const exampleRouter = createTRPCRouter({
       })
     )
     .mutation(async ({ ctx, input }) => {
-      // Check if username is in use
       const saltRounds = 10;
       const hash = bcrypt.hashSync(input.password, saltRounds);
       const newUser = ctx.prisma.user.create({
@@ -52,6 +52,7 @@ export const exampleRouter = createTRPCRouter({
       });
       return newUser;
     }),
+
   handleLogin: publicProcedure
     .input(z.object({ email: z.string(), password: z.string() }))
     .mutation(async ({ input, ctx }) => {
@@ -61,30 +62,37 @@ export const exampleRouter = createTRPCRouter({
         },
       });
 
-      const checkMatch = bcrypt.compareSync(input.password, user.password);
-      if (!checkMatch) return;
-      let arr = [];
-      if (checkMatch) {
-        // Generate key
-        while (arr.length < 6) {
-          const number = Math.floor(Math.random() * 10);
-          if (
-            arr[arr.length - 1] + 1 !== number &&
-            arr[arr.length - 1] !== number
-          ) {
-            arr.push(number);
-          }
-        }
+      if (!user) {
+        throw new TRPCError({
+          code: "BAD_REQUEST",
+          message: "Email not found in db",
+        });
+      }
 
+      // Verify password
+      const checkMatch: boolean = bcrypt.compareSync(
+        input.password,
+        user.password
+      );
+
+      if (!checkMatch) {
+        throw new TRPCError({
+          code: "BAD_REQUEST",
+          message: "Email not found in db",
+        });
+      }
+      // If password match-> validation code
+      if (checkMatch) {
         await ctx.prisma.user.update({
           where: {
             email: input.email,
           },
           data: {
-            validationCode: arr.join(""),
+            validationCode: codeGenerator(),
           },
         });
       }
+
       var transport = nodemailer.createTransport({
         host: "sandbox.smtp.mailtrap.io",
         port: 2525,
