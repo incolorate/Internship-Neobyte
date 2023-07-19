@@ -1,6 +1,25 @@
+import Router from "next/router";
 import Nav from "./Nav";
+import { useUser } from "@clerk/nextjs";
+import { useRouter } from "next/router";
 
 export default function Layout({ children }) {
+  const router = useRouter();
+
+  const { isLoaded, isSignedIn, user } = useUser();
+
+  if (!isLoaded) {
+    return (
+      <Layout>
+        <h1 className="text-black">Loading...</h1>
+      </Layout>
+    );
+  }
+
+  if (!isSignedIn) {
+    router.push("/login");
+  }
+
   return (
     <div className="flex min-h-screen">
       <Nav />
