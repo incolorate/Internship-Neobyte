@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSignIn } from "@clerk/nextjs";
 import { useRouter } from "next/router";
 import { useUser } from "@clerk/nextjs";
-
+import Link from "next/dist/client/link";
 import { api } from "~/utils/api";
 
 type User = {
@@ -114,7 +114,6 @@ export default function SignInForm() {
                       setUserForm({ ...userFrom, email: e.target.value })
                     }
                   />
-                  <button></button>
                 </div>
               </div>
 
@@ -151,6 +150,15 @@ export default function SignInForm() {
                 </button>
               </div>
             </form>
+
+            <Link href="/signup">
+              <p className="mt-10 text-center text-sm text-gray-500">
+                Not a member?
+                <p className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+                  SignUp!
+                </p>
+              </p>
+            </Link>
           </div>
         )}
       </div>

@@ -44,7 +44,7 @@ export default function Nav() {
           <div>
             <Link
               href="/login"
-              className={pathname.includes("users") ? active : inactive}
+              className={pathname.includes("signup") ? active : inactive}
             >
               <GoSignIn className="text-center text-2xl" />
               <p className="text-center text-2xl">Sign in</p>
