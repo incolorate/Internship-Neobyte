@@ -1,6 +1,8 @@
 import { RxDashboard, RxDesktop, RxHome } from "react-icons/rx";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useClerk, useUser } from "@clerk/nextjs";
+import { GoSignIn, GoSignOut } from "react-icons/go";
 
 export default function Nav() {
   const inactive = "flex gap-2 items-center p-2";
@@ -8,6 +10,9 @@ export default function Nav() {
     inactive + " text-green-400 bg-slate-300 bg-opacity-10 rounded-xl";
   const router = useRouter();
   const { pathname } = router;
+
+  const { signOut } = useClerk();
+  const { isSignedIn } = useUser();
 
   return (
     <div className="bg-black p-4 text-white">
@@ -27,6 +32,25 @@ export default function Nav() {
           <RxDesktop className="text-center text-2xl" />
           <p className="text-center text-2xl">Users</p>
         </Link>
+        {isSignedIn && (
+          <div className="flex items-center gap-2 p-2">
+            <GoSignOut className="text-center text-2xl" />
+            <button onClick={() => signOut()}>
+              <p className="text-center text-2xl">Sign out</p>
+            </button>
+          </div>
+        )}
+        {!isSignedIn && (
+          <div>
+            <Link
+              href="/login"
+              className={pathname.includes("users") ? active : inactive}
+            >
+              <GoSignIn className="text-center text-2xl" />
+              <p className="text-center text-2xl">Sign in</p>
+            </Link>
+          </div>
+        )}
       </nav>
     </div>
   );

@@ -24,7 +24,7 @@ export default function Users() {
   const [search, setSearch] = useState("");
   const [filterBy, setFilterBy] = useState("First_Name");
   // Items / page increase by 15
-  const [perPage, setPerPage] = useState(14);
+  const [perPage, setPerPage] = useState(15);
   // Set ascending or descending
   const [sort, setSort] = useState("");
 
