@@ -1,13 +1,6 @@
-import {
-  RxArchive,
-  RxCode,
-  RxDashboard,
-  RxDesktop,
-  RxHome,
-} from "react-icons/rx";
+import { RxDashboard, RxDesktop, RxHome } from "react-icons/rx";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { BiCategory } from "react-icons/bi";
 
 export default function Nav() {
   const inactive = "flex gap-2 items-center p-2";
@@ -33,13 +26,6 @@ export default function Nav() {
         >
           <RxDesktop className="text-center text-2xl" />
           <p className="text-center text-2xl">Users</p>
-        </Link>
-        <Link
-          href="/register"
-          className={`${pathname.includes("login") ? active : inactive}`}
-        >
-          <RxDesktop className="text-center text-2xl" />
-          <p className="text-center text-2xl">Register</p>
         </Link>
       </nav>
     </div>

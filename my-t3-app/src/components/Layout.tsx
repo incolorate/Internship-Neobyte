@@ -3,7 +3,11 @@ import Nav from "./Nav";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/router";
 
-export default function Layout({ children }) {
+type Props = {
+  children: React.ReactNode;
+};
+
+export default function Layout({ children }: Props) {
   const router = useRouter();
 
   const { isLoaded, isSignedIn, user } = useUser();
@@ -17,7 +21,7 @@ export default function Layout({ children }) {
   }
 
   if (!isSignedIn) {
-    router.push("/login");
+    return router.push("/login");
   }
 
   return (
