@@ -8,16 +8,33 @@ export default function ValidateApis() {
   const [requestType, setRequestType] = useState("get");
   // Store data from request
   const [response, setResponse] = useState<object>({});
-  const [errorData, setErrorData] = useState<object>({});
   const [responseTime, setResponseTime] = useState("");
 
   const handleGet = async () => {
+    const dataToJSON = JSON.stringify(textAreaValue);
+    const dataToSend = JSON.parse(dataToJSON);
+
     const start = Date.now();
-    const data = await axios.get(accessLink);
+
+    let data;
+    await axios
+      .get(accessLink, dataToSend)
+      .then(function (response) {
+        data = response;
+      })
+      .catch(function (error) {
+        data = error.message;
+      });
+
+    console.log(data);
+    setResponse({
+      status: data.status,
+      statusText: data.statusText,
+      data,
+    });
     const end = Date.now();
+
     setResponseTime(end - start);
-    setResponse({ ...data });
-    console.log(response);
   };
 
   const handlePost = async () => {
@@ -27,7 +44,7 @@ export default function ValidateApis() {
     const dataToSend = JSON.parse(dataToJSON);
     //axios expects an object
 
-    axios
+    await axios
       .post(accessLink, dataToSend)
       .then(function (response) {
         setResponse({ ...response });
@@ -85,8 +102,7 @@ export default function ValidateApis() {
         <div className="">
           <div className="flex gap-6 border-2 border-slate-500">
             <p className="p-2">
-              {/* {response.status &&
-                `${response.response.status} ${response.response.statusText}`} */}
+              {response.status} {response.statusText}
             </p>
             <p className="bg-slate-700 p-2 px-4">{responseTime} ms</p>
           </div>
@@ -94,7 +110,10 @@ export default function ValidateApis() {
             <p className="mt-4 text-2xl">Preview:</p>
           </div>
           <div className="min-h-screen w-full border-2 border-slate-500 p-4">
-            {/* {response.data && response.response.data} */}
+            {/* <p> {JSON.stringify(response.data, undefined, 2)}</p> */}
+            <pre className="min-h-screen">
+              {JSON.stringify(response.data.data, undefined, 2)}
+            </pre>
           </div>
         </div>
       </div>

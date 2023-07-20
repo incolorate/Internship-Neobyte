@@ -12,7 +12,7 @@ router.get("/products", async (req, res) => {
   if (!cachedProducts) {
     try {
       const allProducts = await Product.find();
-      client.set("products", JSON.stringify(allProducts));
+      client.set("products", allProducts);
       // If user logged in add more info
       req.session.user
         ? logger.info(`Data fetching done from DB,
@@ -25,7 +25,10 @@ router.get("/products", async (req, res) => {
       return res.status(500).json(error);
     }
   }
-  return res.status(200).json(cachedProducts);
+  // Convert the cachedproducts back to an object
+  // if not when sending i get a dirty json
+  const secondParse = JSON.parse(cachedProducts);
+  return res.status(200).json(secondParse);
 });
 
 router.post("/products/create", checkAuth, async (req, res) => {
