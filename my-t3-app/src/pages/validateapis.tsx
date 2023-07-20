@@ -5,6 +5,7 @@ import axios from "axios";
 export default function ValidateApis() {
   const [textAreaValue, setTextAreaValue] = useState("");
   const [accessLink, setAccesLink] = useState("");
+  const [requestType, setRequestType] = useState("get");
   // Store data from request
   const [response, setResponse] = useState<object>({});
   const [errorData, setErrorData] = useState<object>({});
@@ -41,15 +42,19 @@ export default function ValidateApis() {
   };
 
   console.log("you are here", response);
-
+  console.log(requestType);
   return (
     <Layout>
       <div className="grid grid-cols-2 gap-2 rounded-md border-2 border-slate-500 bg-slate-800 p-4 text-slate-200">
         <div>
           <div className="flex rounded-md border-2 border-slate-500">
-            <select className="bg-slate-900 text-2xl text-green-500">
-              <option className="bg-none">POST</option>
-              <option>GET</option>
+            <select
+              className="bg-slate-900 text-2xl text-green-500"
+              onChange={(e) => setRequestType(e.target.value)}
+              value={requestType}
+            >
+              <option value="post">POST</option>
+              <option value="get">GET</option>
             </select>
             <input
               id="url"
