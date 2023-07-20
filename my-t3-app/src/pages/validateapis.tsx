@@ -40,14 +40,12 @@ export default function ValidateApis() {
   const handlePost = async () => {
     const start = Date.now();
 
-    const dataToJSON = JSON.stringify(textAreaValue);
-    const dataToSend = JSON.parse(dataToJSON);
     //axios expects an object
-    console.log(dataToSend, "data to send");
+
     let data;
     let errorData;
     await axios
-      .post(accessLink, dataToSend)
+      .post(accessLink, JSON.parse(textAreaValue))
       .then(function (response) {
         data = response;
       })
@@ -55,8 +53,6 @@ export default function ValidateApis() {
         errorData = error.response;
       });
 
-    console.log(data);
-    console.log(errorData);
     setResponse({
       status: data?.status || errorData?.status,
       statusText: data?.statusText || errorData?.statusText,

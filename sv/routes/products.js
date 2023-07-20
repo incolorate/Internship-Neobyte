@@ -26,7 +26,7 @@ router.get("/products", async (req, res) => {
     }
   }
   // Convert the cachedproducts back to an object
-  // if not when sending i get a dirty json
+  // if not when sending i get a dirty JSON
   const secondParse = JSON.parse(cachedProducts);
   return res.status(200).json(secondParse);
 });
