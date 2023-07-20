@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useClerk, useUser } from "@clerk/nextjs";
 import { GoSignIn, GoSignOut } from "react-icons/go";
+import { LuCopyCheck } from "react-icons/lu";
 
 export default function Nav() {
   const inactive = "flex gap-2 items-center p-2";
@@ -20,7 +21,7 @@ export default function Nav() {
         <RxDashboard className="text-3xl" />
         <h1 className="text-center text-3xl text-white">Admin Dashboard</h1>
       </div>
-      <nav className="flex w-72 flex-col gap-6  p-2 text-white">
+      <nav className="flex w-72 flex-col gap-6 p-2 text-white">
         <Link href="/" className={pathname === "/" ? active : inactive}>
           <RxHome className="text-center text-2xl" />
           <p className="text-center text-2xl">Home</p>
@@ -31,6 +32,13 @@ export default function Nav() {
         >
           <RxDesktop className="text-center text-2xl" />
           <p className="text-center text-2xl">Users</p>
+        </Link>
+        <Link
+          href="/validateapis"
+          className={pathname.includes("users") ? active : inactive}
+        >
+          <LuCopyCheck className="text-center text-2xl" />
+          <p className="text-center text-2xl">Validate Apis</p>
         </Link>
         {isSignedIn && (
           <div className="flex items-center gap-2 p-2">

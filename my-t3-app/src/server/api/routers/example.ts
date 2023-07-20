@@ -57,6 +57,7 @@ export const exampleRouter = createTRPCRouter({
       // Hash password
       const saltRounds = 10;
       const hash: string = bcrypt.hashSync(input.password, saltRounds);
+
       const newUser = ctx.prisma.user.create({
         data: {
           password: hash,
@@ -94,6 +95,7 @@ export const exampleRouter = createTRPCRouter({
           message: "Email not found in db",
         });
       }
+
       // Code generator generates a unique 6 digit code
       const validationCode: string = codeGenerator();
       if (checkMatch) {
@@ -123,6 +125,7 @@ export const exampleRouter = createTRPCRouter({
 
       return validationCode;
     }),
+
   codeVerification: publicProcedure
     .input(z.object({ email: z.string(), sendAt: z.number() }))
     .mutation(({ ctx, input }) => {

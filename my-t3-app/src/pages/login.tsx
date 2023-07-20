@@ -42,17 +42,13 @@ export default function SignInForm() {
     e.preventDefault();
 
     const sendDate = Date.now();
-
     try {
       const serverValidation = await validateCode.mutateAsync({
         email: userFrom.email,
         sendAt: sendDate,
       });
-      if (!serverValidation) {
-        throw Error("Code expired");
-      }
     } catch (error) {
-      throw Error(error);
+      throw error;
     }
 
     if (validationCode !== userValidationCode) {
