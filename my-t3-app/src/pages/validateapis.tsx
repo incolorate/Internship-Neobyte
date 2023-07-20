@@ -5,14 +5,10 @@ import axios from "axios";
 export default function ValidateApis() {
   const [textAreaValue, setTextAreaValue] = useState("");
   const [accessLink, setAccesLink] = useState("");
-
+  // Store data from request
   const [response, setResponse] = useState<object>({});
-  const [responseTime, setResponseTime] = useState("");
   const [errorData, setErrorData] = useState<object>({});
-
-  const handleTextArea = (e) => {
-    setTextAreaValue(e.target.value);
-  };
+  const [responseTime, setResponseTime] = useState("");
 
   const handleGet = async () => {
     const start = Date.now();
@@ -75,7 +71,7 @@ export default function ValidateApis() {
           <div>
             <textarea
               value={textAreaValue}
-              onChange={handleTextArea}
+              onChange={(e) => e.target.value}
               className="min-h-screen w-full border-2 border-slate-500 bg-slate-800 p-4 align-text-top outline-none"
             />
           </div>
