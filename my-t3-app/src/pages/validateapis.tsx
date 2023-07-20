@@ -4,7 +4,7 @@ import axios from "axios";
 
 export default function ValidateApis() {
   const [textAreaValue, setTextAreaValue] = useState("");
-  const [accessLink, setAccesLink] = useState("http://localhost:4000/");
+  const [accessLink, setAccesLink] = useState("");
 
   const [response, setResponse] = useState<object>({});
   const [responseTime, setResponseTime] = useState("");
@@ -25,12 +25,13 @@ export default function ValidateApis() {
 
   const handlePost = async () => {
     const start = Date.now();
-    const dataToSend = JSON.parse(textAreaValue);
 
+    const dataToJSON = JSON.stringify(textAreaValue);
+    const dataToSend = JSON.parse(dataToJSON);
     //axios expects an object
 
     axios
-      .post("http://localhost:4000/user/login", dataToSend)
+      .post(accessLink, dataToSend)
       .then(function (response) {
         setResponse({ ...response });
       })
@@ -61,6 +62,8 @@ export default function ValidateApis() {
               autoComplete="url"
               required
               className="flex-1 bg-slate-700 p-2 outline-none"
+              value={accessLink}
+              onChange={(e) => setAccesLink(e.target.value)}
             ></input>
             <button className="bg-purple-500 p-2 px-9" onClick={handlePost}>
               Send
