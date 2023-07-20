@@ -46,6 +46,8 @@ router.post("/user/login", async (req, res) => {
   const userInfo = await User.findOne({
     user: username,
   });
+
+  if (!userInfo) return res.status(404).json("User not found");
   //   Password check
   bcrypt.compare(password, userInfo.password, function (err, result) {
     if (result) {
