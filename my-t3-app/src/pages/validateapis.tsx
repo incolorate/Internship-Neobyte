@@ -27,7 +27,6 @@ export default function ValidateApis() {
         errorData = error.response;
       });
 
-    console.log(errorData);
     setResponse({
       status: data?.status || errorData?.status,
       statusText: data?.statusText || errorData?.statusText,
@@ -44,17 +43,25 @@ export default function ValidateApis() {
     const dataToJSON = JSON.stringify(textAreaValue);
     const dataToSend = JSON.parse(dataToJSON);
     //axios expects an object
-
+    console.log(dataToSend, "data to send");
+    let data;
+    let errorData;
     await axios
       .post(accessLink, dataToSend)
       .then(function (response) {
-        setResponse({ ...response });
+        data = response;
       })
       .catch(function (error) {
-        console.log(error);
-        setResponse({ ...error });
+        errorData = error.response;
       });
 
+    console.log(data);
+    console.log(errorData);
+    setResponse({
+      status: data?.status || errorData?.status,
+      statusText: data?.statusText || errorData?.statusText,
+      data: data?.data || errorData?.data || "Cannot POST",
+    });
     const end = Date.now();
     setResponseTime(end - start);
   };
