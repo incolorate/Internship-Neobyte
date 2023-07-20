@@ -20,12 +20,14 @@ export default function SignInForm() {
   const [validationCode, setValidationCode] = useState<string>("");
   const [userValidationCode, setUserValidationCode] = useState<string>("");
   const [invalidCode, setInvalidCode] = useState<boolean>(false);
+  const [counter, setCounter] = useState<number>(60);
 
   const { isLoaded, signIn, setActive } = useSignIn();
 
   const router = useRouter();
 
   const login = api.example.handleLogin.useMutation();
+  const validateCode = api.example.codeVerification.useMutation();
 
   const handleFormChange = (e) => {
     setUserForm({ ...userFrom, [e.target.name]: e.target.value });
@@ -38,6 +40,21 @@ export default function SignInForm() {
   // Validation logic
   const handleValidationSubmit = async (e) => {
     e.preventDefault();
+
+    const sendDate = Date.now();
+
+    try {
+      const serverValidation = validateCode.mutateAsync({
+        email: userFrom.email,
+        sendAt: sendDate,
+      });
+      if (!serverValidation) {
+        throw Error("Code expired");
+      }
+    } catch (error) {
+      throw Error(error);
+    }
+
     if (validationCode !== userValidationCode) {
       setInvalidCode(true);
     } else {
@@ -76,6 +93,7 @@ export default function SignInForm() {
       console.log(error);
     }
     setPendingVerification(true);
+    setCounter(60);
   };
 
   // Get official validation code
@@ -83,6 +101,13 @@ export default function SignInForm() {
     setValidationCode(login.data);
   }, [login]);
 
+  // Countdown
+  useEffect(() => {
+    if (pendingVerification) {
+      counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
+    }
+  }, [counter, pendingVerification]);
+  console.log(counter);
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -106,7 +131,9 @@ export default function SignInForm() {
           <LoginValidation
             handleUserValidationCode={handleUserValidationCode}
             handleValidationSubmit={handleValidationSubmit}
+            handleSendNewCode={handleFormSubmit}
             invalidCode={invalidCode}
+            countDown={counter}
           />
         )}
       </div>

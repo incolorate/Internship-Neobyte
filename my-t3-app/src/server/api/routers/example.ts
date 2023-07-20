@@ -103,6 +103,7 @@ export const exampleRouter = createTRPCRouter({
           },
           data: {
             validationCode: validationCode,
+            codeCreatedAt: Date.now().toString(),
           },
         });
       }
@@ -121,5 +122,27 @@ export const exampleRouter = createTRPCRouter({
       );
 
       return validationCode;
+    }),
+  codeVerification: publicProcedure
+    .input(z.object({ email: z.string(), sendAt: z.number() }))
+    .mutation(({ ctx, input }) => {
+      const userData = ctx.prisma.user.findUnique({
+        where: {
+          email: input.email,
+        },
+      });
+
+      if (!userData) {
+        throw new TRPCError({
+          code: "BAD_REQUEST",
+          message: "Email not found in db",
+        });
+      }
+
+      if (Number(userData.codeCreatedAt) - Number(input.sendAt) > 60) {
+        return false;
+      }
+
+      return true;
     }),
 });

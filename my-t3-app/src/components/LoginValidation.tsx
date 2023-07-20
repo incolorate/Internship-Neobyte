@@ -1,12 +1,23 @@
 export default function LoginValidation({
   handleUserValidationCode,
   handleValidationSubmit,
+  handleSendNewCode,
   invalidCode,
+  countDown,
 }) {
   return (
     <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
       <form className="space-y-6" onSubmit={handleValidationSubmit}>
         <div>
+          <h2 className="text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+            {countDown > 0 ? (
+              `Code available for: ${countDown}`
+            ) : (
+              <button className="text-blue-500" onClick={handleSendNewCode}>
+                Send new code
+              </button>
+            )}
+          </h2>
           <label
             htmlFor="email"
             className="block text-sm font-medium leading-6 text-gray-900"
@@ -29,7 +40,8 @@ export default function LoginValidation({
         <div>
           <button
             type="submit"
-            className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-slate-500"
+            disabled={countDown === 0 ? true : false}
           >
             Validate
           </button>

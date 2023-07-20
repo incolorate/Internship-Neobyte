@@ -1,10 +1,16 @@
 export default function codeGenerator(): string {
-  const arr: number[] = [];
-  while (arr.length < 6) {
-    const number = Math.floor(Math.random() * 10);
-    if (arr.length === 0 || arr[arr.length - 1] ? +1 !== number : number) {
-      arr.push(number);
+  const whileArray: number[] = [];
+  while (whileArray.length < 6) {
+    while (whileArray.length < 6) {
+      const currentNumber = Math.floor(Math.random() * 10);
+      const previousNumber = whileArray[whileArray.length - 1];
+      if (
+        currentNumber != previousNumber &&
+        currentNumber != previousNumber + 1
+      ) {
+        whileArray.push(currentNumber);
+      }
     }
   }
-  return arr.join("");
+  return whileArray.join("");
 }
