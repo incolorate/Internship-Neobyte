@@ -17,20 +17,21 @@ export default function ValidateApis() {
     const start = Date.now();
 
     let data;
+    let errorData;
     await axios
       .get(accessLink, dataToSend)
       .then(function (response) {
         data = response;
       })
       .catch(function (error) {
-        data = error.message;
+        errorData = error.response;
       });
 
-    console.log(data);
+    console.log(errorData);
     setResponse({
-      status: data.status,
-      statusText: data.statusText,
-      data,
+      status: data?.status || errorData?.status,
+      statusText: data?.statusText || errorData?.statusText,
+      data: data?.data || "Cannot GET",
     });
     const end = Date.now();
 
@@ -84,6 +85,7 @@ export default function ValidateApis() {
             <button
               className="bg-purple-500 p-2 px-9"
               onClick={requestType === "get" ? handleGet : handlePost}
+              disabled={accessLink.length === 0 ? true : false}
             >
               Send
             </button>
@@ -94,7 +96,7 @@ export default function ValidateApis() {
           <div>
             <textarea
               value={textAreaValue}
-              onChange={(e) => e.target.value}
+              onChange={(e) => setTextAreaValue(e.target.value)}
               className="min-h-screen w-full border-2 border-slate-500 bg-slate-800 p-4 align-text-top outline-none"
             />
           </div>
@@ -110,9 +112,8 @@ export default function ValidateApis() {
             <p className="mt-4 text-2xl">Preview:</p>
           </div>
           <div className="min-h-screen w-full border-2 border-slate-500 p-4">
-            {/* <p> {JSON.stringify(response.data, undefined, 2)}</p> */}
             <pre className="min-h-screen">
-              {JSON.stringify(response.data.data, undefined, 2)}
+              {JSON.stringify(response.data, undefined, 2) ?? ""}
             </pre>
           </div>
         </div>
