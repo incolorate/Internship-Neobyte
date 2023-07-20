@@ -139,7 +139,7 @@ export const exampleRouter = createTRPCRouter({
         });
       }
 
-      if (Number(userData.codeCreatedAt) - Number(input.sendAt) > 60) {
+      if (!(Number(userData.codeCreatedAt) - Number(input.sendAt) > 60)) {
         return false;
       }
 

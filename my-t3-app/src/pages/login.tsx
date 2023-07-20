@@ -44,7 +44,7 @@ export default function SignInForm() {
     const sendDate = Date.now();
 
     try {
-      const serverValidation = validateCode.mutateAsync({
+      const serverValidation = await validateCode.mutateAsync({
         email: userFrom.email,
         sendAt: sendDate,
       });
@@ -107,7 +107,6 @@ export default function SignInForm() {
       counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
     }
   }, [counter, pendingVerification]);
-  console.log(counter);
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
