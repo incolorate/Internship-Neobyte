@@ -41,8 +41,6 @@ export default function ValidateApis() {
     setResponseTime(end - start);
   };
 
-  console.log("you are here", response);
-  console.log(requestType);
   return (
     <Layout>
       <div className="grid grid-cols-2 gap-2 rounded-md border-2 border-slate-500 bg-slate-800 p-4 text-slate-200">
@@ -66,7 +64,10 @@ export default function ValidateApis() {
               value={accessLink}
               onChange={(e) => setAccesLink(e.target.value)}
             ></input>
-            <button className="bg-purple-500 p-2 px-9" onClick={handlePost}>
+            <button
+              className="bg-purple-500 p-2 px-9"
+              onClick={requestType === "get" ? handleGet : handlePost}
+            >
               Send
             </button>
           </div>
@@ -84,8 +85,8 @@ export default function ValidateApis() {
         <div className="">
           <div className="flex gap-6 border-2 border-slate-500">
             <p className="p-2">
-              {response.status &&
-                `${response.response.status} ${response.response.statusText}`}
+              {/* {response.status &&
+                `${response.response.status} ${response.response.statusText}`} */}
             </p>
             <p className="bg-slate-700 p-2 px-4">{responseTime} ms</p>
           </div>
@@ -93,7 +94,7 @@ export default function ValidateApis() {
             <p className="mt-4 text-2xl">Preview:</p>
           </div>
           <div className="min-h-screen w-full border-2 border-slate-500 p-4">
-            {response.data && response.response.data}
+            {/* {response.data && response.response.data} */}
           </div>
         </div>
       </div>
