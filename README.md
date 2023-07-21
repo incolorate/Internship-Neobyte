@@ -10,3 +10,4 @@
 
 * look for other tools like REDIS
 
+## Instalation steps in each document
