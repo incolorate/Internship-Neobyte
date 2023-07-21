@@ -18,7 +18,7 @@ If you are not familiar with the different technologies used in this project, pl
 
 ```bash
 $ git clone gh repo clone incolorate/Internship-Neobyte 
-$ cd NEXTT#
+$ cd NEXTT3
 $ npm install
 ```
 * rename the .env.example file and provide the keys
