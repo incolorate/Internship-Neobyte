@@ -7,6 +7,7 @@ import logger from "./middlewares/loggerMid.js";
 import expressWinston from "express-winston";
 import "dotenv/config";
 import cors from "cors";
+import manageLogs from "./routes/manageLogs.js";
 
 // Initialize app
 const app = express();
@@ -34,10 +35,14 @@ app.get("/", async (req, res) => {
   return res.send(`<h1>Hello Neobyte</h1>`);
 });
 app.get("/error", (req, res) => {
-  throw new Error("ErrorError!");
+  return res.status(500).json("dsa");
+});
+app.get("/errors", (req, res) => {
+  return res.status(500).json("dsa");
 });
 app.use("/", productRoutes);
 app.use("/", manageUsers);
+app.use("/", manageLogs);
 
 // Connect to db
 mongoose

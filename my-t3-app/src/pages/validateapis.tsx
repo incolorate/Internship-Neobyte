@@ -27,14 +27,16 @@ export default function ValidateApis() {
         errorData = error.response;
       });
 
+    const end = Date.now();
+    setResponseTime(end - start);
     setResponse({
+      currentDate: new Date().toLocaleString(),
       status: data?.status || errorData?.status,
       statusText: data?.statusText || errorData?.statusText,
+      responseTime,
       data: data?.data || "Cannot GET",
     });
-    const end = Date.now();
-
-    setResponseTime(end - start);
+    await axios.post("http://localhost:4000/writelog", response);
   };
 
   const handlePost = async () => {
@@ -53,13 +55,16 @@ export default function ValidateApis() {
         errorData = error.response;
       });
 
-    setResponse({
-      status: data?.status || errorData?.status,
-      statusText: data?.statusText || errorData?.statusText,
-      data: data?.data || errorData?.data || "Cannot POST",
-    });
     const end = Date.now();
     setResponseTime(end - start);
+    setResponse({
+      currentDate: new Date().toLocaleString(),
+      status: data?.status || errorData?.status,
+      statusText: data?.statusText || errorData?.statusText,
+      responseTime,
+      data: data?.data || errorData?.data || "Cannot POST",
+    });
+    await axios.post("http://localhost:4000/writelog", response);
   };
 
   return (
