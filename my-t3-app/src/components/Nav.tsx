@@ -35,7 +35,7 @@ export default function Nav() {
         </Link>
         <Link
           href="/validateapis"
-          className={pathname.includes("users") ? active : inactive}
+          className={pathname.includes("validateapis") ? active : inactive}
         >
           <LuCopyCheck className="text-center text-2xl" />
           <p className="text-center text-2xl">Validate Apis</p>

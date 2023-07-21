@@ -1385,3 +1385,3204 @@
   message: 'HTTP POST /user/login',
   timestamp: '2023-07-20T12:20:54.158Z'
 }
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '0',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 44
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T14:50:56.392Z'
+}
+{
+  meta: {
+    req: {
+      url: '/products',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '0',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/products',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 7
+  },
+  level: 'warn',
+  message: 'HTTP POST /products',
+  timestamp: '2023-07-20T15:02:26.826Z'
+}
+{
+  meta: {
+    req: {
+      url: '/pro2ducts',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/pro2ducts',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 1
+  },
+  level: 'warn',
+  message: 'HTTP GET /pro2ducts',
+  timestamp: '2023-07-20T15:12:49.286Z'
+}
+{
+  meta: {
+    req: {
+      url: '/pro2ducts',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/pro2ducts',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 3
+  },
+  level: 'warn',
+  message: 'HTTP GET /pro2ducts',
+  timestamp: '2023-07-20T15:13:55.278Z'
+}
+{
+  meta: {
+    req: {
+      url: '/pro2ducts',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/pro2ducts',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 3
+  },
+  level: 'warn',
+  message: 'HTTP GET /pro2ducts',
+  timestamp: '2023-07-20T15:14:13.908Z'
+}
+{
+  meta: {
+    req: {
+      url: '/pro2ducts',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/pro2ducts',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 2
+  },
+  level: 'warn',
+  message: 'HTTP GET /pro2ducts',
+  timestamp: '2023-07-20T15:14:51.698Z'
+}
+{
+  meta: {
+    req: {
+      url: '/produc2ts',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/produc2ts',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 3
+  },
+  level: 'warn',
+  message: 'HTTP GET /produc2ts',
+  timestamp: '2023-07-20T15:44:13.237Z'
+}
+{
+  meta: {
+    req: {
+      url: '/produ2cts',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/produ2cts',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 3
+  },
+  level: 'warn',
+  message: 'HTTP GET /produ2cts',
+  timestamp: '2023-07-20T15:46:01.113Z'
+}
+{
+  meta: {
+    req: {
+      url: '/produ2cts',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/produ2cts',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 3
+  },
+  level: 'warn',
+  message: 'HTTP GET /produ2cts',
+  timestamp: '2023-07-20T15:46:06.553Z'
+}
+{
+  meta: {
+    req: {
+      url: '/produ2cts',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/produ2cts',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 1
+  },
+  level: 'warn',
+  message: 'HTTP GET /produ2cts',
+  timestamp: '2023-07-20T15:46:20.097Z'
+}
+{
+  meta: {
+    req: {
+      url: '/produ2cts',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/produ2cts',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 3
+  },
+  level: 'warn',
+  message: 'HTTP GET /produ2cts',
+  timestamp: '2023-07-20T15:46:30.450Z'
+}
+{
+  meta: {
+    req: {
+      url: '/products3',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3A4gOQPMqlZ580a57i1OL0PsWsZiE1P8zE.GPIhCT6JHnsCKHssEyGnGQT%2F6tmY%2FPLfzXnX756BiBw',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '0'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/products3',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 1
+  },
+  level: 'warn',
+  message: 'HTTP GET /products3',
+  timestamp: '2023-07-20T15:57:38.459Z'
+}
+{
+  meta: {
+    req: {
+      url: '/products3',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3A4gOQPMqlZ580a57i1OL0PsWsZiE1P8zE.GPIhCT6JHnsCKHssEyGnGQT%2F6tmY%2FPLfzXnX756BiBw',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '0'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/products3',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 0
+  },
+  level: 'warn',
+  message: 'HTTP GET /products3',
+  timestamp: '2023-07-20T15:57:39.444Z'
+}
+{
+  meta: {
+    req: {
+      url: '/products3',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3A4gOQPMqlZ580a57i1OL0PsWsZiE1P8zE.GPIhCT6JHnsCKHssEyGnGQT%2F6tmY%2FPLfzXnX756BiBw',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '0'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/products3',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 1
+  },
+  level: 'warn',
+  message: 'HTTP GET /products3',
+  timestamp: '2023-07-20T16:08:36.260Z'
+}
+{
+  meta: {
+    req: {
+      url: '/products3',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3A4gOQPMqlZ580a57i1OL0PsWsZiE1P8zE.GPIhCT6JHnsCKHssEyGnGQT%2F6tmY%2FPLfzXnX756BiBw',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '0'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/products3',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 0
+  },
+  level: 'warn',
+  message: 'HTTP GET /products3',
+  timestamp: '2023-07-20T16:08:36.627Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/register',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/user/register',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 3
+  },
+  level: 'warn',
+  message: 'HTTP GET /user/register',
+  timestamp: '2023-07-20T16:10:08.839Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/register',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3A4gOQPMqlZ580a57i1OL0PsWsZiE1P8zE.GPIhCT6JHnsCKHssEyGnGQT%2F6tmY%2FPLfzXnX756BiBw',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '56'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/user/register',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 1
+  },
+  level: 'warn',
+  message: 'HTTP GET /user/register',
+  timestamp: '2023-07-20T16:10:46.043Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/register',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3A4gOQPMqlZ580a57i1OL0PsWsZiE1P8zE.GPIhCT6JHnsCKHssEyGnGQT%2F6tmY%2FPLfzXnX756BiBw',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '56'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/user/register',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 0
+  },
+  level: 'warn',
+  message: 'HTTP GET /user/register',
+  timestamp: '2023-07-20T16:10:46.968Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/register',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3A4gOQPMqlZ580a57i1OL0PsWsZiE1P8zE.GPIhCT6JHnsCKHssEyGnGQT%2F6tmY%2FPLfzXnX756BiBw',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '56'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/user/register',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 0
+  },
+  level: 'warn',
+  message: 'HTTP GET /user/register',
+  timestamp: '2023-07-20T16:10:47.638Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/register',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3A4gOQPMqlZ580a57i1OL0PsWsZiE1P8zE.GPIhCT6JHnsCKHssEyGnGQT%2F6tmY%2FPLfzXnX756BiBw',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '56'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/user/register',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 1
+  },
+  level: 'warn',
+  message: 'HTTP GET /user/register',
+  timestamp: '2023-07-20T16:10:48.089Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/register',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3A4gOQPMqlZ580a57i1OL0PsWsZiE1P8zE.GPIhCT6JHnsCKHssEyGnGQT%2F6tmY%2FPLfzXnX756BiBw',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '56'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/user/register',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 1
+  },
+  level: 'warn',
+  message: 'HTTP GET /user/register',
+  timestamp: '2023-07-20T16:10:48.092Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/register',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3A4gOQPMqlZ580a57i1OL0PsWsZiE1P8zE.GPIhCT6JHnsCKHssEyGnGQT%2F6tmY%2FPLfzXnX756BiBw',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '56'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/user/register',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 0
+  },
+  level: 'warn',
+  message: 'HTTP GET /user/register',
+  timestamp: '2023-07-20T16:10:49.007Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/register',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3A4gOQPMqlZ580a57i1OL0PsWsZiE1P8zE.GPIhCT6JHnsCKHssEyGnGQT%2F6tmY%2FPLfzXnX756BiBw',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '56'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/register',
+      query: {}
+    },
+    res: { statusCode: 400 },
+    responseTime: 52
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/register',
+  timestamp: '2023-07-20T16:10:53.794Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '0',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 62
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T16:18:44.433Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '54',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 26
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T16:19:05.275Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '54',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 64
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T16:19:09.250Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '54',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 33
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T16:19:27.234Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '54',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 27
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T16:19:51.282Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '54',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 28
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T16:19:59.367Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '54',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 28
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T16:22:15.070Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '54',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 28
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T16:22:18.016Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '54',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 41
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T16:22:53.543Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '54',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 33
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T16:23:15.557Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/register',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3A4gOQPMqlZ580a57i1OL0PsWsZiE1P8zE.GPIhCT6JHnsCKHssEyGnGQT%2F6tmY%2FPLfzXnX756BiBw',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '56'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/register',
+      query: {}
+    },
+    res: { statusCode: 400 },
+    responseTime: 104
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/register',
+  timestamp: '2023-07-20T16:32:55.265Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/register',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3ApNfFARrJsB_qjr7J2i9KBurJ-4884Vbq.3F82Qy94zdbNuGo4O1Jn%2BFhI0YA29KcotOXIaid9pMY',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '56'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/register',
+      query: {}
+    },
+    res: { statusCode: 400 },
+    responseTime: 37
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/register',
+  timestamp: '2023-07-20T16:32:56.806Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/register',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3ApNfFARrJsB_qjr7J2i9KBurJ-4884Vbq.3F82Qy94zdbNuGo4O1Jn%2BFhI0YA29KcotOXIaid9pMY',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '56'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/register',
+      query: {}
+    },
+    res: { statusCode: 400 },
+    responseTime: 44
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/register',
+  timestamp: '2023-07-20T16:47:00.672Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '0',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 54
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T17:37:28.619Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '0',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 39
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T17:38:16.959Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '0',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 28
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T17:39:46.915Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '0',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 27
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T17:39:56.571Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '0',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 33
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T17:40:00.910Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '0',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 27
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T17:40:27.292Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '0',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 32
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T17:40:41.845Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '5',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 66
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T17:40:49.845Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '5',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 27
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T17:41:45.561Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '5',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 27
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T17:41:47.214Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '54',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 31
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T17:42:31.455Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '54',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 32
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T17:44:09.557Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '54',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 40
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T17:44:45.083Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '54',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 55
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T17:44:46.678Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '54',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 41
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T17:45:10.824Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '69',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 31
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T17:45:32.306Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '69',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 32
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T17:45:35.485Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/register',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '47',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/register',
+      query: {}
+    },
+    res: { statusCode: 400 },
+    responseTime: 26
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/register',
+  timestamp: '2023-07-20T17:46:41.095Z'
+}
+{
+  meta: {
+    req: {
+      url: '/error',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '47',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/error',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 4
+  },
+  level: 'warn',
+  message: 'HTTP POST /error',
+  timestamp: '2023-07-20T17:53:07.577Z'
+}
+{
+  meta: {
+    req: {
+      url: '/error',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '47',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/error',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 3
+  },
+  level: 'warn',
+  message: 'HTTP POST /error',
+  timestamp: '2023-07-20T17:53:23.057Z'
+}
+{
+  meta: {
+    req: {
+      url: '/error',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '47',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/error',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 5
+  },
+  level: 'warn',
+  message: 'HTTP POST /error',
+  timestamp: '2023-07-20T17:54:18.095Z'
+}
+{
+  meta: {
+    req: {
+      url: '/error',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '47',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/error',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 2
+  },
+  level: 'warn',
+  message: 'HTTP POST /error',
+  timestamp: '2023-07-20T17:54:20.161Z'
+}
+{
+  meta: {
+    req: {
+      url: '/error',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '47',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/error',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 1
+  },
+  level: 'warn',
+  message: 'HTTP POST /error',
+  timestamp: '2023-07-20T17:54:20.889Z'
+}
+{
+  meta: {
+    req: {
+      url: '/error',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '47',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/error',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 2
+  },
+  level: 'warn',
+  message: 'HTTP POST /error',
+  timestamp: '2023-07-20T17:54:21.068Z'
+}
+{
+  meta: {
+    req: {
+      url: '/error',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '47',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/error',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 2
+  },
+  level: 'warn',
+  message: 'HTTP POST /error',
+  timestamp: '2023-07-20T17:54:21.967Z'
+}
+{
+  meta: {
+    req: {
+      url: '/error',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '47',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/error',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 5
+  },
+  level: 'warn',
+  message: 'HTTP POST /error',
+  timestamp: '2023-07-20T17:54:27.280Z'
+}
+{
+  meta: {
+    req: {
+      url: '/error',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '47',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/error',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 2
+  },
+  level: 'warn',
+  message: 'HTTP POST /error',
+  timestamp: '2023-07-20T17:54:27.456Z'
+}
+{
+  meta: {
+    req: {
+      url: '/errors',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/errors',
+      query: {}
+    },
+    res: { statusCode: 500 },
+    responseTime: 15
+  },
+  level: 'error',
+  message: 'HTTP GET /errors',
+  timestamp: '2023-07-20T17:56:13.410Z'
+}
+{
+  meta: {
+    req: {
+      url: '//writelog',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3ADXNZG7DZRRwd4PU-iGrn6bFxuGkIbsJp.OGf3Vv3xfw6VaAvT81tDPUQovCQKUZkRwlIB63N8xYE',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '54'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '//writelog',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 6
+  },
+  level: 'warn',
+  message: 'HTTP POST //writelog',
+  timestamp: '2023-07-20T18:06:02.102Z'
+}
+{
+  meta: {
+    req: {
+      url: '//writelog',
+      headers: {
+        host: 'localhost:4000',
+        'user-agent': 'insomnia/2023.4.0',
+        cookie: 'connect.sid=s%3AZkvQPjgITAnaNor4KP3HJUpJrC2I0Erk.sbl6JQZnIsNAGVUJ6YJV47HWUT9OWGvv23Igk1UhdwY',
+        'content-type': 'application/json',
+        accept: '*/*',
+        'content-length': '54'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '//writelog',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 1
+  },
+  level: 'warn',
+  message: 'HTTP POST //writelog',
+  timestamp: '2023-07-20T18:06:03.978Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '49',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 35
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T19:45:36.323Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '49',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 43
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-20T19:46:17.432Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '54',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 320
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-21T04:09:13.799Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '1',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 35
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-21T04:13:49.569Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '1',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 28
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-21T04:13:50.479Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '48',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 29
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-21T04:15:19.710Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '49',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 48
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-21T04:15:23.889Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '49',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 6180
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-21T04:22:18.253Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '49',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 29
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-21T04:22:42.093Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '49',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 38
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-21T04:23:31.614Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '49',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 34
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-21T04:23:36.795Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 3
+  },
+  level: 'warn',
+  message: 'HTTP GET /user/login',
+  timestamp: '2023-07-21T04:24:01.556Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 1
+  },
+  level: 'warn',
+  message: 'HTTP GET /user/login',
+  timestamp: '2023-07-21T04:24:38.132Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 2
+  },
+  level: 'warn',
+  message: 'HTTP GET /user/login',
+  timestamp: '2023-07-21T04:25:15.202Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 3
+  },
+  level: 'warn',
+  message: 'HTTP GET /user/login',
+  timestamp: '2023-07-21T04:25:39.305Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 2
+  },
+  level: 'warn',
+  message: 'HTTP GET /user/login',
+  timestamp: '2023-07-21T04:25:46.460Z'
+}
+{
+  meta: {
+    req: {
+      url: '/products',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '47',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/products',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 0
+  },
+  level: 'warn',
+  message: 'HTTP POST /products',
+  timestamp: '2023-07-21T04:38:40.625Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 2
+  },
+  level: 'warn',
+  message: 'HTTP GET /user/login',
+  timestamp: '2023-07-21T05:17:33.427Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '48',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 33
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-21T05:48:51.728Z'
+}
+{
+  meta: {
+    req: {
+      url: '/products3',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/products3',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 1
+  },
+  level: 'warn',
+  message: 'HTTP GET /products3',
+  timestamp: '2023-07-21T06:40:56.967Z'
+}
+{
+  meta: {
+    req: {
+      url: '/productskh',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/productskh',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 4
+  },
+  level: 'warn',
+  message: 'HTTP GET /productskh',
+  timestamp: '2023-07-21T06:42:28.063Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 1
+  },
+  level: 'warn',
+  message: 'HTTP GET /user/login',
+  timestamp: '2023-07-21T06:42:42.706Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '49',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 31
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-21T06:43:01.009Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '50',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 29
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login',
+  timestamp: '2023-07-21T06:43:03.369Z'
+}
+{
+  meta: {
+    req: {
+      url: '/user/login2',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'content-length': '50',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/user/login2',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 1
+  },
+  level: 'warn',
+  message: 'HTTP POST /user/login2',
+  timestamp: '2023-07-21T06:43:05.975Z'
+}
+{
+  meta: {
+    req: {
+      url: '/productsds',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/productsds',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 1
+  },
+  level: 'warn',
+  message: 'HTTP GET /productsds',
+  timestamp: '2023-07-21T07:04:35.382Z'
+}
+{
+  meta: {
+    req: {
+      url: '/productsds',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/productsds',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 1
+  },
+  level: 'warn',
+  message: 'HTTP GET /productsds',
+  timestamp: '2023-07-21T07:04:42.921Z'
+}
+{
+  meta: {
+    req: {
+      url: '/products',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7',
+        'if-none-match': 'W/"13d-XPU3wcrEOsCuKms2DVFIaRMebS8"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/products',
+      query: {}
+    },
+    res: { statusCode: 500 },
+    responseTime: 38
+  },
+  level: 'error',
+  message: 'HTTP GET /products',
+  timestamp: '2023-07-21T07:12:13.144Z'
+}
+{
+  meta: {
+    req: {
+      url: '/products',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/products',
+      query: {}
+    },
+    res: { statusCode: 500 },
+    responseTime: 4
+  },
+  level: 'error',
+  message: 'HTTP GET /products',
+  timestamp: '2023-07-21T07:12:46.058Z'
+}
+{
+  meta: {
+    req: {
+      url: '/products',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/products',
+      query: {}
+    },
+    res: { statusCode: 500 },
+    responseTime: 4
+  },
+  level: 'error',
+  message: 'HTTP GET /products',
+  timestamp: '2023-07-21T07:12:46.818Z'
+}
+{
+  meta: {
+    req: {
+      url: '/products',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/products',
+      query: {}
+    },
+    res: { statusCode: 500 },
+    responseTime: 3
+  },
+  level: 'error',
+  message: 'HTTP GET /products',
+  timestamp: '2023-07-21T07:12:46.962Z'
+}
+{
+  meta: {
+    req: {
+      url: '/products',
+      headers: {
+        host: 'localhost:4000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        accept: 'application/json, text/plain, */*',
+        dnt: '1',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en,en-US;q=0.9,ro;q=0.8,fr;q=0.7'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/products',
+      query: {}
+    },
+    res: { statusCode: 500 },
+    responseTime: 6
+  },
+  level: 'error',
+  message: 'HTTP GET /products',
+  timestamp: '2023-07-21T07:12:47.076Z'
+}

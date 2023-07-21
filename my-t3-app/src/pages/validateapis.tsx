@@ -45,6 +45,7 @@ export default function ValidateApis() {
 
   const handlePost = async () => {
     const start = Date.now();
+
     try {
       JSON.parse(textAreaValue);
     } catch (e) {
