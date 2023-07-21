@@ -1,3 +1,3 @@
-# Day 6&7 Neobyte
+# Day 6&7&8 Neobyte
 
-Go to [day7](https://github.com/incolorate/Internship-Neobyte/tree/Day7)
+Go to [day8](https://github.com/incolorate/Internship-Neobyte/tree/Day8)
