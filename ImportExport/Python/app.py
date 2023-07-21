@@ -3,7 +3,7 @@ import csv
 import time
 
 # Connect to db/define collection name
-mongo_uri = "mongodb+srv://incolorate:zWlXI0rS9iGVyT55@neobyteday1.zsgcc2w.mongodb.net/?retryWrites=true&w=majority"
+mongo_uri = ""
 client = MongoClient(mongo_uri)
 db = client["neobyteday4"]
 collection = db["Import"]
