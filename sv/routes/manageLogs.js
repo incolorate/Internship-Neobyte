@@ -17,10 +17,7 @@ router.post("/writelog", async (req, res) => {
 
   console.log(requestValues);
 
-  fs.appendFile(
-    "newLog.log",
-    requestValues + "ms " + req.method + " " + req.originalUrl + "\n"
-  );
+  fs.appendFile("newLog.log", requestValues.join(" ") + "ms " + "\n");
 
   return res.json("Successfully exported the data");
 });

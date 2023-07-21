@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Layout from "~/components/Layout";
 import axios from "axios";
+import { set } from "zod";
 
 export default function ValidateApis() {
   const [textAreaValue, setTextAreaValue] = useState("");
@@ -26,6 +27,8 @@ export default function ValidateApis() {
       .catch(function (error) {
         errorData = error.response;
       });
+    console.log(data);
+    console.log(errorData);
 
     const end = Date.now();
     setResponseTime(end - start);
@@ -35,13 +38,19 @@ export default function ValidateApis() {
       statusText: data?.statusText || errorData?.statusText,
       responseTime,
       data: data?.data || "Cannot GET",
+      url: `Access link ${accessLink}`,
     });
     await axios.post("http://localhost:4000/writelog", response);
   };
 
   const handlePost = async () => {
     const start = Date.now();
-
+    try {
+      JSON.parse(textAreaValue);
+    } catch (e) {
+      setResponse({ data: "Invalid JSON" });
+      return false;
+    }
     //axios expects an object
 
     let data;
