@@ -8,7 +8,7 @@ $ cd Python
 $ python3 -m pip install pymongo
 ```
 * Provide a MONGODB connection URI
-*Make sure you are using autopep8 (https://pypi.org/project/autopep8/)[autopep8]*
+*Make sure you are using [autopep8](https://pypi.org/project/autopep8/)*
 ```bash
 $ python app.py
 ```
