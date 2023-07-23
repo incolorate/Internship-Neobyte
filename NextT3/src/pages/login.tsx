@@ -27,18 +27,19 @@ export default function SignInForm() {
   const login = api.example.handleLogin.useMutation();
   const validateCode = api.example.codeVerification.useMutation();
 
-  const handleFormChange = (e) => {
+  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserForm({ ...userFrom, [e.target.name]: e.target.value });
   };
 
-  const handleUserValidationCode = (e) => {
+  const handleUserValidationCode = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserValidationCode(e.target.value);
   };
 
   // Validation logic
-  const handleValidationSubmit = async (e) => {
+  const handleValidationSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
     e.preventDefault();
-
     const sendDate = Date.now();
     try {
       const serverValidation = await validateCode.mutateAsync({
@@ -68,16 +69,13 @@ export default function SignInForm() {
           /*Investigate why the login hasn't completed */
           console.log(result);
         }
-      } catch (err: any) {
-        console.error("error", err.errors[0].longMessage);
-      }
+      } catch (err: any) {}
     }
   };
 
   // Login validation
-  const handleFormSubmit = async (e) => {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     await login
       .mutateAsync({
         email: userFrom.email,
@@ -95,7 +93,7 @@ export default function SignInForm() {
 
   // Get official validation code
   useEffect(() => {
-    setValidationCode(login.data);
+    setValidationCode(login.data || "");
   }, [login]);
 
   // Countdown

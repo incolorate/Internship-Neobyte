@@ -1,10 +1,18 @@
+type LoginValidationProps = {
+  handleUserValidationCode: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleValidationSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  handleSendNewCode: (e: React.FormEvent<HTMLFormElement>) => void;
+  invalidCode: boolean;
+  countDown: number;
+};
+
 export default function LoginValidation({
   handleUserValidationCode,
   handleValidationSubmit,
   handleSendNewCode,
   invalidCode,
   countDown,
-}) {
+}: LoginValidationProps) {
   return (
     <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
       <form className="space-y-6" onSubmit={handleValidationSubmit}>
@@ -13,7 +21,10 @@ export default function LoginValidation({
             {countDown > 0 ? (
               `Code available for: ${countDown}`
             ) : (
-              <button className="text-blue-500" onClick={handleSendNewCode}>
+              <button
+                className="text-blue-500"
+                onClick={() => handleSendNewCode}
+              >
                 Send new code
               </button>
             )}

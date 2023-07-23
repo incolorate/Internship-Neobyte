@@ -1,10 +1,21 @@
 import Link from "next/dist/client/link";
 
+type LoginComponentProps = {
+  handleFormChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleFormSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  loginData: {
+    data: any; // The type of data returned by the login mutation, you can replace 'any' with the actual type if you have it available
+    isLoading: boolean;
+    isError: boolean;
+    error?: { message: string }; // Add the error property with an optional error object
+  };
+};
+
 export default function LoginComponent({
   handleFormChange,
   handleFormSubmit,
   loginData,
-}) {
+}: LoginComponentProps) {
   return (
     <>
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
@@ -50,7 +61,7 @@ export default function LoginComponent({
               />
             </div>
             {loginData.error && (
-              <p className="text-red-500">{loginData?.error.message}</p>
+              <p className="text-red-500">{loginData.error.message || ""}</p>
             )}
           </div>
           <div>
