@@ -57,7 +57,7 @@ export default function SignUp() {
       }
       if (completeSignUp.status === "complete") {
         await setActive({ session: completeSignUp.createdSessionId });
-        register.mutate({
+        await register.mutateAsync({
           email: userForm?.email,
           password: userForm?.password,
         });
@@ -67,7 +67,7 @@ export default function SignUp() {
       console.error(JSON.stringify(err, null, 2));
     }
   };
-  console.log(manageError);
+
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">

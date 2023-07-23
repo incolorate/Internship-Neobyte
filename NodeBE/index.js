@@ -39,6 +39,9 @@ app.get("/error", (req, res) => {
 app.get("/errors", (req, res) => {
   return res.status(500).json("dsa");
 });
+app.get("/errors2", (req, res) => {
+  return res.status(300).json("dsa");
+});
 app.use("/", productRoutes);
 app.use("/", manageUsers);
 
