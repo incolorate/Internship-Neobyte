@@ -1,4 +1,4 @@
-# Day 5->9 Neobyte
+# Day 6->9 Neobyte
 
 ### Requests:
 
@@ -21,8 +21,11 @@ Project requirements:
 **Example:**
 **[2023-07-21 12:08:02] 200 API is up, response time 282 ms**
 
-Result: ![image](https://github.com/incolorate/Internship-Neobyte/assets/88613908/45f156e3-9455-4093-a3b3-3977dcd8ae18)
+Solved in: [**NextT3**](https://github.com/incolorate/Internship-Neobyte/tree/Day8/NextT3)
+Result: ![task 8 picture](https://github.com/incolorate/Internship-Neobyte/assets/88613908/45f156e3-9455-4093-a3b3-3977dcd8ae18)
 
 #### Day 6/7. Two-factor Auth -> User Registration -> User login
+Solved in: [**NextT3**](https://github.com/incolorate/Internship-Neobyte/tree/Day8/NextT3)
+Result: ![task 6 and 7 picture](https://github.com/incolorate/Internship-Neobyte/assets/88613908/bc510513-f400-42fd-a63a-6bf92a6c14af)
 
 ## Instalation steps in each document
