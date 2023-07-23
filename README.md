@@ -22,13 +22,12 @@ Project requirements:
 **[2023-07-21 12:08:02] 200 API is up, response time 282 ms**
 
 Solved in: [**NextT3**](https://github.com/incolorate/Internship-Neobyte/tree/Day8/NextT3)
-Result:
+
 ![task 8 picture](https://github.com/incolorate/Internship-Neobyte/assets/88613908/45f156e3-9455-4093-a3b3-3977dcd8ae18)
 
 #### Day 6/7. Two-factor Auth -> User Registration -> User login
 Solved in: [**NextT3**](https://github.com/incolorate/Internship-Neobyte/tree/Day8/NextT3)
 
-Result:
 !![pic of task 6 and 7](https://github.com/incolorate/Internship-Neobyte/assets/88613908/8180bd99-7f20-4942-969f-d90987d304ba)
 
 # Day 5 Neobyte
@@ -60,6 +59,14 @@ Solved in: [**NodeBE**](https://github.com/incolorate/Internship-Neobyte/tree/Da
 # Day 1&2 Neobyte
 ### Requests:
 
+## Day 2. 
+* Requests:
+* Identify best way to secure the API	
+* Log all the API calls
+* Log all possible issues. 
+Solved in: [**NodeBE**](https://github.com/incolorate/Internship-Neobyte/tree/Day8/NodeBE)
+
+
 #### Day 1. Basic REST API
 * Create a simple API which returns products in json format 	
 * Implement in 1-3 languages, like: nodejs, php, python, go 
@@ -72,12 +79,6 @@ Product Object:
 Solved in: [**NodeBE** (serving data from mongodb)](https://github.com/incolorate/Internship-Neobyte/tree/Day8/NodeBE)
 Solved in [**PythonDay1BE** (serving data from local db)](https://github.com/incolorate/Internship-Neobyte/tree/Day8/PythonDay1BE)
 
-## Day 2. 
-* Requests:
-* Identify best way to secure the API	
-* Log all the API calls
-* Log all possible issues. 
-Solved in: [**NodeBE**](https://github.com/incolorate/Internship-Neobyte/tree/Day8/NodeBE)
 
 
 ## Installation steps in each document
