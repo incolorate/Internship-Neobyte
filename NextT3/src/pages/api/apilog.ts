@@ -1,8 +1,6 @@
-import express from "express";
 import fs from "fs-extra";
-const router = express.Router();
 
-router.post("/writelog", async (req, res) => {
+export default function apilog(req, res) {
   const requestData = req.body;
 
   const requestDataKeys = Object.keys(requestData);
@@ -20,6 +18,4 @@ router.post("/writelog", async (req, res) => {
   fs.appendFile("newLog.log", requestValues.join(" ") + "ms " + "\n");
 
   return res.json("Successfully exported the data");
-});
-
-export default router;
+}

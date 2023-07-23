@@ -7,7 +7,6 @@ import logger from "./middlewares/loggerMid.js";
 import expressWinston from "express-winston";
 import "dotenv/config";
 import cors from "cors";
-import manageLogs from "./routes/manageLogs.js";
 
 // Initialize app
 const app = express();
@@ -42,7 +41,6 @@ app.get("/errors", (req, res) => {
 });
 app.use("/", productRoutes);
 app.use("/", manageUsers);
-app.use("/", manageLogs);
 
 // Connect to db
 mongoose
