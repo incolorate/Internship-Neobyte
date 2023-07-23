@@ -13,6 +13,7 @@ export default function SignUp() {
   const { isLoaded, signUp, setActive } = useSignUp();
   const [pendingVerification, setPendingVerification] = useState(false);
   const [validationCode, setValidationCode] = useState<number>();
+  const [manageError, setManageError] = useState();
 
   const router = useRouter();
   const register = api.example.register.useMutation();
@@ -29,9 +30,11 @@ export default function SignUp() {
       });
       await signUp.prepareEmailAddressVerification({ strategy: "email_code" });
       setPendingVerification(true);
-    } catch (error) {
-      return error;
+    } catch (err) {
+      setManageError(err.errors[0].message);
+      return err;
     }
+    setManageError("");
   };
 
   const onPressVerify = async (e) => {
@@ -40,9 +43,13 @@ export default function SignUp() {
       return;
     }
     try {
-      const completeSignUp = await signUp.attemptEmailAddressVerification({
-        code: validationCode,
-      });
+      const completeSignUp = await signUp
+        .attemptEmailAddressVerification({
+          code: validationCode,
+        })
+        .catch((err) => {
+          setManageError(err.errors[0].longMessage);
+        });
       if (completeSignUp.status !== "complete") {
         /*  investigate the response, to see if there was an error
          or if the user needs to complete more steps.*/
@@ -60,7 +67,7 @@ export default function SignUp() {
       console.error(JSON.stringify(err, null, 2));
     }
   };
-
+  console.log(manageError);
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -123,6 +130,7 @@ export default function SignUp() {
                 </div>
               </div>
               <div>
+                {manageError && <p className="text-red-500">{manageError}</p>}
                 <button
                   type="submit"
                   className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
@@ -144,6 +152,7 @@ export default function SignUp() {
               <button className="mt-8 flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                 Verify code
               </button>
+              {manageError && <p className="text-red-500">{manageError}</p>}
             </form>
           )}
         </div>

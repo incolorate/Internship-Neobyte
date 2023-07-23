@@ -43,7 +43,6 @@ export default function ValidateApis() {
 
   const handlePost = async () => {
     const start = Date.now();
-
     try {
       JSON.parse(textAreaValue);
     } catch (e) {
@@ -52,8 +51,8 @@ export default function ValidateApis() {
     }
     //axios expects an object
 
-    let data;
-    let errorData;
+    let data: AxiosResponse;
+    let errorData: AxiosError;
     await axios
       .post(accessLink, JSON.parse(textAreaValue))
       .then(function (response) {
@@ -65,14 +64,15 @@ export default function ValidateApis() {
 
     const end = Date.now();
     setResponseTime(end - start);
+
     setResponse({
       currentDate: new Date().toLocaleString(),
       status: data?.status || errorData?.status,
       statusText: data?.statusText || errorData?.statusText,
       responseTime,
-      data: data?.data || errorData?.data || "Cannot POST",
+      data: data?.data || "Cannot POST",
     });
-    await axios.post("http://localhost:4000/writelog", response);
+    await axios.post("/api/apilog", response);
   };
 
   return (
