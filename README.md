@@ -26,6 +26,7 @@ Result: ![task 8 picture](https://github.com/incolorate/Internship-Neobyte/asset
 
 #### Day 6/7. Two-factor Auth -> User Registration -> User login
 Solved in: [**NextT3**](https://github.com/incolorate/Internship-Neobyte/tree/Day8/NextT3)
-Result: ![task 6 and 7 picture](https://github.com/incolorate/Internship-Neobyte/assets/88613908/bc510513-f400-42fd-a63a-6bf92a6c14af)
+Result: !![pic of task 6 and 7](https://github.com/incolorate/Internship-Neobyte/assets/88613908/8180bd99-7f20-4942-969f-d90987d304ba)
+
 
 ## Instalation steps in each document
