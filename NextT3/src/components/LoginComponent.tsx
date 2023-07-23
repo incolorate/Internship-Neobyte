@@ -1,6 +1,10 @@
 import Link from "next/dist/client/link";
 
-export default function LoginComponent({ handleFormChange, handleFormSubmit }) {
+export default function LoginComponent({
+  handleFormChange,
+  handleFormSubmit,
+  loginData,
+}) {
   return (
     <>
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
@@ -45,6 +49,9 @@ export default function LoginComponent({ handleFormChange, handleFormSubmit }) {
                 onChange={(e) => handleFormChange(e)}
               />
             </div>
+            {loginData.error && (
+              <p className="text-red-500">{loginData?.error.message}</p>
+            )}
           </div>
           <div>
             <button
