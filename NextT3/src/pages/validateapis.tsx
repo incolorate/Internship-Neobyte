@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Layout from "~/components/Layout";
-import axios from "axios";
-import { set } from "zod";
+import axios, { AxiosError, AxiosResponse } from "axios";
 
 export default function ValidateApis() {
   const [textAreaValue, setTextAreaValue] = useState("");
@@ -9,16 +8,17 @@ export default function ValidateApis() {
   const [requestType, setRequestType] = useState("get");
   // Store data from request
   const [response, setResponse] = useState<object>({});
-  const [responseTime, setResponseTime] = useState("");
+  const [responseTime, setResponseTime] = useState<number>();
 
   const handleGet = async () => {
+    // Data to json -> object this way i did not encounter any problems with sending data
     const dataToJSON = JSON.stringify(textAreaValue);
     const dataToSend = JSON.parse(dataToJSON);
 
     const start = Date.now();
 
-    let data;
-    let errorData;
+    let data: AxiosResponse;
+    let errorData: AxiosError;
     await axios
       .get(accessLink, dataToSend)
       .then(function (response) {
@@ -27,8 +27,6 @@ export default function ValidateApis() {
       .catch(function (error) {
         errorData = error.response;
       });
-    console.log(data);
-    console.log(errorData);
 
     const end = Date.now();
     setResponseTime(end - start);
@@ -40,7 +38,7 @@ export default function ValidateApis() {
       data: data?.data || "Cannot GET",
       url: `Access link ${accessLink}`,
     });
-    await axios.post("http://localhost:4000/writelog", response);
+    await axios.post("/api/apilog", response);
   };
 
   const handlePost = async () => {
