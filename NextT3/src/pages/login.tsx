@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
 import { useSignIn } from "@clerk/nextjs";
 import { useRouter } from "next/router";
-import { useUser } from "@clerk/nextjs";
 import Link from "next/dist/client/link";
 import { api } from "~/utils/api";
 import LoginComponent from "~/components/LoginComponent";
 import LoginValidation from "~/components/LoginValidation";
-import { error } from "console";
 
 type User = {
   email: string;
@@ -21,9 +19,9 @@ export default function SignInForm() {
   const [userValidationCode, setUserValidationCode] = useState<string>("");
   const [invalidCode, setInvalidCode] = useState<boolean>(false);
   const [counter, setCounter] = useState<number>(60);
+  const [loginError, setLoginError] = useState<string>("");
 
   const { isLoaded, signIn, setActive } = useSignIn();
-
   const router = useRouter();
 
   const login = api.example.handleLogin.useMutation();
@@ -63,7 +61,6 @@ export default function SignInForm() {
           password: userFrom.password,
         });
         if (result.status === "complete") {
-          console.log(result);
           await setActive({ session: result.createdSessionId });
           setInvalidCode(false);
           router.push("/");
@@ -80,16 +77,20 @@ export default function SignInForm() {
   // Login validation
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    try {
-      login.mutate({
+
+    await login
+      .mutateAsync({
         email: userFrom.email,
         password: userFrom.password,
+      })
+      .then((res) => {
+        setPendingVerification(true);
+        setCounter(60);
+      })
+      .catch((err) => {
+        // Do nothing
+        return;
       });
-    } catch (error) {
-      console.log(error);
-    }
-    setPendingVerification(true);
-    setCounter(60);
   };
 
   // Get official validation code
@@ -103,6 +104,7 @@ export default function SignInForm() {
       counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
     }
   }, [counter, pendingVerification]);
+
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -117,10 +119,13 @@ export default function SignInForm() {
           </h2>
         </div>
         {!pendingVerification && (
-          <LoginComponent
-            handleFormChange={handleFormChange}
-            handleFormSubmit={handleFormSubmit}
-          />
+          <div>
+            <LoginComponent
+              handleFormChange={handleFormChange}
+              handleFormSubmit={handleFormSubmit}
+              loginData={login}
+            />
+          </div>
         )}
         {pendingVerification && (
           <LoginValidation
