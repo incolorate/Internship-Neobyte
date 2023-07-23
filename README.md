@@ -21,7 +21,7 @@ Project requirements:
 **Example:**
 **[2023-07-21 12:08:02] 200 API is up, response time 282 ms**
 
-Result: ![day 8 project](https://github.com/incolorate/Internship-Neobyte/assets/88613908/154a1e83-38d5-44b2-850c-f2323f5fbe6e)
+Result: ![image](https://github.com/incolorate/Internship-Neobyte/assets/88613908/45f156e3-9455-4093-a3b3-3977dcd8ae18)
 
 #### Day 6/7. Two-factor Auth -> User Registration -> User login
 
