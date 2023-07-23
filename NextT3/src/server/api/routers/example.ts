@@ -79,7 +79,7 @@ export const exampleRouter = createTRPCRouter({
       if (!user) {
         throw new TRPCError({
           code: "BAD_REQUEST",
-          message: "Email not found in db",
+          message: "Password or email is incorrect",
         });
       }
 
@@ -92,7 +92,7 @@ export const exampleRouter = createTRPCRouter({
       if (!checkMatch) {
         throw new TRPCError({
           code: "BAD_REQUEST",
-          message: "Email not found in db",
+          message: "Password or email is incorrect",
         });
       }
 

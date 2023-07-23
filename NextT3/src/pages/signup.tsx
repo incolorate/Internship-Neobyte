@@ -61,7 +61,7 @@ export default function SignUp() {
           email: userForm?.email,
           password: userForm?.password,
         });
-        router.push("/");
+        await router.push("/");
       }
     } catch (err: any) {
       console.error(JSON.stringify(err, null, 2));
