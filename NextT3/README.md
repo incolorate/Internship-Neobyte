@@ -22,7 +22,10 @@ $ cd NEXTT3
 $ npm install
 ```
 * rename the .env.example file and provide the keys
+
 **Note: When using mongodb provide a key in the format presented [here](https://www.prisma.io/docs/concepts/database-connectors/mongodb)**
+
+**If you are using a new DB, don't forget to [Prototype your schema](https://www.prisma.io/docs/concepts/components/prisma-migrate/db-push)
 
 ```bash
 $ npm run dev
