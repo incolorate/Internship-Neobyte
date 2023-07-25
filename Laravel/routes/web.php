@@ -16,10 +16,10 @@ use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/products', function () {
-    return view('products');
+    return view('index'); 
 });
 
 Route::get("/products/create",  function () {

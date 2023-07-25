@@ -3,10 +3,10 @@
 @section("title", "Add product")
 
 @section("content")
-  <form method="POST" action="{{ route('product.store') }}">
+  <form method="POST" action="{{ route('product.store') }}" class="container-sm">
     @method('POST')
     @csrf
-    <div class="form-group">
+    <div class="form-group ">
       <label for="name">Name</label>
       <input type="text" class="form-control" id="name" name="name" placeholder="Enter product name">
       @error('name')

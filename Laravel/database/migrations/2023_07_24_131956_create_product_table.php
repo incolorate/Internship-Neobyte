@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string("name");
-            //  ai in total 10 numere in total inclus zecimale 
             $table->decimal("price", 10, 2);
             $table->integer("stock")->unsigned();
             
