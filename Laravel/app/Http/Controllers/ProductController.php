@@ -67,17 +67,14 @@ class ProductController extends Controller
 
     public function destroy($id)
     {
-        if(Product::where("id", $id)->exists()) {
-            $product = Product::find($id);
-            $product->delete();
-            return response()->json([
-                "message" => "Product with the ID {$id} was deleted"
-
-            ]);
-        } else {
-            return response()->json([
-                "message" => "The product with the ID {$id} does not exist"
-            ]);
+        $product = Product::find($id);
+          
+        if(!$product){
+            return response()->json(["message"=>"Product not found"], 404);
         }
+
+        $product->delete();
+        
+        return redirect()->route("product.index");
     }
 }
