@@ -8,21 +8,21 @@
     @csrf
     <div class="form-group ">
       <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" name="name" placeholder="Enter product name">
+      <input type="text" class="form-control" id="name" name="name" placeholder="Enter product name" value="{{old("name")}}">
       @error('name')
         <p class="text-danger">{{ $message }}</p>
       @enderror
     </div>
     <div class="form-group">
       <label for="price">Price</label>
-      <input type="number" class="form-control" id="price" name="price" placeholder="Enter product price">
+      <input type="number" class="form-control" id="price" name="price" placeholder="Enter product price" value="{{old("price")}}">
       @error('price')
         <p class="text-danger">{{ $message }}</p>
       @enderror
     </div>
     <div class="form-group">
       <label for="stock">Stock</label>
-      <input type="number" class="form-control" id="stock" name="stock" placeholder="Stock">
+      <input type="number" class="form-control" id="stock" name="stock" placeholder="Stock" value="{{old("stock")}}">
       @error('stock')
         <p class="text-danger">{{ $message }}</p>
       @enderror
