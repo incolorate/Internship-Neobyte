@@ -3,7 +3,7 @@
 @section("title", "Add product")
 
 @section("content")
-  <form method="POST" action="{{ route('product.update') }}" class="container-sm">
+  <form method="POST" action="{{ route('product.update', ["id" => $product->id]) }}" class="container-sm">
     @method('PUT')
     @csrf
     <div class="form-group">
@@ -15,7 +15,7 @@
     </div>
     <div class="form-group">
       <label for="price">Price</label>
-      <input type="number" class="form-control" id="price" name="price" placeholder="Enter product price" value="{{product->value}}">
+      <input type="number" class="form-control" id="price" name="price" placeholder="Enter product price" value="{{$product->price}}">
       @error('price')
         <p class="text-danger">{{ $message }}</p>
       @enderror
