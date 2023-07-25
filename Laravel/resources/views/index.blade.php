@@ -24,9 +24,15 @@
                 <td>{{ $product->name }}</td>
                 <td>{{ $product->price }}</td>
                 <td>{{ $product->stock }}</td>
-                <td>
-                  <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                  <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                <td class="d-flex">
+                  <form method="POST" action="{{route("product.destroy", ["id" => $product->id])}}">
+                    @csrf
+                    @method("DELETE")
+                    <button  type="submit" class="delete  btn btn-link" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>
+                  </form>
+                  <form method="PSOT" action="{{ route("product.edit", ["id" => $product->id]) }}">
+                    <button  class="edit btn btn-link" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></button>
+                  </form>
               </td>
             </tr>
         @endforeach

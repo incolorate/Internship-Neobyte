@@ -23,8 +23,10 @@ Route::get("/products/create",  function () {
     return view('create');
 });
 Route::get("/products/{id}/edit", [ProductController::class, "edit"])->name('product.edit');
+Route::delete("/products/{id}", [ProductController::class, "destroy"])->name('product.destroy');
+
 Route::get("/products/{id}", [ProductController::class, "show"]);
 Route::put("/products/{id}", [ProductController::class, "update"])->name('product.update');
-Route::delete("/products/{id}", [ProductController::class, "destroy"]);
+Route::delete("/products/{id}", [ProductController::class, "destroy"])->name('product.destroy');
 
 Route::post("/products", [ProductController::class, 'store'])->name('product.store');;
