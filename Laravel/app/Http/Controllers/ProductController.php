@@ -56,7 +56,7 @@ class ProductController extends Controller
         }
 
         $data = $request->validate([
-            "name" => "required|unique:products|max:255|min:3|",
+            "name" => "required||max:255|min:3|",
             "price" => "required|numeric|between:0,99999.99",
             "stock" => "required|numeric|between:0,99999"
         ]);
