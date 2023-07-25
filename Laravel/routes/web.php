@@ -18,15 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::get('/products', function () {
-    $productController = new ProductController();
-    $products = $productController->index();
-    return view('index', ['products' => $products]);
-})->name('product.index');
-
-
+Route::get("/products", [ProductController::class, 'index'])->name('product.index');
+Route::get("/products/{id}", [ProductController::class, "show"]);
+Route::put("/products/{id}", [ProductController::class, "update"]);
+Route::delete("/products/{id}", [ProductController::class, "destroy"]);
 Route::get("/products/create",  function () {
     return view('create');
 });
-
 Route::post("/products", [ProductController::class, 'store'])->name('product.store');;

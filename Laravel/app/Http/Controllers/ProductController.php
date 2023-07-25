@@ -12,7 +12,7 @@ class ProductController extends Controller
     {
         $products = Product::all();
             
-     return $products;
+     return view('index', compact('products'));
     }
 
     // create new product
