@@ -26,7 +26,7 @@ class ProductController extends Controller
 
         $product = Product::create($data);
 
-        return response()->json($product);
+        return redirect()->route("product.index")->with("success", "Product created successfully");
     }
     // find product by id
     public function show($id)

@@ -5,7 +5,9 @@
 @section("content")
     <div>
         <h1>Products</h1>
-        <button type="button" class="btn btn-primary rounded-pill " >+Add product</button>    
+       
+          <button type="submit" class="btn btn-primary rounded-pill"><a href="{{route("product.create")}}" class="text-white">+Add product</a></button>    
+       
     </div>
     <table class="table mt-2">
         <thead>

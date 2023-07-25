@@ -15,7 +15,7 @@
     </div>
     <div class="form-group">
       <label for="price">Price</label>
-      <input type="number" class="form-control" id="price" name="price" placeholder="Enter product price" value="{{old("price")}}">
+      <input step="any" type="number" class="form-control" id="price" name="price" placeholder="Enter product price" value="{{old("price")}}">
       @error('price')
         <p class="text-danger">{{ $message }}</p>
       @enderror
@@ -27,7 +27,6 @@
         <p class="text-danger">{{ $message }}</p>
       @enderror
     </div>
-
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 @endsection
