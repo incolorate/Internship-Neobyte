@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
 @extends("layouts.app")
 
 @section("content")
@@ -12,6 +14,7 @@
             <th scope="col">Name</th>
             <th scope="col">Price</th>
             <th scope="col">Stock</th>
+            <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -21,6 +24,10 @@
                 <td>{{ $product->name }}</td>
                 <td>{{ $product->price }}</td>
                 <td>{{ $product->stock }}</td>
+                <td>
+                  <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                  <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+              </td>
             </tr>
         @endforeach
         </tbody>
