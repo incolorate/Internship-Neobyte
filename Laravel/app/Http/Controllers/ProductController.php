@@ -17,11 +17,14 @@ class ProductController extends Controller
     // create new product
     public function store(Request $request)
     {
-        $product = new Product();
-        $product->name = $request->name;
-        $product->price = $request->price;
-        $product->stock = $request->stock;
-        $product->save();
+        $data = $request->validate([
+            "name" => "required|unique:products|max:255|min:3|",
+            "price" => "required|numeric|between:0,99999.99",
+            "stock" => "required|numeric|between:0,99999"
+        ]);
+
+        $product = Product::create($data);
+
         return response()->json($product);
     }
     // find product by id
