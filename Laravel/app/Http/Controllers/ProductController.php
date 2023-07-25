@@ -3,21 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Products;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
     // return all products
     public function index()
     {
-        $products = Products::all();
+        $products = Product::all();
         return response()->json($products);
     }
 
     // create new product
     public function store(Request $request)
     {
-        $product = new Products();
+        $product = new Product();
         $product->name = $request->name;
         $product->price = $request->price;
         $product->stock = $request->stock;
@@ -27,7 +27,7 @@ class ProductController extends Controller
     // find product by id
     public function show($id)
     {
-        $product = Products::find($id);
+        $product = Product::find($id);
         if($product){
             return response()->json($product);
         }
@@ -38,8 +38,8 @@ class ProductController extends Controller
     // intreaba pe sandor de naming convention update vs edit
     public function update(Request $request, $id)
     {
-        if (Products::where("id", $id)->exists()) {
-            $product = Products::find($id);
+        if (Product::where("id", $id)->exists()) {
+            $product = Product::find($id);
             $product->name = is_null($request->name) ? $product->name : $request->name;
             $product->price = is_null($request->price) ? $product->price : $request->price;
             $product->stock = is_null($request->stock) ? $product->stock : $request->stock;
@@ -56,8 +56,8 @@ class ProductController extends Controller
 
     public function destroy($id)
     {
-        if(Products::where("id", $id)->exists()) {
-            $product = Products::find($id);
+        if(Product::where("id", $id)->exists()) {
+            $product = Product::find($id);
             $product->delete();
             return response()->json([
                 "message" => "Product with the ID {$id} was deleted"
