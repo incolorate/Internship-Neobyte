@@ -19,9 +19,11 @@ Route::get('/', function () {
 });
 
 Route::get('/products', function () {
-    return 'Hello World';
+    return view('products');
 });
 
 Route::get("/products/create",  function () {
     return view('create');
 });
+
+Route::post("/products", [ProductController::class, 'store'])->name('product.store');;
