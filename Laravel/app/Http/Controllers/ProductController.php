@@ -42,20 +42,20 @@ class ProductController extends Controller
     // intreaba pe sandor de naming convention update vs edit
     public function update(Request $request, $id)
     {
-        if (Product::where("id", $id)->exists()) {
-            $product = Product::find($id);
-            $product->name = is_null($request->name) ? $product->name : $request->name;
-            $product->price = is_null($request->price) ? $product->price : $request->price;
-            $product->stock = is_null($request->stock) ? $product->stock : $request->stock;
-            $product->save();
-                return response()->json([
-                    "message"=> "Product with the ID {$id} updated", 
-                ]);
-        } else {
-            return response()->json([
-                "message" => "Product not found."
-            ]);
+        $product = Product::find($id);
+
+        if(!$product){
+            return response()->json(["message"=>"Product not found"], 404);
         }
+
+        $data = $request->validate([
+            "name" => "required|unique:products|max:255|min:3|",
+            "price" => "required|numeric|between:0,99999.99",
+            "stock" => "required|numeric|between:0,99999"
+        ]);
+
+        $product->update($data);
+        return redirect()->route("product.index");
     }
 
     public function destroy($id)
