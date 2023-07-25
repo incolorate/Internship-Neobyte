@@ -10,7 +10,7 @@
     <style>
         /* Custom styles for the sidebar */
         .sidebar {
-            background-color: #343a40; /* Dark gray background color */
+            background-color: #242323; /* Dark gray background color */
             height: 100vh; /* Full height of the viewport */
             padding-top: 15px;
             color: #fff; /* Text color */
@@ -27,11 +27,12 @@
         <div class="row">
             <nav class="col-md-3 sidebar">
                 <ul class="nav flex-column">
+
                     <li class="nav-item">
                         <a class="nav-link active" href="{{route("home")}}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Products</a>
+                        <a class="nav-link" href="{{route("product.index")}}">Products</a>
                     </li>
                 </ul>
             </nav>

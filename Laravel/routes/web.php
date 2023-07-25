@@ -19,8 +19,11 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/products', function () {
-    return view('index'); 
-});
+    $productController = new ProductController();
+    $products = $productController->index();
+    return view('index', ['products' => $products]);
+})->name('product.index');
+
 
 Route::get("/products/create",  function () {
     return view('create');
