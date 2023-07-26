@@ -3,6 +3,11 @@ import { useState } from "react";
 import classNames from "classnames";
 
 export default function AlgoGame() {
+  const [boardHeight, setBoardHeight] = useState(0);
+  const [boardLength, setBoardLength] = useState(0);
+  const [gameBoard, setGameBoard] = useState<object>({});
+  const [dominant, setDominant] = useState(5);
+
   function getOccurrence(array, value) {
     if (!Array.isArray(array)) {
       console.error('The "array" argument must be an array.');
@@ -107,6 +112,96 @@ export default function AlgoGame() {
     }
     return generateBoard(height, length);
   };
+  const handleSliderChange = (e) => {
+    const newValue = parseInt(e.target.value);
+    setDominant(Math.floor(newValue));
+  };
+  console.log(dominant);
+  return (
+    <Layout>
+      <div>
+        <div className="grid grid-cols-2 gap-8">
+          <div className="flex gap-12">
+            <div className="flex-1">
+              <label htmlFor="height" className="block text-xl text-slate-700">
+                Height
+              </label>
+              <input
+                id="height"
+                type="number"
+                placeholder="Height"
+                onChange={(e) => setBoardHeight(e.target.value)}
+                className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+              />
+            </div>
+            <div className="flex-1">
+              <label htmlFor="length" className="block text-xl text-slate-700">
+                Length
+              </label>
+              <input
+                id="length"
+                type="number"
+                placeholder="Length"
+                onChange={(e) => setBoardLength(e.target.value)}
+                className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+              />
+            </div>
+          </div>
 
-  return <Layout></Layout>;
+          <div>
+            <label
+              htmlFor="default-range"
+              className="mb-2  flex justify-between text-sm font-medium text-gray-900 dark:text-white"
+            >
+              <p className="text-xl text-blue-700">Water</p>
+              <p className="text-xl text-zinc-900">Random</p>
+              <p className="text-xl text-yellow-800">Mountain</p>
+            </label>
+            <input
+              id="default-range"
+              type="range"
+              min="1"
+              max="10"
+              value={dominant}
+              onChange={handleSliderChange}
+              className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700"
+            />
+          </div>
+        </div>
+        <div className="mt-24 flex w-full justify-center">
+          <button
+            className="bg-yellow-400 p-4 px-20 text-2xl"
+            onClick={() => generateBoard(boardLength, boardHeight)}
+          >
+            Generate
+          </button>
+        </div>
+        <div className="mt-5 flex  justify-center gap-3">
+          <div>
+            {Object.keys(gameBoard).map((row) => {
+              return (
+                <div className="flex" key={row}>
+                  {gameBoard[row].map((number, index) => {
+                    return (
+                      <div
+                        className={classNames("h-10 w-10", {
+                          "bg-blue-500": number === 0,
+                          "bg-yellow-500": number === 1,
+                          "bg-orange-500": number === 2,
+                          "bg-orange-600": number === 3,
+                          "bg-orange-800": number === 4,
+                          "bg-white": number === 5,
+                        })}
+                        key={index}
+                      ></div>
+                    );
+                  })}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </Layout>
+  );
 }
