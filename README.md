@@ -1,9 +1,22 @@
+# Day12 Generate island 5x5 or n x n
+
+Rules:
+
+- The height difference can be equal, +- 1 ( horizontal + vertical )
+- Always generate new island
+- The island must contain all levels between 0-5 .
+
+Example:
+![example island](https://github.com/incolorate/Internship-Neobyte/assets/88613908/c36c768c-bf94-450a-ad18-69220efe0c10)
+
+Solved in: [**NextT3**](https://github.com/incolorate/Internship-Neobyte/tree/Day12/NextT3)
+
 # Day11 Laravel Sail Crud 2
 
 ### Requests:
 
 Refactor the code from day 10
-Solved in: [**Laravel**](https://github.com/incolorate/Internship-Neobyte/tree/Day11/Laravel)
+Solved in: [**Laravel**](https://github.com/incolorate/Internship-Neobyte/tree/Day12/Laravel)
 
 # Day10 Laravel Sail Crud
 
@@ -24,7 +37,7 @@ To implement CRUD (Products: ID, title, price):
 - https://laravel.com/docs/10.x/migrations
 - https://laravel.com/docs/10.x/eloquent
 
-Solved in: [**Laravel**](https://github.com/incolorate/Internship-Neobyte/tree/Day11/Laravel)
+Solved in: [**Laravel**](https://github.com/incolorate/Internship-Neobyte/tree/Day12/Laravel)
 
 # Day 6->9 Neobyte
 
@@ -49,13 +62,13 @@ Project requirements:
 **Example:**
 **[2023-07-21 12:08:02] 200 API is up, response time 282 ms**
 
-Solved in: [**NextT3**](https://github.com/incolorate/Internship-Neobyte/tree/Day11/NextT3)
+Solved in: [**NextT3**](https://github.com/incolorate/Internship-Neobyte/tree/Day12/NextT3)
 
 ![task 8 picture](https://github.com/incolorate/Internship-Neobyte/assets/88613908/45f156e3-9455-4093-a3b3-3977dcd8ae18)
 
 #### Day 6/7. Two-factor Auth -> User Registration -> User login
 
-Solved in: [**NextT3**](https://github.com/incolorate/Internship-Neobyte/tree/Day11/NextT3)
+Solved in: [**NextT3**](https://github.com/incolorate/Internship-Neobyte/tree/Day12/NextT3)
 
 !![pic of task 6 and 7](https://github.com/incolorate/Internship-Neobyte/assets/88613908/8180bd99-7f20-4942-969f-d90987d304ba)
 
@@ -66,7 +79,7 @@ Solved in: [**NextT3**](https://github.com/incolorate/Internship-Neobyte/tree/Da
 #### Searchbar with data table from DB
 
 - the data uploaded via the script from [day4](https://github.com/incolorate/Internship-Neobyte/tree/Day4)
-  Solved in: [**NextT3**](https://github.com/incolorate/Internship-Neobyte/tree/Day11/NextT3)
+  Solved in: [**NextT3**](https://github.com/incolorate/Internship-Neobyte/tree/Day12/NextT3)
 
 ![image](https://github.com/incolorate/Internship-Neobyte/assets/88613908/df14881b-863c-4a98-9e49-ee6fc9bbce47)
 
@@ -78,7 +91,7 @@ Solved in: [**NextT3**](https://github.com/incolorate/Internship-Neobyte/tree/Da
 
 - Create a script to import a CSV file into database
 - Create a script which will export from database to CSV file
-  Solved in: [**ImportExport**](https://github.com/incolorate/Internship-Neobyte/tree/Day11/ImportExport)
+  Solved in: [**ImportExport**](https://github.com/incolorate/Internship-Neobyte/tree/Day12/ImportExport)
 
 # Day 3 Neobyte
 
@@ -91,7 +104,7 @@ Solved in: [**NextT3**](https://github.com/incolorate/Internship-Neobyte/tree/Da
   check if products.json exists in RAM .. if YES -> send response from RAM, else send from DB ( load into RAM )
   proposed tech: REDIS ...
 - look for other tools like REDIS
-  Solved in: [**NodeBE**](https://github.com/incolorate/Internship-Neobyte/tree/Day11/NodeBE)
+  Solved in: [**NodeBE**](https://github.com/incolorate/Internship-Neobyte/tree/Day12/NodeBE)
 
 # Day 1&2 Neobyte
 
@@ -103,7 +116,7 @@ Solved in: [**NextT3**](https://github.com/incolorate/Internship-Neobyte/tree/Da
 - Identify best way to secure the API
 - Log all the API calls
 - Log all possible issues.
-  Solved in: [**NodeBE**](https://github.com/incolorate/Internship-Neobyte/tree/Day11/NodeBE)
+  Solved in: [**NodeBE**](https://github.com/incolorate/Internship-Neobyte/tree/Day12/NodeBE)
 
 #### Day 1. Basic REST API
 
@@ -115,7 +128,7 @@ Solved in: [**NextT3**](https://github.com/incolorate/Internship-Neobyte/tree/Da
 - Name ( text )
 - Price ( decimal 10,2 )
 - Stock ( integer )
-  Solved in: [**NodeBE** (serving data from mongodb)](https://github.com/incolorate/Internship-Neobyte/tree/Day11/NodeBE)
-  Solved in [**PythonDay1BE** (serving data from local db)](https://github.com/incolorate/Internship-Neobyte/tree/Day11/PythonDay1BE)
+  Solved in: [**NodeBE** (serving data from mongodb)](https://github.com/incolorate/Internship-Neobyte/tree/Day12/NodeBE)
+  Solved in [**PythonDay1BE** (serving data from local db)](https://github.com/incolorate/Internship-Neobyte/tree/Day12/PythonDay1BE)
 
 ## Installation steps in each document
