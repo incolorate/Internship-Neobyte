@@ -12,6 +12,7 @@ function getPossibilities(num, num2) {
   return currentPossibilities;
 }
 
+// Generate a blue map
 const generateObject = (height, length) => {
   let dummyBoard = {};
   for (let i = 0; i < height; i++) {
@@ -28,7 +29,7 @@ const generateObject = (height, length) => {
         dummyBoard[i][j] = 0;
         continue;
       }
-      dummyBoard[i].push(-1);
+      dummyBoard[i].push(0);
     }
   }
   return dummyBoard;
@@ -37,55 +38,42 @@ const generateObject = (height, length) => {
 export default function waterWorld(height, length) {
   const dummyBoard = generateObject(height, length);
 
-  const generateBoard = (height, length) => {
-    // first row will get incremented
-    let row = 1;
-    let column = 1;
-    for (let i = 1; i < length; i++) {
-      // each i fill 1 circle
-      for (let j = 1; j < height - 1; j++) {
-        // J will track the height
-        for (let o = 1; o < length - 1; o++) {
-          if (o === row) {
-            const lookUp = dummyBoard[j - 1][o];
-            const lookLeft = dummyBoard[j][o - 1];
-            const posib = getPossibilities(lookUp, lookLeft);
-            dummyBoard[j][o] = posib[Math.floor(Math.random() * posib.length)];
-            continue;
-          }
-
-          // primu rand
-          if (j === row) {
-            const lookUp = dummyBoard[j - 1][o];
-            const lookLeft = dummyBoard[j][o - 1];
-            const posib = getPossibilities(lookUp, lookLeft);
-            dummyBoard[j][o] = posib[Math.floor(Math.random() * posib.length)];
-            console.log("this", o);
-            continue;
-          }
-
-          // ultimu rand
-          if (j === height - 1 - row) {
-            const lookLeft = dummyBoard[j][o - 1];
-            const lookDown = dummyBoard[j + 1][o];
-            const posib = getPossibilities(lookLeft, lookDown);
-            dummyBoard[j][o] = posib[Math.floor(Math.random() * posib.length)];
-          }
-
-          // ultima coloana
-          if (o === length - column - 1) {
-            const lookRight = dummyBoard[j][o + 1];
-            const lookUp = dummyBoard[j - 1][o];
-            const posib = getPossibilities(lookRight, lookUp);
-            dummyBoard[j][o] = posib[Math.floor(Math.random() * posib.length)];
-          }
+  const validateBoard = () => {
+    // take each surounding block and valdiate it
+    for (let i = 1; i < length - 1; i++) {
+      for (let j = 1; j < length - 1; j++) {
+        const mainBlock = dummyBoard[i][j];
+        // surrounding blocks
+        const left = dummyBoard[i][j - 1];
+        const right = dummyBoard[i][j + 1];
+        const up = dummyBoard[i - 1][j];
+        const down = dummyBoard[i + 1][j];
+        if (
+          Math.abs(mainBlock - left) > 1 ||
+          Math.abs(mainBlock - right) > 1 ||
+          Math.abs(mainBlock - up) > 1 ||
+          Math.abs(mainBlock - down) > 1
+        ) {
+          generateBoard(height, length);
         }
       }
-      row++;
-      column++;
     }
-    return dummyBoard;
   };
+
+  const generateBoard = (height, length) => {
+    //  don't touch borders i j 1
+    for (let i = 1; i < height - 1; i++) {
+      for (let j = 1; j < length - 1; j++) {
+        // let's go row by row if undefined generate new board
+        const lookUp = dummyBoard[i - 1][j + 1];
+        const lookLeft = dummyBoard[i][j - 1];
+        const posib = getPossibilities(lookUp, lookLeft);
+        dummyBoard[i][j] = posib[Math.floor(Math.random() * posib.length)];
+      }
+    }
+    validateBoard();
+  };
+
   generateBoard(height, length);
   console.log(dummyBoard);
   return dummyBoard;
