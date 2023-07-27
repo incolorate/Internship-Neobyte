@@ -1,6 +1,7 @@
 import Layout from "~/components/Layout";
 import { useState } from "react";
 import classNames from "classnames";
+import waterWorld from "~/components/waterworld";
 
 export default function AlgoGame() {
   const [boardHeight, setBoardHeight] = useState(0);
@@ -116,7 +117,7 @@ export default function AlgoGame() {
     const newValue = parseInt(e.target.value);
     setDominant(Math.floor(newValue));
   };
-  console.log(dominant);
+
   return (
     <Layout>
       <div>
@@ -169,12 +170,22 @@ export default function AlgoGame() {
           </div>
         </div>
         <div className="mt-24 flex w-full justify-center">
-          <button
-            className="bg-yellow-400 p-4 px-20 text-2xl"
-            onClick={() => generateBoard(boardLength, boardHeight)}
-          >
-            Generate
-          </button>
+          <div className="flex gap-4">
+            <button
+              className="bg-yellow-400 p-4 px-20 text-2xl"
+              onClick={() => generateBoard(boardLength, boardHeight)}
+            >
+              Generate
+            </button>
+            <button
+              className="bg-blue-700 p-4 px-20 text-2xl text-white"
+              onClick={() =>
+                setGameBoard(waterWorld(boardHeight, boardLength, dominant))
+              }
+            >
+              Waterworld
+            </button>
+          </div>
         </div>
         <div className="mt-5 flex  justify-center gap-3">
           <div>
