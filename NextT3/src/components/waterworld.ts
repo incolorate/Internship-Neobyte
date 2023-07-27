@@ -1,111 +1,86 @@
+function getPossibilities(num, num2) {
+  const num1Arr = [num, num + 1, num - 1].filter(
+    (number) => number <= 5 && number >= 0
+  );
+  const num2Arr = [num2, num2 + 1, num2 - 1].filter(
+    (number) => number <= 5 && number >= 0
+  );
+  const currentPossibilities = num1Arr.filter((element) =>
+    num2Arr.includes(element)
+  );
+
+  return currentPossibilities;
+}
+
+const generateObject = (height, length) => {
+  let dummyBoard = {};
+  for (let i = 0; i < height; i++) {
+    dummyBoard[i] = [];
+    for (let j = 0; j < length; j++) {
+      // first row/last row
+      if (i === 0 || i === height - 1) {
+        dummyBoard[i].push(0);
+        continue;
+      }
+
+      // first column/ last column
+      if (j === 0 || j === length - 1) {
+        dummyBoard[i][j] = 0;
+        continue;
+      }
+      dummyBoard[i].push(-1);
+    }
+  }
+  return dummyBoard;
+};
+
 export default function waterWorld(height, length) {
-  const dummyBoard = {};
+  const dummyBoard = generateObject(height, length);
 
-  const generateObject = (height, length) => {
-    for (i = 0; i < height; i++) {
-      dummyBoard[i] = [];
-      for (j = 0; j < length; j++) {
-        // first row/last row
-        if (i === 0 || i === height - 1) {
-          dummyBoard[i].push(0);
-          continue;
-        }
+  const generateBoard = (height, length) => {
+    // first row will get incremented
+    let row = 1;
 
-        // first column/ last column
-        if (j === 0 || j === length - 1) {
-          dummyBoard[i][j] = 0;
-          continue;
-        }
-        dummyBoard[i].push(-1);
-      }
-    }
-  };
-  generateObject(height, length);
+    for (let i = 1; i < 2; i++) {
+      // each i fill 1 circle
+      for (let j = 1; j < height - 1; j++) {
+        // J will track the height
+        for (let o = 1; o < length - 1; o++) {
+          if (o === 1) {
+            const lookUp = dummyBoard[j - 1][o];
+            const lookLeft = dummyBoard[j][o - 1];
+            const posib = getPossibilities(lookUp, lookLeft);
+            dummyBoard[j][o] = posib[Math.floor(Math.random() * posib.length)];
+            continue;
+          }
 
-  const generateBoard = (gameHeight, gameLength) => {
-    for (let i = 1; i < gameHeight - 1; i++) {
-      for (let j = 1; j < gameLength - 1; j++) {
-        // check up left right down
-        // toate randurile inafara de ultimul si toate coloanele inafara de ultima
-        if (j !== gameLength - 2 && i !== gameHeight - 2) {
-          const upValue = dummyBoard[i - 1][j];
-          const leftValue = dummyBoard[i][j - 1];
-          const upPossibilities = [upValue, upValue + 1, upValue - 1].filter(
-            (number) => number >= 0 && number <= 5
-          );
-          const leftPossibilities = [
-            leftValue,
-            leftValue + 1,
-            leftValue - 1,
-          ].filter((number) => number >= 0 && number <= 5);
-          const currentPossibilities = upPossibilities.filter((element) =>
-            leftPossibilities.includes(element)
-          );
-          dummyBoard[i][j] =
-            currentPossibilities[
-              Math.floor(Math.random() * currentPossibilities.length)
-            ];
-          continue;
-        }
+          // primu rand
+          if (j === row) {
+            const lookUp = dummyBoard[j - 1][o];
+            const lookLeft = dummyBoard[j][o - 1];
+            const posib = getPossibilities(lookUp, lookLeft);
+            dummyBoard[j][o] = posib[Math.floor(Math.random() * posib.length)];
+            console.log("this", o);
+            continue;
+          }
 
-        // ultima coloana dar nu la ultimul rand
-        if (j === gameLength - 2 && i !== gameHeight - 2) {
-          const upValue = dummyBoard[i - 1][j];
-          const leftValue = dummyBoard[i][j - 1];
-          const upPossibilities = [upValue, upValue + 1, upValue - 1].filter(
-            (number) => number >= 0 && number <= 5
-          );
-          const leftPossibilities = [
-            leftValue,
-            leftValue + 1,
-            leftValue - 1,
-          ].filter((number) => number >= 0 && number <= 5);
-          const currentPossibilities = upPossibilities.filter((element) =>
-            leftPossibilities.includes(element)
-          );
-          const rightValue = dummyBoard[i][j + 1];
-          const rightPossibilities = [
-            rightValue,
-            rightValue + 1,
-            rightValue - 1,
-          ].filter((number) => number >= 0 && number <= 5);
-          const possibilities = rightPossibilities.filter((element) =>
-            currentPossibilities.includes(element)
-          );
-          dummyBoard[i][j] =
-            possibilities[Math.floor(Math.random() * possibilities.length)];
-          continue;
-        }
+          // ultimu rand
+          if (j === height - 1 - row) {
+            const lookLeft = dummyBoard[j][o - 1];
+            const lookDown = dummyBoard[j + 1][o];
+            const posib = getPossibilities(lookLeft, lookDown);
+            dummyBoard[j][o] = posib[Math.floor(Math.random() * posib.length)];
+          }
 
-        // ultimul rand dar nu ultima coloana sus stanga jos
-        if (i == gameHeight - 2 && j !== gameLength - 2) {
-          const upValue = dummyBoard[i - 1][j];
-          const leftValue = dummyBoard[i][j - 1];
-          const upPossibilities = [upValue, upValue + 1, upValue - 1].filter(
-            (number) => number >= 0 && number <= 5
-          );
-          const leftPossibilities = [
-            leftValue,
-            leftValue + 1,
-            leftValue - 1,
-          ].filter((number) => number >= 0 && number <= 5);
-          const currentPossibilities = upPossibilities.filter((element) =>
-            leftPossibilities.includes(element)
-          );
-
-          const downValue = dummyBoard[i + 1][j];
-
-          const downPossibilities = [0, 1].filter(
-            (number) => number >= 0 && number <= 5
-          );
-
-          const finnal = downPossibilities.filter((element) =>
-            currentPossibilities.includes(element)
-          );
-          dummyBoard[i][j] = finnal[Math.floor(Math.random() * finnal.length)];
+          // ultima coloana
+          if (o === length - 2) {
+            dummyBoard[j][o] = 1;
+          }
         }
       }
+      row++;
     }
+
     return dummyBoard;
   };
   generateBoard(height, length);
