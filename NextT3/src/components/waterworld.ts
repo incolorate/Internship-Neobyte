@@ -74,7 +74,10 @@ export default function waterWorld(height, length) {
 
           // ultima coloana
           if (o === length - 2) {
-            dummyBoard[j][o] = 1;
+            const lookRight = dummyBoard[j][o + 1];
+            const lookUp = dummyBoard[j - 1][o];
+            const posib = getPossibilities(lookRight, lookUp);
+            dummyBoard[j][o] = posib[Math.floor(Math.random() * posib.length)];
           }
         }
       }
