@@ -41,7 +41,7 @@ export default function waterWorld(height, length) {
     // first row will get incremented
     let row = 1;
     let column = 1;
-    for (let i = 1; i < 2; i++) {
+    for (let i = 1; i < length; i++) {
       // each i fill 1 circle
       for (let j = 1; j < height - 1; j++) {
         // J will track the height
@@ -84,7 +84,6 @@ export default function waterWorld(height, length) {
       row++;
       column++;
     }
-
     return dummyBoard;
   };
   generateBoard(height, length);

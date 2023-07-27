@@ -179,9 +179,7 @@ export default function AlgoGame() {
             </button>
             <button
               className="bg-blue-700 p-4 px-20 text-2xl text-white"
-              onClick={() =>
-                setGameBoard(waterWorld(boardHeight, boardLength, dominant))
-              }
+              onClick={() => setGameBoard(waterWorld(boardHeight, boardLength))}
             >
               Waterworld
             </button>
