@@ -23,56 +23,16 @@ export default function waterWorld(height, length) {
   generateObject(height, length);
 
   const generateBoard = (gameHeight, gameLength) => {
-    // don't check first row i=0...
     for (let i = 1; i < gameHeight - 1; i++) {
-      // first row  do nothing
-      // first column and alst column do nothing
-      for (let j = 1; j < gameLength - 2; j++) {
-        if (j === Math.floor(gameLength / 2)) {
-          dummyBoard[i][j] = "middle";
-
-          const leftValue = dummyBoard[i][j - 1];
-          const rightValue = dummyBoard[i][j + 1];
+      for (let j = 1; j < gameLength - 1; j++) {
+        // check up left right down
+        // toate randurile inafara de ultimul si toate coloanele inafara de ultima
+        if (j !== gameLength - 2 && i !== gameHeight - 2) {
           const upValue = dummyBoard[i - 1][j];
-          const rightUpPossibilities = [
-            rightValue,
-            rightValue + 1,
-            rightValue - 1,
-          ].filter((number) => number >= 0 && number <= 5);
+          const leftValue = dummyBoard[i][j - 1];
           const upPossibilities = [upValue, upValue + 1, upValue - 1].filter(
             (number) => number >= 0 && number <= 5
           );
-          const rightVsUp = upPossibilities.filter((element) =>
-            rightUpPossibilities.includes(element)
-          );
-          const leftPossibilities = [
-            leftValue,
-            leftValue + 1,
-            leftValue - 1,
-          ].filter((number) => number >= 0 && number <= 5);
-          const currentPossibilities = rightVsUp.filter((element) =>
-            leftPossibilities.includes(element)
-          );
-          dummyBoard[i][j] =
-            currentPossibilities[
-              Math.floor(Math.random() * currentPossibilities.length)
-            ];
-          continue;
-        }
-
-        if (
-          j !== Math.floor(gameLength / 2) &&
-          j <= Math.floor(gameLength / 2 - 2)
-        ) {
-          // handle left value
-          const upValue = dummyBoard[i - 1][j];
-          // Look left
-          const leftValue = dummyBoard[i][j - 1];
-          // get all Possibilities
-          const upPossibilities = [upValue, upValue + 1, upValue - 1].filter(
-            (number) => number >= 0 && number <= 5
-          );
-
           const leftPossibilities = [
             leftValue,
             leftValue + 1,
@@ -85,33 +45,64 @@ export default function waterWorld(height, length) {
             currentPossibilities[
               Math.floor(Math.random() * currentPossibilities.length)
             ];
+          continue;
+        }
 
-          // handle right value
-          const previousRowLength = dummyBoard[i - 1].length;
-          const rightUp = dummyBoard[i - 1][previousRowLength - 1 - j];
-          const rightValue = dummyBoard[i][previousRowLength - j];
-
-          const rightUpPossibilities = [
-            rightUp,
-            rightUp + 1,
-            rightUp - 1,
+        // ultima coloana dar nu la ultimul rand
+        if (j === gameLength - 2 && i !== gameHeight - 2) {
+          const upValue = dummyBoard[i - 1][j];
+          const leftValue = dummyBoard[i][j - 1];
+          const upPossibilities = [upValue, upValue + 1, upValue - 1].filter(
+            (number) => number >= 0 && number <= 5
+          );
+          const leftPossibilities = [
+            leftValue,
+            leftValue + 1,
+            leftValue - 1,
           ].filter((number) => number >= 0 && number <= 5);
-
-          const rightValuePossibilities = [
+          const currentPossibilities = upPossibilities.filter((element) =>
+            leftPossibilities.includes(element)
+          );
+          const rightValue = dummyBoard[i][j + 1];
+          const rightPossibilities = [
             rightValue,
             rightValue + 1,
             rightValue - 1,
           ].filter((number) => number >= 0 && number <= 5);
+          const possibilities = rightPossibilities.filter((element) =>
+            currentPossibilities.includes(element)
+          );
+          dummyBoard[i][j] =
+            possibilities[Math.floor(Math.random() * possibilities.length)];
+          continue;
+        }
 
-          const rightPossibilities = rightUpPossibilities.filter((element) =>
-            rightValuePossibilities.includes(element)
+        // ultimul rand dar nu ultima coloana sus stanga jos
+        if (i == gameHeight - 2 && j !== gameLength - 2) {
+          const upValue = dummyBoard[i - 1][j];
+          const leftValue = dummyBoard[i][j - 1];
+          const upPossibilities = [upValue, upValue + 1, upValue - 1].filter(
+            (number) => number >= 0 && number <= 5
+          );
+          const leftPossibilities = [
+            leftValue,
+            leftValue + 1,
+            leftValue - 1,
+          ].filter((number) => number >= 0 && number <= 5);
+          const currentPossibilities = upPossibilities.filter((element) =>
+            leftPossibilities.includes(element)
           );
 
-          dummyBoard[i][previousRowLength - 1 - j] =
-            rightValuePossibilities[
-              Math.floor(Math.random() * rightValuePossibilities.length)
-            ];
-          continue;
+          const downValue = dummyBoard[i + 1][j];
+
+          const downPossibilities = [0, 1].filter(
+            (number) => number >= 0 && number <= 5
+          );
+
+          const finnal = downPossibilities.filter((element) =>
+            currentPossibilities.includes(element)
+          );
+          dummyBoard[i][j] = finnal[Math.floor(Math.random() * finnal.length)];
         }
       }
     }
