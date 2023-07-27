@@ -40,13 +40,13 @@ export default function waterWorld(height, length) {
   const generateBoard = (height, length) => {
     // first row will get incremented
     let row = 1;
-
+    let column = 1;
     for (let i = 1; i < 2; i++) {
       // each i fill 1 circle
       for (let j = 1; j < height - 1; j++) {
         // J will track the height
         for (let o = 1; o < length - 1; o++) {
-          if (o === 1) {
+          if (o === row) {
             const lookUp = dummyBoard[j - 1][o];
             const lookLeft = dummyBoard[j][o - 1];
             const posib = getPossibilities(lookUp, lookLeft);
@@ -73,7 +73,7 @@ export default function waterWorld(height, length) {
           }
 
           // ultima coloana
-          if (o === length - 2) {
+          if (o === length - column - 1) {
             const lookRight = dummyBoard[j][o + 1];
             const lookUp = dummyBoard[j - 1][o];
             const posib = getPossibilities(lookRight, lookUp);
@@ -82,6 +82,7 @@ export default function waterWorld(height, length) {
         }
       }
       row++;
+      column++;
     }
 
     return dummyBoard;
