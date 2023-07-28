@@ -11,6 +11,7 @@ export default function AlgoGame() {
   const [boardLength, setBoardLength] = useState(0);
   const [gameBoard, setGameBoard] = useState<object>({});
   const [dominant, setDominant] = useState(5);
+  const [showMessage, setShowMessage] = useState(false);
 
   const generateBoard = (height, length) => {
     const dummyBoard = {};
@@ -135,18 +136,32 @@ export default function AlgoGame() {
           <div className="flex gap-4">
             <button
               className="bg-yellow-400 p-4 px-20 text-2xl"
-              onClick={() => generateBoard(boardLength, boardHeight)}
+              onClick={() => {
+                setShowMessage(false);
+                generateBoard(boardLength, boardHeight);
+              }}
             >
               Generate
             </button>
             <button
               className="bg-blue-700 p-4 px-20 text-2xl text-white"
-              onClick={() => setGameBoard(waterWorld(boardHeight, boardLength))}
+              onClick={() => {
+                setShowMessage(true);
+                setGameBoard(waterWorld(boardHeight, boardLength));
+              }}
             >
               Waterworld
             </button>
           </div>
         </div>
+        {showMessage && (
+          <p className="text-center text-xl text-red-400">
+            In the grim reality of the postapocalyptic world of Waterworld, the
+            devastating effects of years of relentless corrosion have led to the
+            complete disappearance of mountains from our once majestic
+            landscape.{" "}
+          </p>
+        )}
         <div className="mt-5 flex  justify-center gap-3">
           <div>
             {Object.keys(gameBoard).map((row) => {

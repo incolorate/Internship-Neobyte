@@ -65,7 +65,7 @@ export default function waterWorld(height, length) {
     for (let i = 1; i < height - 1; i++) {
       for (let j = 1; j < length - 1; j++) {
         // let's go row by row if undefined generate new board
-        const lookUp = dummyBoard[i - 1][j + 1];
+        const lookUp = dummyBoard[i - 1][j];
         const lookLeft = dummyBoard[i][j - 1];
         const posib = getPossibilities(lookUp, lookLeft);
         dummyBoard[i][j] = posib[Math.floor(Math.random() * posib.length)];

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useClerk, useUser } from "@clerk/nextjs";
 import { GoSignIn, GoSignOut } from "react-icons/go";
-import { LuCopyCheck, LuGamepad } from "react-icons/lu";
+import { LuBird, LuCopyCheck, LuGamepad, LuX } from "react-icons/lu";
 
 export default function Nav() {
   const inactive = "flex gap-2 items-center p-2";
@@ -47,6 +47,14 @@ export default function Nav() {
           <LuGamepad className="text-center text-2xl" />
           <p className="text-center text-2xl">Algorithm game</p>
         </Link>
+        <Link
+          href="/twitter"
+          className={pathname.includes("twitter") ? active : inactive}
+        >
+          <LuBird className="text-center text-2xl" />
+          <p className="text-center text-2xl">Twitter</p>
+        </Link>
+
         {isSignedIn && (
           <div className="flex items-center gap-2 p-2">
             <GoSignOut className="text-center text-2xl" />

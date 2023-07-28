@@ -26,3 +26,11 @@ model User {
   password  String
   codeCreatedAt String?
 }
+
+model Post {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String    
+  postText  String
+  userEmail String
+  createdAt String
+}

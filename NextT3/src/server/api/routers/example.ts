@@ -7,6 +7,7 @@ import nodemailer from "nodemailer";
 import codeGenerator from "../../helpers/validationCodeGenerator.ts";
 import { TRPCError } from "@trpc/server";
 import emailTemplate from "~/server/helpers/emailTemplate.ts";
+import { useUser } from "@clerk/nextjs";
 
 type Customer = {
   id: string;
@@ -18,7 +19,6 @@ type Customer = {
   Last_Name: string;
   Phone_1: string;
 };
-
 // Connect to email service
 const transport = nodemailer.createTransport({
   host: "sandbox.smtp.mailtrap.io",
@@ -41,6 +41,7 @@ export const exampleRouter = createTRPCRouter({
       await client.set("users", JSON.stringify(data));
       return data;
     }
+
     // set expire to 100s
     await client.expire("users", 100);
     return JSON.parse(cache) as Customer[];
@@ -147,5 +148,40 @@ export const exampleRouter = createTRPCRouter({
       }
 
       return true;
+    }),
+
+  //  handle posts
+
+  createPost: publicProcedure
+    .input(
+      z.object({
+        userId: z.string(),
+        postText: z.string().max(255),
+        userEmail: z.string(),
+        createdAt: z.string(),
+      })
+    )
+    .mutation(async ({ ctx, input }) => {
+      const createPost = ctx.prisma.post.create({
+        data: {
+          userId: input.userId,
+          postText: input.postText,
+          userEmail: input.userEmail,
+          createdAt: input.createdAt,
+        },
+      });
+      return createPost;
+    }),
+
+  findPostsByEmail: publicProcedure
+    .input(z.object({ userEmail: z.string() }))
+    .mutation(({ ctx, input }) => {
+      const findPosts = ctx.prisma.post.findMany({
+        where: {
+          userEmail: input.userEmail,
+        },
+      });
+
+      return findPosts;
     }),
 });
