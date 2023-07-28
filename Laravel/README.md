@@ -8,6 +8,7 @@ Note: when using git clone be mindfull of the branch
 gh repo clone incolorate/Internship-Neobyte
 cd Laravel
 npm install
+composer install
 ```
 
 Rename .env.example to .env and add the necessary keys
@@ -33,4 +34,10 @@ Update the database to match the latest version defined in the migrations.
 
 ```
 ./vendor/bin/sail artisan migrate
+```
+
+To access go to:
+
+```
+http://localhost
 ```
