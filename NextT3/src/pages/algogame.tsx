@@ -2,6 +2,9 @@ import Layout from "~/components/Layout";
 import { useState } from "react";
 import classNames from "classnames";
 import waterWorld from "~/components/waterworld";
+import getOccurrence from "~/components/getOccurrence";
+import getPossibilities from "~/components/getPossibilities";
+import handleTwoDimensions from "~/components/handleTwoDimensions";
 
 export default function AlgoGame() {
   const [boardHeight, setBoardHeight] = useState(0);
@@ -9,17 +12,6 @@ export default function AlgoGame() {
   const [gameBoard, setGameBoard] = useState<object>({});
   const [dominant, setDominant] = useState(5);
 
-  function getOccurrence(array, value) {
-    if (!Array.isArray(array)) {
-      console.error('The "array" argument must be an array.');
-      return 0;
-    }
-
-    let count = 0;
-    array?.forEach((v) => v === value && count++);
-    console.log("this is count", count);
-    return count;
-  }
   const generateBoard = (height, length) => {
     const dummyBoard = {};
     const blocks = [0, 1, 2, 3, 4, 5];
@@ -39,17 +31,9 @@ export default function AlgoGame() {
         // now we look to the left for the first row
         if (i === 0) {
           const leftValue = dummyBoard[i][j - 1];
-          // = + and - to left value
-          const currentPossibilities = [
-            leftValue,
-            leftValue + 1,
-            leftValue - 1,
-          ].filter((number) => number >= 0 && number <= 5);
-          dummyBoard[i].push(
-            currentPossibilities[
-              Math.floor(Math.random() * currentPossibilities.length)
-            ]
-          );
+          // getPosib returns a valid number for dummyboard
+          const currentPossibility = getPossibilities(leftValue, 0, 5);
+          dummyBoard[i].push(currentPossibility);
           continue;
         }
 
@@ -57,16 +41,8 @@ export default function AlgoGame() {
         //The first value of each row will only look up
         if (j === 0) {
           const upValue = dummyBoard[i - 1][j];
-          const currentPossibilities = [
-            upValue,
-            upValue + 1,
-            upValue - 1,
-          ].filter((number) => number >= 0 && number <= 5);
-          dummyBoard[i].push(
-            currentPossibilities[
-              Math.floor(Math.random() * currentPossibilities.length)
-            ]
-          );
+          const currentPossibility = getPossibilities(upValue, 0, 5);
+          dummyBoard[i].push(currentPossibility);
           continue;
         }
 
@@ -74,30 +50,16 @@ export default function AlgoGame() {
         const upValue = dummyBoard[i - 1][j];
         // Look left
         const leftValue = dummyBoard[i][j - 1];
-        // get all Possibilities
-        const upPossibilities = [upValue, upValue + 1, upValue - 1].filter(
-          (number) => number >= 0 && number <= 5
-        );
-        const leftPossibilities = [
-          leftValue,
-          leftValue + 1,
-          leftValue - 1,
-        ].filter((number) => number >= 0 && number <= 5);
-        // Get common values
-        const currentPossibilities = upPossibilities.filter((element) =>
-          leftPossibilities.includes(element)
-        );
-        dummyBoard[i].push(
-          currentPossibilities[
-            Math.floor(Math.random() * currentPossibilities.length)
-          ]
-        );
+
+        // takes two numbers -> 2 arrays of posibilities -> gets commun numbers -> 1 random
+        const currentPossibility = handleTwoDimensions(upValue, leftValue);
+        dummyBoard[i].push(currentPossibility);
         continue;
       }
     }
+
     const checkForValues = Object.values(dummyBoard).toString();
-    console.log(Math.floor(dominant / 2), "dominant");
-    // Check occurrence of selected block
+    // Get occurrence checks the occurrence of dominant in the dummy board
     const occurrence = getOccurrence(
       Object.values(dummyBoard).flat(1),
       Math.floor(dominant / 2)

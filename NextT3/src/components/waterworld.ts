@@ -1,9 +1,9 @@
 function getPossibilities(num, num2) {
   const num1Arr = [num, num + 1, num - 1].filter(
-    (number) => number <= 5 && number >= 0
+    (number) => number <= 3 && number >= 0
   );
   const num2Arr = [num2, num2 + 1, num2 - 1].filter(
-    (number) => number <= 5 && number >= 0
+    (number) => number <= 3 && number >= 0
   );
   const currentPossibilities = num1Arr.filter((element) =>
     num2Arr.includes(element)
