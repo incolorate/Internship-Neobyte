@@ -11,6 +11,8 @@ Example:
 
 Solved in: [**NextT3**](https://github.com/incolorate/Internship-Neobyte/tree/Day12/NextT3)
 
+![day 12 result](https://github.com/incolorate/Internship-Neobyte/assets/88613908/8aef7b7a-8d51-4550-ad5f-ed940bb70d6f)
+
 # Day11 Laravel Sail Crud 2
 
 ### Requests:
