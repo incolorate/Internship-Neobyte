@@ -18,19 +18,22 @@ model Import {
   Last_Name   String @map("Last Name")
   Phone_1     String @map("Phone 1")
 }
-// fix this
+
+
 model User {
-  id            String    @id @default(auto()) @map("_id") @db.ObjectId
-  email         String?   @unique
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  email          String?   @unique
   validationCode String? 
-  password  String
-  codeCreatedAt String?
+  password       String
+  codeCreatedAt  String?
 }
 
 model Post {
-  id        String    @id @default(auto()) @map("_id") @db.ObjectId
-  userId    String    
-  postText  String
-  userEmail String
-  createdAt String
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  userId         String    
+  postText       String
+  postTitle      String
+  userEmail      String
+  createdAt      String
+
 }

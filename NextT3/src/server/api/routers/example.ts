@@ -159,6 +159,7 @@ export const exampleRouter = createTRPCRouter({
         postText: z.string().max(255),
         userEmail: z.string(),
         createdAt: z.string(),
+        postTitle: z.string().max(65),
       })
     )
     .mutation(async ({ ctx, input }) => {
@@ -168,6 +169,7 @@ export const exampleRouter = createTRPCRouter({
           postText: input.postText,
           userEmail: input.userEmail,
           createdAt: input.createdAt,
+          postTitle: input.postTitle,
         },
       });
       return createPost;

@@ -48,11 +48,11 @@ export default function Nav() {
           <p className="text-center text-2xl">Algorithm game</p>
         </Link>
         <Link
-          href="/twitter"
-          className={pathname.includes("twitter") ? active : inactive}
+          href="/olx"
+          className={pathname.includes("olx") ? active : inactive}
         >
           <LuBird className="text-center text-2xl" />
-          <p className="text-center text-2xl">Twitter</p>
+          <p className="text-center text-2xl">OLX </p>
         </Link>
 
         {isSignedIn && (
