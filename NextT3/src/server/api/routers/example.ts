@@ -156,10 +156,10 @@ export const exampleRouter = createTRPCRouter({
     .input(
       z.object({
         userId: z.string(),
-        postText: z.string().max(255),
+        postText: z.string().max(255).optional(),
         userEmail: z.string(),
         createdAt: z.string(),
-        postTitle: z.string().max(65),
+        postTitle: z.string().max(65).min(10),
       })
     )
     .mutation(async ({ ctx, input }) => {
@@ -175,15 +175,55 @@ export const exampleRouter = createTRPCRouter({
       return createPost;
     }),
 
-  findPostsByEmail: publicProcedure
-    .input(z.object({ userEmail: z.string() }))
-    .mutation(({ ctx, input }) => {
+  findPostsById: publicProcedure
+    .input(z.object({ userId: z.string() }))
+    .query(({ ctx, input }) => {
       const findPosts = ctx.prisma.post.findMany({
         where: {
-          userEmail: input.userEmail,
+          userId: input.userId,
         },
       });
 
       return findPosts;
+    }),
+  deleteAd: publicProcedure
+    .input(z.object({ adId: z.string() }))
+    .mutation(({ ctx, input }) => {
+      const ad = ctx.prisma.post.delete({
+        where: {
+          id: input.adId,
+        },
+      });
+      return ad;
+    }),
+  findPostById: publicProcedure
+    .input(z.object({ postId: z.string() }))
+    .query(({ ctx, input }) => {
+      const post = ctx.prisma.post.findUnique({
+        where: {
+          id: input.postId,
+        },
+      });
+      return post;
+    }),
+  editAd: publicProcedure
+    .input(
+      z.object({
+        title: z.string().max(65).min(10),
+        description: z.string().max(255).optional(),
+        inputId: z.string(),
+      })
+    )
+    .mutation(({ ctx, input }) => {
+      const updateProduct = ctx.prisma.post.update({
+        data: {
+          postTitle: input.title,
+          postText: input.description,
+        },
+        where: {
+          id: input.inputId,
+        },
+      });
+      return updateProduct;
     }),
 });

@@ -1,15 +1,28 @@
 import { useState } from "react";
 import Layout from "~/components/Layout";
-import { BiDownArrowAlt, BiRightArrowAlt } from "react-icons/bi";
+import {
+  BiDownArrowAlt,
+  BiEdit,
+  BiRightArrowAlt,
+  BiTrashAlt,
+} from "react-icons/bi";
 import { api } from "~/utils/api";
 import { useUser } from "@clerk/nextjs";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function OlxUser() {
   const [showAdForm, setShowAdForm] = useState(false);
   const [showMyAds, setShowMyAds] = useState(false);
   const [ad, setAd] = useState({});
   const [count, setCount] = useState({});
+  const [success, setSuccess] = useState(false);
   const user = useUser();
+  const router = useRouter();
+
+  const getAds = api.example.findPostsById.useQuery({
+    userId: router.query.id,
+  });
 
   const handleFormChange = (e) => {
     setAd({ ...ad, [e.target.name]: e.target.value });
@@ -27,15 +40,23 @@ export default function OlxUser() {
 
   const createPost = api.example.createPost.useMutation();
 
-  const handleCreatePost = (e) => {
+  const handleCreatePost = async (e) => {
     e.preventDefault();
-    createPost.mutateAsync({
-      userId: user.user?.id,
-      postText: ad.description,
-      createdAt: Date.now().toLocaleString(),
-      postTitle: ad.title,
-      userEmail: user.user?.primaryEmailAddress?.emailAddress,
-    });
+    try {
+      await createPost.mutateAsync({
+        userId: user.user?.id,
+        postText: ad.description || "",
+        createdAt: Date.now().toLocaleString(),
+        postTitle: ad.title,
+        userEmail: user.user?.primaryEmailAddress?.emailAddress,
+      });
+      setCount({ title: "", description: "" });
+      setAd({ title: "", description: "" });
+      setSuccess(true);
+      await getAds.refetch();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -51,6 +72,14 @@ export default function OlxUser() {
       </div>
       {showAdForm && (
         <form>
+          {success && (
+            <p className="text-green-300">The ad was created successfully</p>
+          )}
+          {createPost.error ? (
+            <p className="text-red-600">Something went wrong</p>
+          ) : (
+            ""
+          )}
           <div className="space-y-12">
             <div className="border-b border-gray-900/10 pb-12">
               <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
@@ -98,7 +127,6 @@ export default function OlxUser() {
                       name="description"
                       rows={3}
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      defaultValue={""}
                       onChange={(e) => {
                         handleContentLength(e);
                         handleFormChange(e);
@@ -144,6 +172,36 @@ export default function OlxUser() {
           {showMyAds ? <BiDownArrowAlt /> : <BiRightArrowAlt />}
         </div>
         <p>Show my ads</p>
+      </div>
+      <div>
+        {showMyAds && (
+          <table className="mt-2 w-full table-fixed text-xl text-black">
+            <thead className="bg-zinc-300">
+              <tr>
+                <td>#</td>
+                <td>Title</td>
+                <td>Description</td>
+                <td>Actions</td>
+              </tr>
+            </thead>
+            <tbody>
+              {getAds.data.map((ad, index) => {
+                return (
+                  <tr key={ad.id}>
+                    <td>{index}</td>
+                    <td>{ad.postTitle}</td>
+                    <td className="truncate">{ad.postText}</td>
+                    <td>
+                      <Link href={`${router.asPath}/${ad.id}`}>
+                        <BiEdit />
+                      </Link>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        )}
       </div>
     </Layout>
   );
