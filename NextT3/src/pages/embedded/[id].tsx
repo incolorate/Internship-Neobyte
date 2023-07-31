@@ -15,7 +15,7 @@ import { createId } from "@paralleldrive/cuid2";
 export default function OlxUser() {
   const [showAdForm, setShowAdForm] = useState(false);
   const [showMyAds, setShowMyAds] = useState(false);
-  const [ad, setAd] = useState({});
+  const [ad, setAd] = useState({ title: "", description: "" });
   const [count, setCount] = useState({});
   const [success, setSuccess] = useState(false);
   const user = useUser();
@@ -47,20 +47,31 @@ export default function OlxUser() {
   }
 
   const handleCreatePost = async (e) => {
-    const adsJSON = [
-      ...myAds,
-      {
-        title: ad.title,
-        description: ad.description,
-        id: createId(),
-      },
-    ];
+    let totalAds;
+    if (myAds) {
+      totalAds = [
+        ...myAds,
+        {
+          title: ad.title,
+          description: ad.description,
+          id: createId(),
+        },
+      ];
+    } else {
+      totalAds = [
+        {
+          title: ad.title,
+          description: ad.description,
+          id: createId(),
+        },
+      ];
+    }
 
     e.preventDefault();
     try {
       await createPost.mutateAsync({
         userId: user.user?.id,
-        ads: JSON.stringify(adsJSON),
+        ads: JSON.stringify(totalAds),
       });
       setCount({ title: 0, description: 0 });
       setAd({ title: "", description: "" });
@@ -71,7 +82,6 @@ export default function OlxUser() {
     }
   };
 
-  console.log(myAds);
   return (
     <Layout>
       <div
