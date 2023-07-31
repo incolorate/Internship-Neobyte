@@ -239,11 +239,11 @@ export const exampleRouter = createTRPCRouter({
           userId: input.userId,
         },
         update: {
-          ads: JSON.stringify(input.ads),
+          ads: input.ads,
         },
         create: {
           userId: input.userId,
-          ads: JSON.stringify(input.ads),
+          ads: input.ads,
         },
       });
       return createAd;

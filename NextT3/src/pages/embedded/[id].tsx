@@ -42,11 +42,12 @@ export default function OlxUser() {
     userId: router.query.id,
   });
   let myAds;
+
   if (getAds.isSuccess) {
-    const adsString = JSON.parse(JSON.parse(getAds.data.ads));
-    myAds = adsString;
+    myAds = JSON.parse(getAds.data.ads);
   }
 
+  console.log(myAds);
   const handleCreatePost = async (e) => {
     const adsJSON = [
       ...myAds,
@@ -71,24 +72,6 @@ export default function OlxUser() {
       console.log(error);
     }
   };
-  //   const handleCreatePost = async (e) => {
-  //     e.preventDefault();
-  //     try {
-  //       await createPost.mutateAsync({
-  //         userId: user.user?.id,
-  //         postText: ad.description || "",
-  //         createdAt: Date.now().toLocaleString(),
-  //         postTitle: ad.title,
-  //         userEmail: user.user?.primaryEmailAddress?.emailAddress,
-  //       });
-  //       setCount({ title: 0, description: 0 });
-  //       setAd({ title: "", description: "" });
-  //       setSuccess(true);
-  //       await getAds.refetch();
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
 
   return (
     <Layout>
