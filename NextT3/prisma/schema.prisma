@@ -32,8 +32,15 @@ model Post {
   id             String    @id @default(auto()) @map("_id") @db.ObjectId
   userId         String    
   postText       String
-  postTitle      String
+  postTitle      String    
   userEmail      String
   createdAt      String
+}
 
+
+
+model EmbededPost {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  userId String @unique
+  ads Json
 }

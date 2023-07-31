@@ -1,4 +1,4 @@
-import { string, z } from "zod";
+import { object, string, z } from "zod";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 import { Redis } from "ioredis";
 import { env } from "~/env.mjs";
@@ -225,5 +225,37 @@ export const exampleRouter = createTRPCRouter({
         },
       });
       return updateProduct;
+    }),
+  createEmbeddedAd: publicProcedure
+    .input(
+      z.object({
+        ads: z.any(),
+        userId: z.string(),
+      })
+    )
+    .mutation(({ ctx, input }) => {
+      const createAd = ctx.prisma.embededPost.upsert({
+        where: {
+          userId: input.userId,
+        },
+        update: {
+          ads: JSON.stringify(input.ads),
+        },
+        create: {
+          userId: input.userId,
+          ads: JSON.stringify(input.ads),
+        },
+      });
+      return createAd;
+    }),
+  getEmbeddedAds: publicProcedure
+    .input(z.object({ userId: z.string() }))
+    .query(({ ctx, input }) => {
+      const getAds = ctx.prisma.embededPost.findUnique({
+        where: {
+          userId: input.userId,
+        },
+      });
+      return getAds;
     }),
 });

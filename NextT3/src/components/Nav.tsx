@@ -54,7 +54,13 @@ export default function Nav() {
           <LuBird className="text-center text-2xl" />
           <p className="text-center text-2xl">OLX </p>
         </Link>
-
+        <Link
+          href="/embedded "
+          className={pathname.includes("embedded ") ? active : inactive}
+        >
+          <LuBird className="text-center text-2xl" />
+          <p className="text-center text-2xl">Embedded OLX </p>
+        </Link>
         {isSignedIn && (
           <div className="flex items-center gap-2 p-2">
             <GoSignOut className="text-center text-2xl" />
