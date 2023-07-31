@@ -47,6 +47,7 @@ export default function OlxUser() {
   }
 
   const handleCreatePost = async (e) => {
+    e.preventDefault();
     let totalAds;
     if (myAds) {
       totalAds = [
