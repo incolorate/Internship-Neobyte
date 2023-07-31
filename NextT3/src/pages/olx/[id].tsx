@@ -27,13 +27,14 @@ export default function OlxUser() {
   const handleFormChange = (e) => {
     setAd({ ...ad, [e.target.name]: e.target.value });
   };
+
   const handleContentLength = (e) => {
     setCount({ ...count, [e.target.name]: e.target.value.length });
   };
 
   const handleCancel = (e) => {
     e.preventDefault();
-    setCount({ title: "", description: "" });
+    setCount({ title: 0, description: 0 });
     setAd({ title: "", description: "" });
     setShowAdForm(!showAdForm);
   };
@@ -50,7 +51,7 @@ export default function OlxUser() {
         postTitle: ad.title,
         userEmail: user.user?.primaryEmailAddress?.emailAddress,
       });
-      setCount({ title: "", description: "" });
+      setCount({ title: 0, description: 0 });
       setAd({ title: "", description: "" });
       setSuccess(true);
       await getAds.refetch();
@@ -188,7 +189,7 @@ export default function OlxUser() {
               {getAds.data.map((ad, index) => {
                 return (
                   <tr key={ad.id}>
-                    <td>{index}</td>
+                    <td>{index + 1}</td>
                     <td>{ad.postTitle}</td>
                     <td className="truncate">{ad.postText}</td>
                     <td>
