@@ -42,12 +42,10 @@ export default function OlxUser() {
     userId: router.query.id,
   });
   let myAds;
-
-  if (getAds.isSuccess) {
+  if (getAds.data) {
     myAds = JSON.parse(getAds.data.ads);
   }
 
-  console.log(myAds);
   const handleCreatePost = async (e) => {
     const adsJSON = [
       ...myAds,
@@ -73,6 +71,7 @@ export default function OlxUser() {
     }
   };
 
+  console.log(myAds);
   return (
     <Layout>
       <div
@@ -199,7 +198,7 @@ export default function OlxUser() {
               </tr>
             </thead>
             <tbody>
-              {myAds.map((ad, index) => {
+              {myAds?.map((ad, index) => {
                 return (
                   <tr key={ad.id}>
                     <td>{index + 1}</td>
