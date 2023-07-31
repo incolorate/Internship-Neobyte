@@ -7,17 +7,30 @@ import { api } from "~/utils/api";
 export default function EditProduct() {
   const user = useUser();
   const router = useRouter();
-  const [count, setCount] = useState({});
+  const [count, setCount] = useState({ title: "", description: "" });
   const [success, setSuccess] = useState(false);
   const [ad, setAd] = useState({});
 
   const getAds = api.example.getEmbeddedAds.useQuery({
     userId: router.query.id,
   });
+
   let myAds;
+  let currentAdIndex;
+
   if (getAds.data) {
     myAds = JSON.parse(getAds?.data?.ads);
+    currentAdIndex = myAds.findIndex((ad) => ad.id === router.query.edit);
   }
+  useEffect(() => {
+    if (getAds.data) {
+      console.log(myAds[currentAdIndex]);
+      setAd({
+        title: myAds[currentAdIndex].title,
+        description: myAds[currentAdIndex].description,
+      });
+    }
+  }, [getAds.data]);
 
   const createPost = api.example.createEmbeddedAd.useMutation();
 
@@ -35,10 +48,10 @@ export default function EditProduct() {
   };
 
   const handleEdit = async (e) => {
-    const editIndex = myAds.findIndex((ad) => ad.id === router.query.edit);
-    myAds[editIndex] = {
-      title: ad.title || myAds[editIndex].title,
-      description: ad.description || myAds[editIndex].description,
+    myAds[currentAdIndex] = {
+      title: ad.title,
+      description: ad.description,
+      id: myAds[currentAdIndex].id,
     };
     try {
       await createPost.mutateAsync({

@@ -92,7 +92,7 @@ export default function OlxUser() {
         <div className="mt-1">
           {showAdForm ? <BiDownArrowAlt /> : <BiRightArrowAlt />}
         </div>
-        <p>Create new add</p>
+        <p>Create new ad</p>
       </div>
       {showAdForm && (
         <form>
