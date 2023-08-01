@@ -2,6 +2,8 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head, Link } from "@inertiajs/react";
 
 export default function Ads({ auth, ads }) {
+    console.log(ads);
+
     return (
         <AuthenticatedLayout
             user={auth.user}
