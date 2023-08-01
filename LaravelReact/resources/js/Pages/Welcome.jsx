@@ -1,22 +1,63 @@
 import AdCard from "@/Components/AdCard";
 import PrimaryButton from "@/Components/PrimaryButton";
+import useDebounce from "@/hooks/useDebounce";
 import { Link, Head, usePage, router } from "@inertiajs/react";
+import axios from "axios";
+import debounce from "lodash.debounce";
+import { useEffect, useState } from "react";
 import { FcSearch } from "react-icons/fc";
 
-export default function Welcome({ auth, ads }) {
-    const { data, links } = ads;
+export default function Welcome({ auth }) {
+    const [searchQuery, setSearchQuery] = useState();
+    const [allAds, setAllAds] = useState();
+    const debouncedSearch = useDebounce(searchQuery, 300);
 
-    const handleNavigation = (url) => {
-        router.replace(url);
+    useEffect(() => {
+        axios
+            .get("/fetch-ads", { params: { query: "" } })
+            .then((response) => {
+                setAllAds(response.data);
+            })
+            .catch((error) => {
+                console.error("Error fetching ads:", error);
+            });
+    }, []);
+
+    useEffect(() => {
+        axios
+            .get("/fetch-ads", { params: { query: searchQuery } })
+            .then((response) => {
+                setAllAds(response.data);
+            })
+            .catch((error) => {
+                console.error("Error fetching ads:", error);
+            });
+    }, [debouncedSearch]);
+    const handleNavigation = async (url) => {
+        axios
+            .get(url, { params: { query: "" } })
+            .then((response) => {
+                setAllAds(response.data);
+            })
+            .catch((error) => {
+                console.error("Error fetching ads:", error);
+            });
     };
-    console.log(data, links);
+
+    const handleInputChange = (e) => {
+        setSearchQuery(e.target.value);
+    };
+
     return (
         <>
             <Head title="Welcome" />
             <div className="flex items-center justify-center bg-slate-800">
                 <div className="w-full max-w-5xl ">
                     <div className="flex justify-between p-2  text-white ">
-                        <h1 className="text-2xl font-thin">NeoX</h1>
+                        <Link href="/">
+                            {" "}
+                            <h1 className="text-2xl font-thin">NeoX</h1>
+                        </Link>
                         <div>
                             {auth.user ? (
                                 <Link
@@ -55,15 +96,22 @@ export default function Welcome({ auth, ads }) {
                                     <FcSearch className="text-2xl mt-2" />
                                 </label>
                             </div>
-                            <input
-                                type="text"
-                                name="search"
-                                id="search"
-                                className="border-0 focus:outline-none outline-none w-full text-black"
-                            />
-                            <PrimaryButton className="bg-white rounded-none text-black">
-                                Search now
-                            </PrimaryButton>
+                            <form
+                                className="flex flex-1"
+                                onSubmit={(e) => handleInputChange(e)}
+                            >
+                                <input
+                                    onChange={handleInputChange}
+                                    type="text"
+                                    name="search"
+                                    id="search"
+                                    value={searchQuery}
+                                    className="border-0 focus:outline-none outline-none w-full text-black  outline-0 "
+                                />
+                                <PrimaryButton className="bg-white rounded-none text-black">
+                                    Search now
+                                </PrimaryButton>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -71,8 +119,9 @@ export default function Welcome({ auth, ads }) {
             <div className="flex items-center justify-center bg-slate-100">
                 <div className="w-full max-w-5xl ">
                     <div className="p-4 text-white  flex  justify-center gap-2 flex-wrap">
-                        {data.map((ad) => (
+                        {allAds?.data?.map((ad) => (
                             <AdCard
+                                key={ad.id}
                                 title={ad.title}
                                 description={ad.description}
                                 author={ad.user.name}
@@ -80,7 +129,7 @@ export default function Welcome({ auth, ads }) {
                         ))}
                     </div>
                     <div className="flex items-center justify-center gap-2 mb-8">
-                        {links.map((link, index) => (
+                        {allAds?.links?.map((link, index) => (
                             <PrimaryButton
                                 key={index}
                                 onClick={() => handleNavigation(link.url)}
@@ -88,9 +137,9 @@ export default function Welcome({ auth, ads }) {
                             >
                                 {index === 0
                                     ? "Previous"
-                                    : index === links.length - 1
+                                    : index === allAds.links.length - 1
                                     ? "Next"
-                                    : index + 1}
+                                    : index}
                             </PrimaryButton>
                         ))}
                     </div>

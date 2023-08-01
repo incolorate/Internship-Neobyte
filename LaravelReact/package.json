@@ -20,6 +20,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "lodash.debounce": "^4.0.8",
         "react-icons": "^4.10.1"
     }
 }

@@ -11,22 +11,26 @@ use Illuminate\Support\Facades\Auth;
 
 class AdController extends Controller
 {
-
-    public function allAds()
+    public function fetchAds(Request $request)
     {
+        $query = $request->input('query');
+    
+        $ads = Ad::with("user")
+            ->when($query, function ($query) use ($request) {
+                $searchTerm = '%' . $request->input('query') . '%';
+                $query->where('title', 'like', $searchTerm)
+                    ->orWhere('description', 'like', $searchTerm);
+            })
+            ->paginate(9);
+    
+            return response()->json($ads);
+        }
 
-        $ads = Ad::with("user")->paginate(9);
-
-        return Inertia::render('Welcome',[
-            "ads" => $ads
-        ]);
-    }
-   
     public function index()
     {
         $user = Auth::user();
         $ads = $user->ads()->get();
-        Inertia::share('rootAds', $ads);
+    
         return Inertia::render('Ads',[
             "ads" => $ads
         ]);

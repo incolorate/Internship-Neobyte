@@ -17,7 +17,7 @@ use App\Http\Controllers\AdController;
 |
 */
 
-Route::get('/', [AdController::class, "allAds"], function () {
+Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
@@ -44,6 +44,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/ads/{id}/edit', [AdController::class, 'edit'])->name('ads.edit');
 
 });
+
+Route::get('/fetch-ads', [AdController::class, "fetchAds"]);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
