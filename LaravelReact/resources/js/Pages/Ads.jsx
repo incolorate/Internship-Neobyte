@@ -1,8 +1,7 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head, Link } from "@inertiajs/react";
 
-export default function Dashboard({ auth, ads }) {
-    console.log(ads);
+export default function Ads({ auth, ads }) {
     return (
         <AuthenticatedLayout
             user={auth.user}
@@ -18,7 +17,7 @@ export default function Dashboard({ auth, ads }) {
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900"></div>
-                        <div>dsa</div>
+                        <div>hello from ads</div>
                     </div>
                 </div>
             </div>
