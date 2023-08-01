@@ -11,7 +11,9 @@ class AdController extends Controller
 {
     public function index()
     {
-        $ads = Ad::all();
+        $user = Auth::user();
+        $ads = $user->ads()->get();
+
         return Inertia::render('Ads',[
             "ads" => $ads
         ]);
