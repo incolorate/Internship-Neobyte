@@ -1,26 +1,19 @@
-import { useState } from "react";
-
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import { Head, Link, router } from "@inertiajs/react";
+import { Head, Link, router, useForm } from "@inertiajs/react";
 import PrimaryButton from "@/Components/PrimaryButton";
 
 const Create = ({ auth }) => {
-    const [formData, setFormData] = useState({
+    const { data, setData, post, processing, errors } = useForm({
         title: "",
         description: "",
     });
 
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-        setFormData((prevData) => ({ ...prevData, [name]: value }));
-    };
-
     const handleSubmit = (e) => {
-        event.preventDefault();
-
-        router.post("/ads", formData);
+        e.preventDefault();
+        router.post("/ads", data);
     };
 
+    console.log(errors.title);
     return (
         <AuthenticatedLayout
             user={auth.user}
@@ -57,9 +50,16 @@ const Create = ({ auth }) => {
                                             id="title"
                                             name="title"
                                             className="border-b-gray-600 border-t-0 border-x-0 border-gray-300 p-2"
-                                            value={formData.title}
-                                            onChange={handleChange}
+                                            value={data.title}
+                                            onChange={(e) =>
+                                                setData("title", e.target.value)
+                                            }
                                         />
+                                        {errors.title && (
+                                            <div className="text-red-300">
+                                                {errors.title}
+                                            </div>
+                                        )}
                                     </div>
                                     <div className="flex justify-center flex-col mt-6">
                                         <label htmlFor="description">
@@ -69,10 +69,20 @@ const Create = ({ auth }) => {
                                             id="description"
                                             name="description"
                                             className="border-b-gray-600 border-t-0 border-x-0 border-gray-300 p-2"
-                                            value={formData.description}
-                                            onChange={handleChange}
+                                            value={data.description}
+                                            onChange={(e) =>
+                                                setData(
+                                                    "description",
+                                                    e.target.value
+                                                )
+                                            }
                                         />
                                     </div>
+                                    {errors.description && (
+                                        <div className="text-red-300">
+                                            {errors.description}
+                                        </div>
+                                    )}
                                     <PrimaryButton className="mt-2">
                                         Create
                                     </PrimaryButton>

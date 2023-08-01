@@ -3,10 +3,10 @@ import { Head, Link } from "@inertiajs/react";
 import { useState } from "react";
 import { router } from "@inertiajs/react";
 import PrimaryButton from "@/Components/PrimaryButton";
+import usePage from "@inertiajs/react";
 
 export default function Ads({ auth, ad }) {
-    const { errors } = usePage().props;
-
+    const { errors } = usePage();
     const [formData, setFormData] = useState({
         title: ad.title,
         description: ad.description,

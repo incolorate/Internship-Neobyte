@@ -51,8 +51,8 @@ class AdController extends Controller
 
         // why does this not work
         // $user->ads()-> Ad::create($request->all());
-    
         $user->ads()->save($ad);
+        
         return redirect()->route('ads.index');
     }
 
