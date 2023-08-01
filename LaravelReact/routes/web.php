@@ -17,7 +17,7 @@ use App\Http\Controllers\AdController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', [AdController::class, "allAds"], function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
@@ -29,7 +29,7 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-
+Route::get('/share-root-ads', [AdController::class, 'shareRootAds'])->name('share.root.ads');
 
 
 Route::middleware('auth')->group(function () {
@@ -37,8 +37,18 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/ads', [AdController::class, 'index'])->name('ads.index');
-    Route::get('/ads/create', [AdController::class, 'create'])->name('ads.create');
     Route::post('/ads', [AdController::class, 'store'])->name('ads.store');
+    Route::get('/ads/create', [AdController::class, 'create'])->name('ads.create');
+    Route::delete('/ads/{id}', [AdController::class, 'destroy'])->name('ads.delete');
+    Route::put('/ads/{id}', [AdController::class, 'update'])->name('ads.update');
+    Route::get('/ads/{id}/edit', [AdController::class, 'edit'])->name('ads.edit');
+
 });
+
+Route::get('/dashboard', function () {
+    return Inertia::render('Dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+
 
 require __DIR__.'/auth.php';
