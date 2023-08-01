@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AdsCreateRequest;
 use Illuminate\Http\Request;
 use App\Models\Ad;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\FetchAdsRequest;
-
 
 class AdController extends Controller
 {
@@ -41,23 +41,18 @@ class AdController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(AdsCreateRequest $request)
     {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string',
-        ]);
-
         $user = Auth::user();
-
         $ad = new Ad([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
         ]);
 
+        // why does this not work
+        // $user->ads()-> Ad::create($request->all());
+    
         $user->ads()->save($ad);
-
-
         return redirect()->route('ads.index');
     }
 

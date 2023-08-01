@@ -5,6 +5,8 @@ import { router } from "@inertiajs/react";
 import PrimaryButton from "@/Components/PrimaryButton";
 
 export default function Ads({ auth, ad }) {
+    const { errors } = usePage().props;
+
     const [formData, setFormData] = useState({
         title: ad.title,
         description: ad.description,
@@ -23,7 +25,7 @@ export default function Ads({ auth, ad }) {
         router.put(`/ads/${ad.id}`, formData);
     };
 
-    console.log(formData);
+    console.log(errors);
     return (
         <AuthenticatedLayout
             user={auth.user}
@@ -51,7 +53,7 @@ export default function Ads({ auth, ad }) {
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900">
                             <p className="mb-2">Edit ad:</p>
-                            <form onSubmit={handleSubmit}>
+                            <form onSubmit={(e) => handleSubmit(e)}>
                                 <div className="flex justify-center flex-col">
                                     <label htmlFor="title">Title</label>
                                     <input
@@ -62,6 +64,7 @@ export default function Ads({ auth, ad }) {
                                         value={formData.title}
                                         onChange={handleForm}
                                     />
+                                    {errors.title && <div>{errors.title}</div>}
                                 </div>
                                 <div className="flex mt-4 justify-center flex-col">
                                     <label htmlFor="description">
