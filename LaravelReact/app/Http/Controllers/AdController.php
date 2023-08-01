@@ -6,12 +6,12 @@ use Illuminate\Http\Request;
 use App\Models\Ad;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Auth;
-
+use App\Http\Requests\FetchAdsRequest;
 
 
 class AdController extends Controller
 {
-    public function fetchAds(Request $request)
+    public function fetchAds(FetchAdsRequest $request)
     {
         $query = $request->input('query');
     
@@ -19,7 +19,7 @@ class AdController extends Controller
             ->when($query, function ($query) use ($request) {
                 $searchTerm = '%' . $request->input('query') . '%';
                 $query->where('title', 'like', $searchTerm)
-                    ->orWhere('description', 'like', $searchTerm);
+                      ->orWhere('description', 'like', $searchTerm);
             })
             ->paginate(9);
     
