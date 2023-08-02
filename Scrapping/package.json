@@ -1,6 +1,7 @@
 {
   "type": "module",
   "dependencies": {
+    "mysql2": "^3.5.2",
     "puppeteer": "^20.9.0"
   }
 }

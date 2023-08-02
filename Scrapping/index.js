@@ -1,4 +1,25 @@
 import puppeteer from "puppeteer";
+import mysql from "mysql2";
+
+const pool = mysql.createPool({
+  host: "localhost", // Replace with your MySQL host
+  user: "root", // Replace with your MySQL username
+  password: "password", // Replace with your MySQL password
+  database: "laravelreact", // Replace with your MySQL database name
+  connectionLimit: 10, // Set the maximum number of connections in the pool
+});
+
+async function checkIfEntryExists(title) {
+  try {
+    const query = "SELECT COUNT(*) AS count FROM olx_data WHERE title = ?";
+    const [rows] = await pool.promise().query(query, [title]);
+    const count = rows[0].count;
+    return count > 0;
+  } catch (err) {
+    console.log("Error while checking entry:", err);
+    return false;
+  }
+}
 
 (async () => {
   // Launch the browser and open a new blank page
@@ -75,7 +96,15 @@ import puppeteer from "puppeteer";
       return element ? element.textContent.trim() : null;
     }, titleSelector);
 
-    const priceSelector = `strong[data-cy="adPageAdPrice"]`;
+    const titleExists = await checkIfEntryExists(title);
+    if (titleExists) {
+      console.log(
+        "Entry with the same title already exists. Skipping insertion."
+      );
+      await cardPage.close();
+      continue;
+    }
+    const priceSelector = `strong[aria-label="Preț"]`;
     const price = await cardPage.evaluate((query) => {
       const element = document.querySelector(query);
       return element ? element.textContent.trim() : null;
@@ -93,15 +122,30 @@ import puppeteer from "puppeteer";
       return element ? element.textContent.trim() : null;
     }, descriptionSelector);
 
-    const imageSelector = "img.image-gallery-image";
+    const imageSelector =
+      'div[aria-label="Go to Slide 1"] img.image-gallery-image';
     const image = await cardPage.evaluate((query) => {
-      const element = document.querySelector(query);
-      return element ? element.textContent.trim() : null;
+      const imgElement = document.querySelector(query);
+      return imgElement ? imgElement.src : null;
     }, imageSelector);
 
-    data.push({ title, price, location, description, image });
+    console.log(image);
+    const adData = { title, description, price, location, image };
+    data.push(adData);
+
+    try {
+      // Execute the INSERT query using the MySQL pool
+      const result = await pool
+        .promise()
+        .query("INSERT INTO olx_data SET ?", adData);
+
+      console.log("Inserted row ID:", result[0].insertId);
+    } catch (err) {
+      console.log(err);
+    }
+
     await cardPage.close();
   }
-  console.log(data);
-  page.screenshot({ path: "screenshot.png" });
+  pool.end();
+  await browser.close();
 })();
