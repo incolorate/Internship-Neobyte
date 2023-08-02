@@ -73,23 +73,9 @@ class AdController extends Controller
         ]);
     }
 
-    public function update(Request $request, $id)
+    public function update(AdsCreateRequest $request, Ad $id)
     {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string',
-        ]);
-
-        $user = Auth::user();
-        $ad = $user->ads()->find($id);
-
-        if (!$ad) {
-            return redirect()->route('ads.index')->with('error', 'Ad not found');
-        }
-
-        $ad->title = $request->input('title');
-        $ad->description = $request->input('description');
-        $ad->save();
+        $id->update($request->all());
 
         return redirect()->route('ads.index')->with('success', 'Ad updated successfully');
     }
