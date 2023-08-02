@@ -1,3 +1,30 @@
+# Day 13. Create an OLX prototype 
+
+### Requests: 
+User Object mandatory fields: email ( unique ) 
+AD Object mandatory fields: ID, title (not nullable), description ( nullable )  
+
+### Layouts:
+
+Page #1 
+* Enter email: john@example.com
+* [Log in] -> onclick: check if the user exists with email address. If does not exists, create new user
+->Redirect to Page #2
+  
+Page #2 
+Welcome, john@example.com 
+
+[New AD]   -> on click display form: 
+* Title
+* Description
+[Save]
+My ads (list all users ads)
+* ID
+* TITLE
+* DESCRIPTION
+
+Solved in: [**NextT3**](https://github.com/incolorate/Internship-Neobyte/tree/Day13/NextT3)
+
 # Day12 Generate island 5x5 or n x n
 
 Rules:
