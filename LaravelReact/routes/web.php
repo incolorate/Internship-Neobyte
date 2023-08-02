@@ -41,7 +41,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/ads/create', [AdController::class, 'create'])->name('ads.create');
     Route::delete('/ads/{id}', [AdController::class, 'destroy'])->name('ads.delete');
     Route::put('/ads/{id}', [AdController::class, 'update'])->name('ads.update');
-    Route::get('/ads/{id}/edit', [AdController::class, 'edit'])->name('ads.edit');
+    Route::get('/ads/{ad}/edit', [AdController::class, 'edit'])->name('ads.edit');
 
 });
 

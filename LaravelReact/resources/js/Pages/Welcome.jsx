@@ -10,8 +10,8 @@ import { FcSearch } from "react-icons/fc";
 export default function Welcome({ auth }) {
     const [searchQuery, setSearchQuery] = useState("");
     const [allAds, setAllAds] = useState();
-    const debouncedSearch = useDebounce(searchQuery, 300);
 
+    const debouncedSearch = useDebounce(searchQuery, 300);
     useEffect(() => {
         if (searchQuery.length > 1) {
             axios

@@ -16,7 +16,7 @@ class AdController extends Controller
         $query = $request->input('query');
     
         $ads = Ad::with("user")
-            ->when($query, function ($query) use ($request) {
+                ->when($query, function ($query) use ($request) {
                 $searchTerm = '%' . $request->input('query') . '%';
                 $query->where('title', 'like', $searchTerm)
                       ->orWhere('description', 'like', $searchTerm);
@@ -27,7 +27,7 @@ class AdController extends Controller
             ->paginate(9);
 
             return response()->json($ads);
-        }
+    }
 
     public function index()
     {
@@ -45,34 +45,26 @@ class AdController extends Controller
 
 
     public function store(AdsCreateRequest $request)
-    {
+    {    
         $user = Auth::user();
         $ad = new Ad([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
         ]);
-
-        // why does this not work
-        // $user->ads()-> Ad::create($request->all());
+        
         $user->ads()->save($ad);
         
         return redirect()->route('ads.index');
     }
 
-    public function edit($id)
+    public function edit(Ad $ad)
     {
-        $user = Auth::user();
-        $ad = $user->ads()->find($id);
-
-        if (!$ad) {
-            return redirect()->route('ads.index')->with('error', 'Ad not found');
-        }
-         
         return Inertia::render('Ads/Edit', [
             "ad" => $ad
         ]);
     }
 
+// change $id to $ad
     public function update(AdsCreateRequest $request, Ad $id)
     {
         $id->update($request->all());
@@ -82,9 +74,8 @@ class AdController extends Controller
 
     public function destroy(Ad $id)
     {
- 
+        // / change $id to $ad
         $id->delete();
-
         // Redirect back to the ads index page with a success message
         return redirect()->route('ads.index')->with('success', 'Ad deleted successfully');
     }

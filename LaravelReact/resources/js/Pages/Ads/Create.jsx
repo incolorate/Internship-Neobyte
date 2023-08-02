@@ -13,7 +13,6 @@ const Create = ({ auth }) => {
         router.post("/ads", data);
     };
 
-    console.log(errors.title);
     return (
         <AuthenticatedLayout
             user={auth.user}
