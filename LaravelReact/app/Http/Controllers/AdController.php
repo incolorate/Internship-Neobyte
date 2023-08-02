@@ -80,21 +80,10 @@ class AdController extends Controller
         return redirect()->route('ads.index')->with('success', 'Ad updated successfully');
     }
 
-    public function destroy($id)
+    public function destroy(Ad $id)
     {
-        // Find the authenticated user
-        $user = Auth::user();
-
-        // Find the ad by its ID within the user's ads
-        $ad = $user->ads()->find($id);
-
-        // Check if the ad exists
-        if (!$ad) {
-            return redirect()->route('ads.index')->with('error', 'Ad not found');
-        }
-
-        // Delete the ad from the database
-        $ad->delete();
+ 
+        $id->delete();
 
         // Redirect back to the ads index page with a success message
         return redirect()->route('ads.index')->with('success', 'Ad deleted successfully');
