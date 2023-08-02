@@ -1,12 +1,9 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import { Head, Link } from "@inertiajs/react";
+import { Head, Link, router } from "@inertiajs/react";
 import { useState } from "react";
-import { router } from "@inertiajs/react";
 import PrimaryButton from "@/Components/PrimaryButton";
-import usePage from "@inertiajs/react";
 
 export default function Ads({ auth, ad }) {
-    const { errors } = usePage();
     const [formData, setFormData] = useState({
         title: ad.title,
         description: ad.description,
@@ -25,7 +22,6 @@ export default function Ads({ auth, ad }) {
         router.put(`/ads/${ad.id}`, formData);
     };
 
-    console.log(errors);
     return (
         <AuthenticatedLayout
             user={auth.user}
@@ -64,7 +60,6 @@ export default function Ads({ auth, ad }) {
                                         value={formData.title}
                                         onChange={handleForm}
                                     />
-                                    {errors.title && <div>{errors.title}</div>}
                                 </div>
                                 <div className="flex mt-4 justify-center flex-col">
                                     <label htmlFor="description">

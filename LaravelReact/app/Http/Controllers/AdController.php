@@ -21,8 +21,11 @@ class AdController extends Controller
                 $query->where('title', 'like', $searchTerm)
                       ->orWhere('description', 'like', $searchTerm);
             })
+            ->when($query === null || trim($query) === '', function ($query) {
+                // If the query is empty or not provided, return all the ads
+            })
             ->paginate(9);
-    
+
             return response()->json($ads);
         }
 
