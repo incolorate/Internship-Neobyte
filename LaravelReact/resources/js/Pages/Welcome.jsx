@@ -118,11 +118,8 @@ export default function Welcome({ auth }) {
                                     name="search"
                                     id="search"
                                     value={searchQuery}
-                                    className="border-0 focus:outline-none outline-none w-full text-black  outline-0 "
+                                    className="border-0 focus:outline-none outline-none w-full text-black  outline-0 border-transparent focus:border-transparent focus:ring-0"
                                 />
-                                <PrimaryButton className="bg-white rounded-none text-black">
-                                    Search now
-                                </PrimaryButton>
                             </form>
                         </div>
                     </div>
