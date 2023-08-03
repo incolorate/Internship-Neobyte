@@ -133,7 +133,11 @@ export default function Welcome({ auth }) {
                                 key={ad.id}
                                 title={ad.title}
                                 description={ad.description}
-                                author={ad.user.name}
+                                author={
+                                    ad.hasOwnProperty("user")
+                                        ? ad.user.name
+                                        : "Imported ad"
+                                }
                             />
                         ))}
                     </div>
