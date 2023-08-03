@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OlxController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +32,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/share-root-ads', [AdController::class, 'shareRootAds'])->name('share.root.ads');
 
+Route::get('/olx', function () {
+    return Inertia::render('Olx');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -45,7 +49,10 @@ Route::middleware('auth')->group(function () {
 
 });
 
+
+
 Route::get('/fetch-ads', [AdController::class, "fetchAds"]);
+Route::get('/fetch-olx', [OlxController::class, "fetch"]);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
