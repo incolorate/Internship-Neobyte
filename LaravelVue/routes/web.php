@@ -24,7 +24,10 @@ Route::get('/', function () {
     ]);
 });
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    $user = Auth::user();
+    $ads = $user->ads()->get();
+    
+    return Inertia::render('Dashboard', ["ads" => $ads]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
