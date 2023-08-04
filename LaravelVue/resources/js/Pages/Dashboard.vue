@@ -20,7 +20,7 @@ import Button from "../CustomComponents/Button.vue";
                     <div class="p-6 text-gray-900">
                         <div class="flex justify-between">
                             <p>Manage your ads:</p>
-                            <Button>Create ad</Button>
+                            <Button buttonType="primary">Create ad</Button>
                         </div>
                     </div>
                 </div>
