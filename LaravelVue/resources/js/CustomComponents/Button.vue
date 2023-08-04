@@ -16,7 +16,7 @@ const buttonClass = computed(() => {
             buttonType: {
                 primary: "bg-slate-950 text-slate-100  hover:bg-slate-700",
                 secondary: "bg-yellow-400 text-slate-950 hover:bg-yellow-300",
-                warning: "bg-red-500, text-slate-950 hover:bg-red-700",
+                warning: "bg-red-600 text-yellow-200 hover:bg-red-700",
             },
         },
     })({
