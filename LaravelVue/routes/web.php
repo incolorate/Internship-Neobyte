@@ -37,7 +37,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::post("/dashboard/ads", [AdController::class, "store"])->name("ad.store");
     Route::get("/dashboard/ads/create", [AdController::class, 'create'])->name("ad.create");
-    Route::get('/dashboard/ads/{ad}/edit', [AdController::class, 'edit'])->name('ads.edit');
+    Route::put('/dashboard/ads/{ad}', [AdController::class, 'update'])->name('ad.update');
+    Route::get('/dashboard/ads/{ad}/edit', [AdController::class, 'edit'])->name('ad.edit');
 });
 
 require __DIR__.'/auth.php';

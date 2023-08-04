@@ -36,4 +36,11 @@ class AdController extends Controller
             "ad" => $ad
         ]);
     }
+
+    public function update(Ad $ad, AdCreateRequest $request)
+    {
+        $ad->update($request->all());
+    
+        return to_route('dashboard');
+    }
 }

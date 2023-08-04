@@ -15,9 +15,10 @@ const form = reactive({
     image: ad.image || null,
 });
 
+console.log(form);
 const handleSubmit = () => {
     form.price = parseInt(form.price);
-    router.put(TODO, form);
+    router.put(`/dashboard/ads/${ad.id}`, form);
 };
 </script>
 
@@ -36,7 +37,7 @@ const handleSubmit = () => {
                 <h2
                     class="font-semibold text-xl text-blue-600 leading-tight cursor-pointer"
                 >
-                    Create ad
+                    Edit ad
                 </h2>
             </div>
         </template>
@@ -112,7 +113,7 @@ const handleSubmit = () => {
                                     {{ errors.image }}
                                 </div>
                             </div>
-                            <Button buttonType="secondary">Create ad</Button>
+                            <Button buttonType="secondary">Edit ad</Button>
                         </form>
                     </div>
                 </div>
