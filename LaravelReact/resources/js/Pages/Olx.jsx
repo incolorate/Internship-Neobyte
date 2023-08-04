@@ -10,7 +10,6 @@ export default function Olx({ auth }) {
     const [searchQuery, setSearchQuery] = useState("");
     const [allAds, setAllAds] = useState();
 
-    console.log(allAds);
     const debouncedSearch = useDebounce(searchQuery, 300);
     useEffect(() => {
         if (searchQuery.length > 1) {
@@ -128,7 +127,7 @@ export default function Olx({ auth }) {
             <div className="flex items-center justify-center bg-slate-100">
                 <div className="w-full max-w-5xl ">
                     <div className="p-4 text-white  flex  justify-center gap-2 flex-wrap">
-                        {allAds?.data?.map((ad) => (
+                        {allAds?.map((ad) => (
                             <AdCard
                                 key={ad.id}
                                 title={ad.title}

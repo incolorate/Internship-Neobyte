@@ -9,23 +9,27 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\FetchAdsRequest;
 use App\Models\OlxData;
+use Illuminate\Support\Facades\Redis;
 
 class OlxController extends Controller
 {
 
     public function fetch(Request $request)
     {
-        $query = $request->input('query');
+       
+        $cacheKey = 'olx_ads_all';
+        $cachedAds   = Redis::get($cacheKey);
+        
+        if ($cachedAds !== null) {
+            $ads = json_decode($cachedAds, true);
+            return response()->json($ads);
+        } else {
+            $ads = OlxData::all();
+            Redis::set($cacheKey, json_encode($ads));
+            return response()->json($ads);
+        }
     
-        $ads = OlxData::query()
-            ->when($query, function ($query) use ($request) {
-                $searchTerm = '%' . $request->input('query') . '%';
-                $query->where('title', 'like', $searchTerm)
-                    ->orWhere('description', 'like', $searchTerm);
-            })
-            ->paginate(10);
-    
-        return response()->json($ads);
+      
     }
     
 }

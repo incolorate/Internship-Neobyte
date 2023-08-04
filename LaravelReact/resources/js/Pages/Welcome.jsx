@@ -135,7 +135,7 @@ export default function Welcome({ auth }) {
                                 description={ad.description}
                                 author={
                                     ad.hasOwnProperty("user")
-                                        ? ad.user.name
+                                        ? ad?.user?.name
                                         : "Imported ad"
                                 }
                             />
