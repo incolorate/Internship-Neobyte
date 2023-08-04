@@ -1,6 +1,6 @@
 <script setup>
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
-import { Head } from "@inertiajs/vue3";
+import { Head, Link } from "@inertiajs/vue3";
 import Button from "../CustomComponents/Button.vue";
 </script>
 
@@ -20,7 +20,9 @@ import Button from "../CustomComponents/Button.vue";
                     <div class="p-6 text-gray-900">
                         <div class="flex justify-between">
                             <p>Manage your ads:</p>
-                            <Button buttonType="primary">Create ad</Button>
+                            <Link href="dashboard/ads/create">
+                                <Button buttonType="primary">Create ad</Button>
+                            </Link>
                         </div>
                     </div>
                 </div>
