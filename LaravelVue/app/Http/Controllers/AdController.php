@@ -16,11 +16,17 @@ class AdController extends Controller
     }
 
     public function store(AdCreateRequest $request)
-    {    
-        $user = Auth::user();
-        $ad =  Ad::create($request->all());
-        $user->ads()->save($ad);
-        
+    {   
+         
+        $ad = new Ad();
+        $ad->title = $request->input('title');
+        $ad->description = $request->input('description');
+        $ad->price = $request->input('price');
+        $ad->location = $request->input('location');
+        $ad->image = $request->input('image');
+        $ad->user_id = auth()->user()->id; 
+        $ad->save();
+
         return to_route('dashboard');
     }
 
