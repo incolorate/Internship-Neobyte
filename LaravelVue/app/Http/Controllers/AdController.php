@@ -30,4 +30,10 @@ class AdController extends Controller
         return to_route('dashboard');
     }
 
+    public function edit(Ad $ad)
+    {
+        return Inertia::render('Dashboard/Ads/Edit', [
+            "ad" => $ad
+        ]);
+    }
 }
