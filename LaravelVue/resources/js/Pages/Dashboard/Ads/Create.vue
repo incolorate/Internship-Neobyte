@@ -16,6 +16,7 @@ const form = reactive({
 });
 
 const handleSubmit = () => {
+    form.price = parseInt(form.price);
     router.post("/dashboard/ads", form);
 };
 </script>
@@ -79,6 +80,7 @@ const handleSubmit = () => {
                                     id="price"
                                     v-model="form.price"
                                     class="border-b-gray-600 border-t-0 border-x-0 border-gray-300 p-2"
+                                    type="number"
                                 />
                                 <div v-if="errors.price">
                                     {{ errors.price }}
