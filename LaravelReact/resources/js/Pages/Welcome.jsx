@@ -13,47 +13,31 @@ export default function Welcome({ auth }) {
 
     const debouncedSearch = useDebounce(searchQuery, 300);
     useEffect(() => {
-        if (searchQuery.length > 1) {
-            axios
-                .get("/fetch-ads", { params: { query: searchQuery } })
-                .then((response) => {
-                    setAllAds(response.data);
-                })
-                .catch((error) => {
-                    console.error("Error fetching ads:", error);
-                });
-        } else {
-            axios
-                .get("/fetch-ads")
-                .then((response) => {
-                    setAllAds(response.data);
-                })
-                .catch((error) => {
-                    console.error("Error fetching ads:", error);
-                });
-        }
+        const searchParams =
+            searchQuery.length > 1 ? { params: { query: searchQuery } } : "";
+
+        axios
+            .get("/fetch-ads", searchParams)
+            .then((response) => {
+                setAllAds(response.data);
+            })
+            .catch((error) => {
+                console.error("Error fetching ads:", error);
+            });
     }, [debouncedSearch]);
 
     const handleNavigation = async (url) => {
-        if (searchQuery.length > 1) {
-            axios
-                .get(url, { params: { query: searchQuery } })
-                .then((response) => {
-                    setAllAds(response.data);
-                })
-                .catch((error) => {
-                    console.error("Error fetching ads:", error);
-                });
-        } else {
-            axios
-                .get(url)
-                .then((response) => {
-                    setAllAds(response.data);
-                })
-                .catch((error) => {
-                    console.error("Error fetching ads:", error);
-                });
-        }
+        const searchParams =
+            searchQuery.length > 1 ? { params: { query: searchQuery } } : "";
+
+        axios
+            .get(url, searchParams)
+            .then((response) => {
+                setAllAds(response.data);
+            })
+            .catch((error) => {
+                console.error("Error fetching ads:", error);
+            });
     };
 
     const handleInputChange = (e) => {

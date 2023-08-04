@@ -11,49 +11,21 @@ export default function Olx({ auth }) {
     const [allAds, setAllAds] = useState();
 
     const debouncedSearch = useDebounce(searchQuery, 300);
-    useEffect(() => {
-        if (searchQuery.length > 1) {
-            axios
-                .get("/fetch-olx", { params: { query: searchQuery } })
-                .then((response) => {
-                    setAllAds(response.data);
-                })
-                .catch((error) => {
-                    console.error("Error fetching ads:", error);
-                });
-        } else {
-            axios
-                .get("/fetch-olx")
-                .then((response) => {
-                    setAllAds(response.data);
-                })
-                .catch((error) => {
-                    console.error("Error fetching ads:", error);
-                });
-        }
-    }, [debouncedSearch]);
 
-    const handleNavigation = async (url) => {
-        if (searchQuery.length > 1) {
-            axios
-                .get(url, { params: { query: searchQuery } })
-                .then((response) => {
-                    setAllAds(response.data);
-                })
-                .catch((error) => {
-                    console.error("Error fetching ads:", error);
-                });
-        } else {
-            axios
-                .get(url)
-                .then((response) => {
-                    setAllAds(response.data);
-                })
-                .catch((error) => {
-                    console.error("Error fetching ads:", error);
-                });
-        }
-    };
+    console.log(allAds);
+    useEffect(() => {
+        const searchParams =
+            searchQuery.length > 1 ? { params: { query: searchQuery } } : "";
+
+        axios
+            .get("/fetch-olx", searchParams)
+            .then((response) => {
+                setAllAds(response.data);
+            })
+            .catch((error) => {
+                console.error("Error fetching ads:", error);
+            });
+    }, [debouncedSearch]);
 
     const handleInputChange = (e) => {
         setSearchQuery(e.target.value);

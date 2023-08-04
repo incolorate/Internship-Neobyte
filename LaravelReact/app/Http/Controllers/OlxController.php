@@ -20,16 +20,25 @@ class OlxController extends Controller
         $cacheKey = 'olx_ads_all';
         $cachedAds   = Redis::get($cacheKey);
         
-        if ($cachedAds !== null) {
+        if ($cachedAds === null) {
+            $ads = OlxData::query()->get();
+            $expirationTime = 3600;
+            Redis::setex($cacheKey, $expirationTime, json_encode($ads));
+            
+        } 
+
+            $query = $request->input('query');
+            
             $ads = json_decode($cachedAds, true);
+            $ads = collect($ads)
+                    ->when($query, function ($query) use ($request) {
+                    $searchTerm = '%' . $request->input('query') . '%';
+                    $query->where('title', 'like', $searchTerm)
+                        ->orWhere('description', 'like', $searchTerm);
+                });
+
+
             return response()->json($ads);
-        } else {
-            $ads = OlxData::all();
-            Redis::set($cacheKey, json_encode($ads));
-            return response()->json($ads);
-        }
-    
-      
     }
     
 }
