@@ -11,4 +11,10 @@ class AdController extends Controller
     {
         return Inertia::render("Dashboard/Ads/Create");
     }
+
+    public function store()
+    {
+        
+    }
+
 }
