@@ -2,6 +2,13 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head, Link } from "@inertiajs/vue3";
 import Button from "../CustomComponents/Button.vue";
+import { defineProps } from "vue";
+import Table from "../CustomComponents/Table.vue";
+
+const { ads } = defineProps(["ads"]);
+
+// You can now access 'ads' directly here or use it in the template
+const headers = ["#", "Title", "Description", "Price", "Location", "Actions"];
 </script>
 
 <template>
@@ -24,6 +31,7 @@ import Button from "../CustomComponents/Button.vue";
                                 <Button buttonType="primary">Create ad</Button>
                             </Link>
                         </div>
+                        <div><Table :headers="headers" :items="ads" /></div>
                     </div>
                 </div>
             </div>
