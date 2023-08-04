@@ -31,7 +31,13 @@ const headers = ["#", "Title", "Description", "Price", "Location", "Actions"];
                                 <Button buttonType="primary">Create ad</Button>
                             </Link>
                         </div>
-                        <div><Table :headers="headers" :items="ads" /></div>
+                        <div>
+                            <Table
+                                :headers="headers"
+                                :items="ads"
+                                :actions="true"
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

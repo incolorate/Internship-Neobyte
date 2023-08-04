@@ -1,3 +1,12 @@
+<script setup>
+import { Link } from "@inertiajs/vue3";
+const { items, headers, actions } = defineProps([
+    "items",
+    "headers",
+    "actions",
+]);
+</script>
+
 <template>
     <table
         class="w-full text-sm text-left text-gray-500 dark:text-gray-400 mt-4"
@@ -20,24 +29,10 @@
                 <td class="truncate">{{ item.description || "-" }}</td>
                 <td>{{ item.price }}</td>
                 <td>{{ item.location || "-" }}</td>
-                <td>Edit / Delete</td>
+                <td v-if="actions">
+                    <Link :href="`/dashboard/ads/${item.id}/edit`">Edit</Link>
+                </td>
             </tr>
         </tbody>
     </table>
 </template>
-
-<script>
-export default {
-    props: {
-        items: {
-            type: Array,
-            required: true,
-        },
-        headers: {
-            type: Array,
-            required: true,
-        },
-    },
-};
-import { FaRegularEdit } from "oh-vue-icons/icons";
-</script>
