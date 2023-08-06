@@ -3,19 +3,19 @@ import PrimaryButton from "@/Components/PrimaryButton";
 import useDebounce from "@/hooks/useDebounce";
 import { Link, Head, usePage, router } from "@inertiajs/react";
 import axios from "axios";
-import debounce from "lodash.debounce";
 import { useEffect, useState } from "react";
 import { FcSearch } from "react-icons/fc";
 
-export default function Welcome({ auth }) {
+export default function Olx({ auth }) {
     const [searchQuery, setSearchQuery] = useState("");
     const [allAds, setAllAds] = useState();
 
+    console.log(allAds);
     const debouncedSearch = useDebounce(searchQuery, 300);
     useEffect(() => {
         if (searchQuery.length > 1) {
             axios
-                .get("/fetch-ads", { params: { query: searchQuery } })
+                .get("/fetch-olx", { params: { query: searchQuery } })
                 .then((response) => {
                     setAllAds(response.data);
                 })
@@ -24,7 +24,7 @@ export default function Welcome({ auth }) {
                 });
         } else {
             axios
-                .get("/fetch-ads")
+                .get("/fetch-olx")
                 .then((response) => {
                     setAllAds(response.data);
                 })
@@ -134,10 +134,11 @@ export default function Welcome({ auth }) {
                                 title={ad.title}
                                 description={ad.description}
                                 author={
-                                    ad.hasOwnProperty("user")
-                                        ? ad.user.name
-                                        : "Imported ad"
+                                    ad?.user?.name ? ad.user.name : "No author"
                                 }
+                                image={ad.image}
+                                price={ad.price}
+                                location={ad.location}
                             />
                         ))}
                     </div>
