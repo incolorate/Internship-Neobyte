@@ -1,8 +1,9 @@
 <script setup>
-import { Link } from "@inertiajs/vue3";
+import { Link, router } from "@inertiajs/vue3";
 import Modal from "../Components/Modal.vue";
 import { reactive } from "vue";
 import Button from "../CustomComponents/Button.vue";
+
 const { items, headers, actions } = defineProps([
     "items",
     "headers",
@@ -13,7 +14,10 @@ const show = reactive({
     modal: false,
 });
 
-const handleDelete = () => {};
+const handleDelete = (id) => {
+    router.delete(`/dashboard/ads/${id}`);
+    show.modal = false;
+};
 </script>
 
 <template>
@@ -44,22 +48,27 @@ const handleDelete = () => {};
                     <span @click="show.modal = true" class="cursor-pointer"
                         >Delete</span
                     >
+                    <Modal :show="show.modal">
+                        <div class="p-7">
+                            <p class="text-center mb-6">
+                                Are you sure you want to delete the product?
+                            </p>
+                            <div class="flex gap-4 justify-center">
+                                <Button
+                                    buttonType="warning"
+                                    @click="handleDelete(item.id)"
+                                    >Yes</Button
+                                >
+                                <Button
+                                    buttonType="primary"
+                                    @click="show.modal = false"
+                                    >No</Button
+                                >
+                            </div>
+                        </div>
+                    </Modal>
                 </td>
             </tr>
         </tbody>
     </table>
-
-    <Modal :show="show.modal">
-        <div class="p-7">
-            <p class="text-center mb-6">
-                Are you sure you want to delete the product?
-            </p>
-            <div class="flex gap-4 justify-center">
-                <Button buttonType="warning">Yes</Button>
-                <Button buttonType="primary" @click="show.modal = false"
-                    >No</Button
-                >
-            </div>
-        </div>
-    </Modal>
 </template>

@@ -43,4 +43,11 @@ class AdController extends Controller
     
         return to_route('dashboard');
     }
+
+    public function destroy(Ad $ad)
+    {
+        $ad->delete();
+
+        return to_route("dashboard");
+    }
 }
