@@ -69,7 +69,12 @@ const getLatestAds = async () => {
       return element ? element.textContent.trim() : null;
     }, titleSelector);
 
-    // TO DO CHECK IF TITLE EXISTS
+    const existingAd = await Ad.findOne({ title });
+
+    if (existingAd) {
+      console.log("Ad already exits");
+      continue;
+    }
 
     const priceSelector = `strong[aria-label="Preț"]`;
     const price = await cardPage.evaluate((query) => {
