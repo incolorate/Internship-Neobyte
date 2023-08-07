@@ -4,6 +4,7 @@ import HomeLayout from "../Layouts/HomeLayout.vue";
 import axios from "axios";
 import { ref, computed } from "vue";
 
+//  doar setup -> vezi props etc pt setup..
 export default {
     components: {
         HomeLayout,
@@ -22,7 +23,6 @@ export default {
     },
     setup(props) {
         const ads = ref([]);
-
         axios
             .get("http://localhost:4000/ads")
             .then((response) => {
