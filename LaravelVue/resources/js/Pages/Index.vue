@@ -18,7 +18,7 @@ const ads = ref(null);
 onMounted(async () => {
     try {
         const response = await axios.get("http://localhost:4000/ads");
-        ads.value = response.data;
+        ads.value = [...response.data, ...props.nativeAds];
     } catch (error) {
         console.log(error);
     }
