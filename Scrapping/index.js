@@ -23,11 +23,11 @@ app.use("/", sendAds);
 app.use("/", subscribe);
 
 // Comment this out when working on the code
-// const runGetLatestAds = () => {
-//   getLatestAds();
-// };
-// runGetLatestAds();
-// setInterval(runGetLatestAds, 3600000);
+const runGetLatestAds = () => {
+  getLatestAds();
+};
+runGetLatestAds();
+setInterval(runGetLatestAds, 3600000);
 
 // Connect to db
 mongoose
