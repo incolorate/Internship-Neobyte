@@ -3,15 +3,18 @@
 **Make sure you have docker instaled**
 
 Note: when using git clone be mindfull of the branch
+**Make sure you have docker installed and opened**
 
 ```
 gh repo clone incolorate/Internship-Neobyte
 cd Laravel
-npm install
+composer install
+./vendor/bin/sail up
+./vendor/bin/sail npm install
+./vendor/bin/sail npm run dev
 ```
 
 Rename .env.example to .env and add the necessary keys
-
 If you deplay on local machine:
 
 ```
@@ -21,12 +24,6 @@ DB_PORT=3306
 DB_DATABASE=example_app
 DB_USERNAME=sail
 DB_PASSWORD=password
-```
-
-Run using docker
-
-```
-./vendor/bin/sail up
 ```
 
 Update the database to match the latest version defined in the migrations.
