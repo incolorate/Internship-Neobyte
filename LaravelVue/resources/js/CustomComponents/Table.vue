@@ -48,6 +48,7 @@ const handleDelete = (id) => {
                     <span @click="show.modal = true" class="cursor-pointer"
                         >Delete</span
                     >
+
                     <Modal :show="show.modal">
                         <div class="p-7">
                             <p class="text-center mb-6">

@@ -5,7 +5,7 @@ import Button from "../CustomComponents/Button.vue";
 
 const { user } = defineProps(["user"]);
 
-const subscripe = async () => {
+const subscribe = async () => {
     await axios.post("http://localhost:4000/subscribe", user);
 };
 </script>
@@ -21,7 +21,7 @@ const subscripe = async () => {
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900">
-                        <Button buttonType="primary" @click="subscripe"
+                        <Button buttonType="primary" @click="subscribe"
                             >Subscribe</Button
                         >
                     </div>
