@@ -24,7 +24,7 @@ const getLatestAds = async () => {
 
   let finalUrls = [];
 
-  for (let i = 1; i < 2; i++) {
+  for (let i = 8; i < 9; i++) {
     const cardPage = await browser.newPage();
     await cardPage.goto(
       `https://www.olx.ro/imobiliare/terenuri/oradea/?currency=EUR&page=${i}`
@@ -37,8 +37,8 @@ const getLatestAds = async () => {
       });
       return urls;
     });
-    finalUrls = finalUrls.concat(cardUrls);
-
+    finalUrls = [...finalUrls, ...cardUrls];
+    console.log(finalUrls);
     await cardPage.close();
   }
 
@@ -46,7 +46,6 @@ const getLatestAds = async () => {
 
   // Loop through each URL and get the data
   for (let i = 0; i < finalUrls.length; i++) {
-    console.log("ghir ran once");
     if (!finalUrls[i].includes("https://")) continue;
     const cardPage = await browser.newPage();
     await cardPage.goto(finalUrls[i]);
@@ -71,8 +70,9 @@ const getLatestAds = async () => {
 
     const existingAd = await Ad.findOne({ title });
 
-    if (existingAd) {
-      console.log("Ad already exits");
+    if (existingAd !== null) {
+      console.log("Already in db ");
+      await cardPage.close();
       continue;
     }
 
@@ -114,7 +114,6 @@ const getLatestAds = async () => {
 
     await cardPage.close();
   }
-
   await browser.close();
 };
 
