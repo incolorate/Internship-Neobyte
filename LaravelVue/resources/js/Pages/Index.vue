@@ -1,42 +1,28 @@
-<script>
+<script setup>
 import { Head } from "@inertiajs/vue3";
 import HomeLayout from "../Layouts/HomeLayout.vue";
 import axios from "axios";
-import { ref, computed } from "vue";
+import { ref, onMounted } from "vue";
 
-//  doar setup -> vezi props etc pt setup..
-export default {
-    components: {
-        HomeLayout,
+const props = defineProps({
+    canLogin: Boolean,
+    canRegister: Boolean,
+    nativeAds: {
+        type: Array,
+        default: () => [],
     },
-    props: {
-        canLogin: {
-            type: Boolean,
-        },
-        canRegister: {
-            type: Boolean,
-        },
-        nativeAds: {
-            type: Array,
-            default: () => [],
-        },
-    },
-    setup(props) {
-        const ads = ref([]);
-        axios
-            .get("http://localhost:4000/ads")
-            .then((response) => {
-                ads.value = [...response.data, ...props.nativeAds];
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+});
 
-        return {
-            ads,
-        };
-    },
-};
+const ads = ref(null);
+
+onMounted(async () => {
+    try {
+        const response = await axios.get("http://localhost:4000/ads");
+        ads.value = response.data;
+    } catch (error) {
+        console.log(error);
+    }
+});
 </script>
 
 <template>
@@ -47,7 +33,7 @@ export default {
             <div
                 className="p-4 text-white  flex  justify-center gap-2 flex-wrap"
             >
-                <div v-if="ads.length > 0">
+                <div v-if="ads !== null">
                     <div
                         v-for="ad in ads"
                         :key="ad._id"
@@ -56,7 +42,7 @@ export default {
                         <div className="w-52 h-40">
                             <img
                                 :src="ad.image"
-                                :alt="ad.title"
+                                alt="{title}"
                                 className="p-1 w-52 h-40"
                                 loading="lazy"
                             />
