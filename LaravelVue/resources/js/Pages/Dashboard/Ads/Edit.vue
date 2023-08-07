@@ -15,7 +15,6 @@ const form = reactive({
     image: ad.image || null,
 });
 
-console.log(form);
 const handleSubmit = () => {
     form.price = parseInt(form.price);
     router.put(`/dashboard/ads/${ad.id}`, form);
