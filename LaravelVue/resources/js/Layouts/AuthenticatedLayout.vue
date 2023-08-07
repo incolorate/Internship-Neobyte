@@ -37,6 +37,9 @@ const showingNavigationDropdown = ref(false);
                                 >
                                     Dashboard
                                 </NavLink>
+                                <NavLink href="/adstracker">
+                                    Ads tracker
+                                </NavLink>
                             </div>
                         </div>
 

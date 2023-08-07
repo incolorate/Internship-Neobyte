@@ -2,7 +2,7 @@
 import { Head } from "@inertiajs/vue3";
 import HomeLayout from "../Layouts/HomeLayout.vue";
 import axios from "axios";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 export default {
     components: {
@@ -15,14 +15,18 @@ export default {
         canRegister: {
             type: Boolean,
         },
+        nativeAds: {
+            type: Array,
+            default: () => [],
+        },
     },
-    setup() {
-        const ads = ref(null);
+    setup(props) {
+        const ads = ref([]);
 
         axios
             .get("http://localhost:4000/ads")
             .then((response) => {
-                ads.value = response.data; // Assign the response data to 'ads' ref, not 'ref'
+                ads.value = [...response.data, ...props.nativeAds];
             })
             .catch((error) => {
                 console.log(error);
@@ -43,7 +47,7 @@ export default {
             <div
                 className="p-4 text-white  flex  justify-center gap-2 flex-wrap"
             >
-                <div v-if="ads !== null">
+                <div v-if="ads.length > 0">
                     <div
                         v-for="ad in ads"
                         :key="ad._id"
@@ -52,7 +56,7 @@ export default {
                         <div className="w-52 h-40">
                             <img
                                 :src="ad.image"
-                                alt="{title}"
+                                :alt="ad.title"
                                 className="p-1 w-52 h-40"
                                 loading="lazy"
                             />
