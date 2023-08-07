@@ -2,7 +2,7 @@
 import { Head } from "@inertiajs/vue3";
 import HomeLayout from "../Layouts/HomeLayout.vue";
 import axios from "axios";
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 
 const props = defineProps({
     canLogin: Boolean,
@@ -13,21 +13,42 @@ const props = defineProps({
     },
 });
 
-const ads = ref(null);
+const allAds = ref(null);
+const searchQuery = ref("");
 
 onMounted(async () => {
     try {
         const response = await axios.get("http://localhost:4000/ads");
-        ads.value = [...response.data, ...props.nativeAds];
+        allAds.value = [...response.data, ...props.nativeAds];
     } catch (error) {
         console.log(error);
     }
+});
+
+const filteredAds = computed(() => {
+    console.log(filteredAds);
+    const query = searchQuery.value.toLowerCase();
+    return allAds.value?.filter((ad) => {
+        return (
+            ad?.title?.toLowerCase().includes(query) ||
+            ad?.location?.toLowerCase().includes(query) ||
+            (ad?.price && ad?.price.toString().toLowerCase().includes(query))
+        );
+    });
 });
 </script>
 
 <template>
     <Head>NeoX</Head>
     <HomeLayout :canLogin="canLogin" :canRegister="canRegister"> </HomeLayout>
+    <div class="flex justify-center">
+        <input
+            type="text"
+            class="w-96 outline-0 outline-none text-black"
+            v-model="searchQuery"
+            placeholder="Search ads..."
+        />
+    </div>
     <div className="flex items-center justify-center bg-slate-100">
         <div className="w-full max-w-5xl ">
             <div
@@ -35,7 +56,7 @@ onMounted(async () => {
             >
                 <div v-if="ads !== null">
                     <div
-                        v-for="ad in ads"
+                        v-for="ad in filteredAds"
                         :key="ad._id"
                         className="shadow-md  bg-white min-w-full max-w-full text-slate-800 h-40 flex mt-4"
                     >
