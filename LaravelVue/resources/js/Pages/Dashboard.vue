@@ -2,7 +2,6 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head, Link } from "@inertiajs/vue3";
 import Button from "../CustomComponents/Button.vue";
-import { defineProps } from "vue";
 import Table from "../CustomComponents/Table.vue";
 
 const { ads } = defineProps(["ads"]);

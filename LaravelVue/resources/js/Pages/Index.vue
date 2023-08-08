@@ -3,6 +3,7 @@ import { Head } from "@inertiajs/vue3";
 import HomeLayout from "../Layouts/HomeLayout.vue";
 import axios from "axios";
 import { ref, onMounted, computed } from "vue";
+import { cva } from "class-variance-authority";
 
 const props = defineProps({
     canLogin: Boolean,
@@ -36,11 +37,55 @@ const filteredAds = computed(() => {
         );
     });
 });
-</script>
 
+const imageType = ref("ro");
+const showFlagSelect = ref(false);
+
+const mainImage = computed(() => {
+    return cva("", {
+        variants: {
+            imageType: {
+                ro: "http://localhost:5173/resources/js/images/romania.png",
+                uk: "http://localhost:5173/resources/js/images//uk.png",
+                de: "http://localhost:5173/resources/js/images//de.png",
+            },
+        },
+    })({
+        imageType: imageType.value,
+    });
+});
+</script>
 <template>
     <Head>NeoX</Head>
-    <HomeLayout :canLogin="canLogin" :canRegister="canRegister"> </HomeLayout>
+    <HomeLayout :canLogin="canLogin" :canRegister="canRegister">
+        <div class="">
+            <img :src="mainImage" class="w-5 h-5" />
+        </div>
+        <div class="cursor-pointer">
+            <p @click="showFlagSelect = !showFlagSelect">X</p>
+            <div
+                v-if="showFlagSelect"
+                class="absolute bg-white"
+                @click="showFlagSelect = !showFlagSelect"
+            >
+                <img
+                    class="w-10 h-6 mb-2"
+                    src="../images/de.png"
+                    @click="imageType = `de`"
+                />
+                <img
+                    class="w-10 h-6"
+                    src="../images/uk.png"
+                    @click="imageType = `uk`"
+                />
+                <img
+                    class="w-10 h-6"
+                    src="../images/romania.png"
+                    @click="imageType = `ro`"
+                />
+            </div>
+        </div>
+    </HomeLayout>
     <div class="flex justify-center">
         <input
             type="text"

@@ -16,7 +16,7 @@ const { props } = defineProps(["canLogin", "canRegister"]);
                         </h1>
                     </Link>
                 </div>
-                <div v-if="canLogin">
+                <div v-if="canLogin" class="flex gap-2">
                     <div v-if="canLogin">
                         <Link
                             v-if="$page.props.auth.user"
@@ -40,9 +40,9 @@ const { props } = defineProps(["canLogin", "canRegister"]);
                             >
                         </template>
                     </div>
+                    <slot />
                 </div>
             </div>
-            <slot />
         </div>
     </div>
 </template>
