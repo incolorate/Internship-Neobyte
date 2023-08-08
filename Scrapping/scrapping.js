@@ -19,17 +19,16 @@ const getLatestAds = async () => {
     "#onetrust-accept-btn-handler"
   );
   await acceptButton.click();
-
   // // Get the URLs of each card using page.evaluate
-
+  await page.close();
   let finalUrls = [];
-
-  for (let i = 8; i < 9; i++) {
+  for (let i = 2; i < 6; i++) {
     const cardPage = await browser.newPage();
     await cardPage.goto(
       `https://www.olx.ro/imobiliare/terenuri/oradea/?currency=EUR&page=${i}`
     );
-    const cardUrls = await page.evaluate(() => {
+
+    const cardUrls = await cardPage.evaluate(() => {
       const cardElements = document.querySelectorAll(`a[class="css-rc5s2u"]`);
       const urls = [];
       cardElements.forEach((card) => {
@@ -38,7 +37,6 @@ const getLatestAds = async () => {
       return urls;
     });
     finalUrls = [...finalUrls, ...cardUrls];
-    console.log(finalUrls);
     await cardPage.close();
   }
 
