@@ -17,3 +17,30 @@ router.get("/ads", async (req, res) => {
 });
 
 export default router;
+
+router.post("/test", async (req, res) => {
+  const ad = {
+    title: { ro: "Titlu now" },
+    description: { ro: "Pret fain" },
+    price: 3000,
+    location: "Oradea",
+  };
+  try {
+    await Ad.create(ad);
+  } catch (error) {
+    return res.json(error);
+  }
+
+  return res.json("Ad created");
+});
+
+router.put("/test2", async (req, res) => {
+  try {
+    await Ad.findOneAndUpdate(
+      { _id: "64d3017211c2fa62e02201e9" },
+      { title: { en: "munte" } }
+    );
+  } catch (error) {
+    console.log(error);
+  }
+});

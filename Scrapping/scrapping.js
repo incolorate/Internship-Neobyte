@@ -19,17 +19,16 @@ const getLatestAds = async () => {
     "#onetrust-accept-btn-handler"
   );
   await acceptButton.click();
-
   // // Get the URLs of each card using page.evaluate
-
+  await page.close();
   let finalUrls = [];
-
-  for (let i = 8; i < 9; i++) {
+  for (let i = 2; i < 3; i++) {
     const cardPage = await browser.newPage();
     await cardPage.goto(
       `https://www.olx.ro/imobiliare/terenuri/oradea/?currency=EUR&page=${i}`
     );
-    const cardUrls = await page.evaluate(() => {
+
+    const cardUrls = await cardPage.evaluate(() => {
       const cardElements = document.querySelectorAll(`a[class="css-rc5s2u"]`);
       const urls = [];
       cardElements.forEach((card) => {
@@ -38,7 +37,6 @@ const getLatestAds = async () => {
       return urls;
     });
     finalUrls = [...finalUrls, ...cardUrls];
-    console.log(finalUrls);
     await cardPage.close();
   }
 
@@ -68,9 +66,9 @@ const getLatestAds = async () => {
       return element ? element.textContent.trim() : null;
     }, titleSelector);
 
-    const existingAd = await Ad.findOne({ title });
+    const existingAd = await Ad.findOne({ title: { ro: title } });
 
-    if (existingAd !== null) {
+    if (existingAd === null) {
       console.log("Already in db ");
       await cardPage.close();
       continue;
@@ -101,7 +99,13 @@ const getLatestAds = async () => {
       return imgElement ? imgElement.src : null;
     }, imageSelector);
 
-    const adData = { title, description, price, location, image };
+    const adData = {
+      title: { ro: title },
+      description: { ro: title },
+      price,
+      location,
+      image,
+    };
 
     try {
       Ad.create(adData);
@@ -109,8 +113,6 @@ const getLatestAds = async () => {
     } catch (error) {
       console("Error occurred at", adData.title);
     }
-
-    //  TO DO SAVE TO DATABASE
 
     await cardPage.close();
   }

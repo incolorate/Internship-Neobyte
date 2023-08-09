@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.post("/subscribe", async (req, res) => {
   const { name: user } = req.body;
+
   const checkUser = await Subscription.findOne({ user: user });
   if (checkUser) {
     return res.json("User already subscribed");

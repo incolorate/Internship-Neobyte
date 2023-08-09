@@ -1,11 +1,23 @@
 import mongoose from "mongoose";
 
-const adSchema = mongoose.Schema({
-  title: {
+const translationSchema = mongoose.Schema({
+  ro: {
     type: String,
-    required: true,
+    default: null,
   },
-  description: String,
+  en: {
+    type: String,
+    default: null,
+  },
+  de: {
+    type: String,
+    default: null,
+  },
+});
+
+const adSchema = mongoose.Schema({
+  title: translationSchema,
+  description: translationSchema,
   price: String,
   location: String,
   image: String,
