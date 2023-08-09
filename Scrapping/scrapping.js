@@ -22,7 +22,7 @@ const getLatestAds = async () => {
   // // Get the URLs of each card using page.evaluate
   await page.close();
   let finalUrls = [];
-  for (let i = 2; i < 6; i++) {
+  for (let i = 2; i < 3; i++) {
     const cardPage = await browser.newPage();
     await cardPage.goto(
       `https://www.olx.ro/imobiliare/terenuri/oradea/?currency=EUR&page=${i}`
@@ -66,9 +66,9 @@ const getLatestAds = async () => {
       return element ? element.textContent.trim() : null;
     }, titleSelector);
 
-    const existingAd = await Ad.findOne({ title });
+    const existingAd = await Ad.findOne({ title: { ro: title } });
 
-    if (existingAd !== null) {
+    if (existingAd === null) {
       console.log("Already in db ");
       await cardPage.close();
       continue;
@@ -99,7 +99,13 @@ const getLatestAds = async () => {
       return imgElement ? imgElement.src : null;
     }, imageSelector);
 
-    const adData = { title, description, price, location, image };
+    const adData = {
+      title: { ro: title },
+      description: { ro: title },
+      price,
+      location,
+      image,
+    };
 
     try {
       Ad.create(adData);
@@ -107,8 +113,6 @@ const getLatestAds = async () => {
     } catch (error) {
       console("Error occurred at", adData.title);
     }
-
-    //  TO DO SAVE TO DATABASE
 
     await cardPage.close();
   }
